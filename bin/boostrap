@@ -1,0 +1,48 @@
+#!/bin/bash -xe
+
+BOOT_USER=${1:-periklis}
+BOOT_MACHINE=${2:-alphaomega}
+BOOT_BRANCH=${3:-origin/master}
+
+VALID_USERS=("periklis" "ptsirakidis")
+VALID_MACHINES=("alphaomega" "theopompos")
+VALID_BRANCHES=("origin/master" "latest-release")
+
+if [[ " ${VALID_USERS[*]} " != *"$BOOT_USER"* ]];
+then
+    echo "Provided user is not valid!"
+    exit 1
+fi
+
+if [[ " ${VALID_MACHINES[*]} " != *"$BOOT_MACHINE"* ]];
+then
+    echo "Provided machine is not valid!"
+    exit 1
+fi
+
+if [[ " ${VALID_BRANCHES[*]} " != *"$BOOT_BRANCH"* ]];
+then
+    echo "Provided branch is not valid!"
+    exit 1
+fi
+
+echo "Booting machine $BOOT_MACHINE for $BOOT_USER on $BOOT_BRANCH"
+echo
+echo "Initialize base repositories"
+
+mkdir -p ~/projects/"${BOOT_USER}"
+cd ~/projects/"${BOOT_USER}"
+git clone git://github.com/periklis/nix-config
+git clone git://github.com/periklis/nixpkgs
+git clone git://github.com/periklis/dot-"${BOOT_MACHINE}"
+
+ln -sf dot-"${BOOT_MACHINE}"/machine.nix machine.nix
+
+echo "Initialize emacs repositories"
+git clone git://github.com/periklis/dot-emacs
+cd dot-emacs
+git clone git://github.com/periklis/dot-emacs-machines
+
+echo "Initialize org repository"
+cd ~
+git clone git://github.com/periklis/org
