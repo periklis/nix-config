@@ -30,6 +30,10 @@ in
 
   services.nix-daemon.enable = true;
 
+  # services.chunkwm = import ./services/chunkwm.nix { inherit(pkgs) chunkwm; };
+
+  services.skhd = import ./services/skhd.nix { inherit(pkgs) skhd; };
+
   system.defaults = import ./preferences/defaults.nix {};
 
   system.stateVersion = 3;
