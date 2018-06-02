@@ -108,5 +108,5 @@ then
     export NIX_PATH=darwin="${BASE_DIR}"/nix-config/nix-darwin:darwin-config="${BASE_DIR}"/nix-config/configuration.nix:"${NIX_PATH}"
     "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild build
     "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild switch
-    . /etc/static/bashrc
+    . /etc/static/zshrc
 fi
