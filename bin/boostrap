@@ -39,9 +39,10 @@ then
 fi
 
 cd "${BASE_DIR}"
-git clone --recurse-submodules git@github.com:periklis/nix-config.git
-git clone git@github.com:periklis/nixpkgs.git
-git clone git@github.com:periklis/dot-"${BOOT_MACHINE}".git
+git clone git@github.com:periklis/nix-config.git
+cd "${BASE_DIR}"/nix-config
+git submodule update --init -- nixpkgs
+git submodule update --init -- "${BOOT_MACHINE}"
 
 echo
 echo "Symlink $BOOT_MACHINE machine configuration"
@@ -49,6 +50,7 @@ echo ln -s "${BASE_MACHINE_DIR}/machine.nix" machine.nix
 
 echo
 echo "Initialize emacs repositories"
+cd "${BASE_DIR}"
 git clone --recurse-submodules git@github.com:periklis/dot-emacs.git
 git clone git@github.com:periklis/dot-emacs-machines.git
 echo ln -s ~/.emacs.d dot-emacs
