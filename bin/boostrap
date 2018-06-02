@@ -33,7 +33,7 @@ echo "Booting machine $BOOT_MACHINE for $BOOT_USER on $BOOT_BRANCH"
 echo
 echo "Initialize base repositories"
 
-if [[ ! -d "${BASE_DIR}" ]];
+if ![[ -d "${BASE_DIR}" ]];
 then
     echo mkdir -p "${BASE_DIR}"
 fi
