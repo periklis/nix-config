@@ -1,7 +1,7 @@
 #!/bin/bash -xe
 
 BOOT_USER=${1:-periklis}
-BOOT_MACHINE=${2:-alphaomega}
+BOOT_MACHINE=${2:-theopompos}
 BOOT_BRANCH=${3:-origin/master}
 
 VALID_USERS=("periklis" "ptsirakidis")
