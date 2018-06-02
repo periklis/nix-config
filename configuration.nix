@@ -13,7 +13,7 @@
     buildUsersGroup = "nixbld";
     maxJobs = 4;
     buildCores = 1;
-    buildUseSandbox = false;
+    useSandbox = false;
 
     binaryCaches = [ https://cache.nixos.org/ ];
     binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
