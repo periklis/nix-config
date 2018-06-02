@@ -39,32 +39,64 @@ then
 fi
 
 cd "${BASE_DIR}"
-git clone git@github.com:periklis/nix-config.git
+
+if [[ -d "${BASE_DIR}/nix-config" ]]; then
+    echo "Base repository nix-config exists"
+else
+    git clone git@github.com:periklis/nix-config.git
+fi
+
+
 cd "${BASE_DIR}"/nix-config
-git submodule update --init -- nixpkgs
-git submodule update --init -- nix-darwin
-git submodule update --init -- "${BOOT_MACHINE}"
+if [[ -f "${BASE_DIR}/nix-config/nixpkgs/default.nix" ]]; then
+    echo "Base nix-config submodule nixpkgs exists"
+else
+    git submodule update --init -- nixpkgs
+fi
+
+if [[ -f "${BASE_DIR}/nix-config/nix-darwin/default.nix" ]]; then
+    echo "Base nix-config submodule nix-darwin exists"
+else
+    git submodule update --init -- nix-darwin
+fi
+
+if [[ -f "${BASE_DIR}/nix-config/${BOOT_MACHINE}/default.nix" ]]; then
+    echo "Base nix-config submodule ${BOOT_MACHINE} exists"
+else
+    git submodule update --init -- "${BOOT_MACHINE}"
+fi
 
 echo
 echo "Symlink $BOOT_MACHINE machine configuration"
-echo ln -s "${BASE_MACHINE_DIR}/machine.nix" machine.nix
+ln -sf "${BASE_MACHINE_DIR}/default.nix" machine.nix
 
 echo
 echo "Initialize emacs repositories"
+
 cd "${BASE_DIR}"
-git clone --recurse-submodules git@github.com:periklis/dot-emacs.git
-git clone git@github.com:periklis/dot-emacs-machines.git
-ln -s ~/.emacs.d dot-emacs
-ln -s ~/.emacs.d/common.el dot-emacs/machines/common.el
-ln -s ~/.emacs.d/local.el dot-emacs/machines/"${BOOT_MACHINE}"/local.el
+if [[ -d "${BASE_DIR}/dot-emacs" ]]; then
+    echo "Repository dot-emacs exists"
+else
+    git clone --recurse-submodules git@github.com:periklis/dot-emacs.git
+    git submodule init
+    git submodule update
+
+    ln -sf ~/.emacs.d dot-emacs
+    ln -sf ~/.emacs.d/common.el dot-emacs/machines/common.el
+    ln -sf ~/.emacs.d/local.el dot-emacs/machines/"${BOOT_MACHINE}"/local.el
+fi
 
 echo
 echo "Initialize org repository"
-git clone git@github.com:periklis/org.git
+if [[ -d "${BASE_DIR}/org" ]]; then
+    echo "Repository org exists"
+else
+    git clone git@github.com:periklis/org.git
+fi
 
 echo
 echo "Symlink org repository"
-ln -s ~/org org
+ln -sf ~/org org
 
 if [[ :$PATH: != *:"/nix/var/nix/profiles/default/bin":* ]];
 then
