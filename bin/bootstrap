@@ -78,12 +78,10 @@ if [[ -d "${BASE_DIR}/dot-emacs" ]]; then
     echo "Repository dot-emacs exists"
 else
     git clone --recurse-submodules git@github.com:periklis/dot-emacs.git
-    git submodule init
-    git submodule update
 
-    ln -sf ~/.emacs.d dot-emacs
-    ln -sf ~/.emacs.d/common.el dot-emacs/machines/common.el
-    ln -sf ~/.emacs.d/local.el dot-emacs/machines/"${BOOT_MACHINE}"/local.el
+    ln -sf "${BASE_DIR}/dot-emacs" ~/.emacs.d
+    ln -sf "${BASE_DIR}/dot-emacs/machines/common.el" dot-emacs/common.el
+    ln -sf "${BASE_DIR}/dot-emacs/machines/${BOOT_MACHINE}/local.el" dot-emacs/local.el
 fi
 
 echo
@@ -92,11 +90,8 @@ if [[ -d "${BASE_DIR}/org" ]]; then
     echo "Repository org exists"
 else
     git clone git@github.com:periklis/org.git
+    ln -sf "${BASE_DIR}/org" ~/org
 fi
-
-echo
-echo "Symlink org repository"
-ln -sf ~/org org
 
 if [[ :$PATH: != *:"/nix/var/nix/profiles/default/bin":* ]];
 then
@@ -109,7 +104,7 @@ if [[ :$NIX_PATH: != *:"${BASE_DIR}/nix-config/nix-darwin":* ]];
 then
     echo
     echo "Install Nix-Darwin Manager"
-    sudo ln -s private/var/run /run
+    sudo ln -sf private/var/run /run
     export NIX_PATH=darwin="${BASE_DIR}"/nix-config/nix-darwin:darwin-config="${BASE_DIR}"/nix-config/configuration.nix:"${NIX_PATH}"
     "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild build
     "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild switch
