@@ -23,7 +23,8 @@
   nixPath = [
     "darwin=$HOME/projects/$LOGNAME/nix-config/nix-darwin"
     "darwin-config=$HOME/projects/$LOGNAME/nix-config/configuration.nix"
-    "nixpkgs=/Users/ptsirakidis/projects/periklis/nixpkgs"
+    "nixpkgs-overlays=/Users/$LOGNAME/projects/$LOGNAME/nix-config/overlays"
+    "nixpkgs=/Users/$LOGNAME/projects/$LOGNAME/nix-config/nixpkgs"
     "/nix/var/nix/profiles/per-user/root/channels"
     "$HOME/.nix-defexpr/channels"
   ];

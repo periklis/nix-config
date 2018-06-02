@@ -1,15 +1,29 @@
 { config, lib, pkgs, ... }:
 let
   machine = import ./machine.nix { inherit lib pkgs; };
+
+  inherit(machine) networking nix;
 in
 {
   environment = import ./environment.nix { inherit lib; };
 
-  networking.hostName = machine.hostname;
+  networking = {
+    inherit (networking) hostName;
+    knownNetworkServices = [ "Ethernet" "Wi-Fi" ];
+  };
 
   nix = import ./programs/nix.nix {
-    machine = machine.nix;
+    machine = nix;
     nix = pkgs.nixUnstable;
+  };
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowBroken = true;
+    };
+
+    overlays = import ./overlays/overlays.nix;
   };
 
   programs.zsh = import ./programs/zsh.nix {};
