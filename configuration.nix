@@ -10,7 +10,6 @@
     package = pkgs.nixUnstable;
 
     useDaemon = true;
-    buildUsersGroup = "nixbld";
     maxJobs = 4;
     buildCores = 1;
     useSandbox = false;
