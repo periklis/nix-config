@@ -43,27 +43,33 @@ git clone --recurse-submodules git://github.com/periklis/nix-config
 git clone git://github.com/periklis/nixpkgs
 git clone git://github.com/periklis/dot-"${BOOT_MACHINE}"
 
+echo
 echo "Symlink $BOOT_MACHINE machine configuration"
 echo ln -s "${BASE_MACHINE_DIR}/machine.nix" machine.nix
 
+echo
 echo "Initialize emacs repositories"
 git clone --recurse-submodules git://github.com/periklis/dot-emacs
 git clone git://github.com/periklis/dot-emacs-machines
 
+echo
 echo "Initialize org repository"
 git clone git://github.com/periklis/org
 
+echo
 echo "Symlink org repository"
 echo ln -s ~/org org
 
 if [[ :$PATH: != *:"/nix/var/nix/profiles/default/bin":* ]];
 then
+    echo
     echo "Install Nix Package Manager"
     curl https://nixos.org/nix/install | sh
 fi
 
 if [[ :$NIX_PATH: != *:"${BASE_DIR}/nix-config/nix-darwin":* ]];
 then
+    echo
     echo "Install Nix-Darwin Manager"
     sudo ln -s private/var/run /run
     export NIX_PATH=darwin="${BASE_DIR}"/nix-config/nix-darwin:darwin-config="${BASE_DIR}"/nix-config/configuration.nix:"${NIX_PATH}"
