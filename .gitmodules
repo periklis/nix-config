@@ -1,3 +1,12 @@
 [submodule "nix-darwin"]
 	path = nix-darwin
 	url = git@github.com:periklis/nix-darwin.git
+[submodule "nixpkgs"]
+	path = nixpkgs
+	url = git@github.com:periklis/nixpkgs.git
+[submodule "alphaomega"]
+	path = alphaomega
+	url = git@github.com:periklis/dot-alphaomega
+[submodule "theopompos"]
+	path = theopompos
+	url = git@github.com:periklis/dot-theopompos
