@@ -42,6 +42,7 @@ cd "${BASE_DIR}"
 git clone git@github.com:periklis/nix-config.git
 cd "${BASE_DIR}"/nix-config
 git submodule update --init -- nixpkgs
+git submodule update --init -- nix-darwin
 git submodule update --init -- "${BOOT_MACHINE}"
 
 echo
@@ -53,9 +54,9 @@ echo "Initialize emacs repositories"
 cd "${BASE_DIR}"
 git clone --recurse-submodules git@github.com:periklis/dot-emacs.git
 git clone git@github.com:periklis/dot-emacs-machines.git
-echo ln -s ~/.emacs.d dot-emacs
-echo ln -s ~/.emacs.d/common.el dot-emacs/machines/common.el
-echo ln -s ~/.emacs.d/local.el dot-emacs/machines/"${BOOT_MACHINE}"/local.el
+ln -s ~/.emacs.d dot-emacs
+ln -s ~/.emacs.d/common.el dot-emacs/machines/common.el
+ln -s ~/.emacs.d/local.el dot-emacs/machines/"${BOOT_MACHINE}"/local.el
 
 echo
 echo "Initialize org repository"
@@ -63,7 +64,7 @@ git clone git@github.com:periklis/org.git
 
 echo
 echo "Symlink org repository"
-echo ln -s ~/org org
+ln -s ~/org org
 
 if [[ :$PATH: != *:"/nix/var/nix/profiles/default/bin":* ]];
 then
