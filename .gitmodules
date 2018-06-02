@@ -1,0 +1,3 @@
+[submodule "nix-darwin"]
+	path = nix-darwin
+	url = git@github.com:periklis/nix-darwin.git

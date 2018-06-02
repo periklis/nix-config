@@ -4,9 +4,12 @@ BOOT_USER=${1:-periklis}
 BOOT_MACHINE=${2:-alphaomega}
 BOOT_BRANCH=${3:-origin/master}
 
-VALID_USERS=("periklis2" "ptsirakidis")
+VALID_USERS=("periklis" "ptsirakidis")
 VALID_MACHINES=("alphaomega" "theopompos")
 VALID_BRANCHES=("origin/master" "latest-release")
+
+BASE_DIR=~/projects/"${BOOT_USER}"
+BASE_MACHINE_DIR="${BASE_DIR}/dot-${BOOT_MACHINE}"
 
 if [[ " ${VALID_USERS[*]} " != *"$BOOT_USER"* ]];
 then
@@ -30,14 +33,18 @@ echo "Booting machine $BOOT_MACHINE for $BOOT_USER on $BOOT_BRANCH"
 echo
 echo "Initialize base repositories"
 
-mkdir -p ~/projects/"${BOOT_USER}"
-cd ~/projects/"${BOOT_USER}"
-git clone git://github.com/periklis/nix-config
+if [[ ! -d "${BASE_DIR}" ]];
+then
+    echo mkdir -p "${BASE_DIR}"
+fi
+
+cd "${BASE_DIR}"
+git clone --recurse-submodules git://github.com/periklis/nix-config
 git clone git://github.com/periklis/nixpkgs
 git clone git://github.com/periklis/dot-"${BOOT_MACHINE}"
 
 echo "Symlink $BOOT_MACHINE machine configuration"
-ln -s dot-"${BOOT_MACHINE}"/machine.nix machine.nix
+echo ln -s "${BASE_MACHINE_DIR}/machine.nix" machine.nix
 
 echo "Initialize emacs repositories"
 git clone --recurse-submodules git://github.com/periklis/dot-emacs
@@ -47,4 +54,20 @@ echo "Initialize org repository"
 git clone git://github.com/periklis/org
 
 echo "Symlink org repository"
-ln -s ~/org org
+echo ln -s ~/org org
+
+if [[ :$PATH: != *:"/nix/var/nix/profiles/default/bin":* ]];
+then
+    echo "Install Nix Package Manager"
+    curl https://nixos.org/nix/install | sh
+fi
+
+if [[ :$NIX_PATH: != *:"${BASE_DIR}/nix-config/nix-darwin":* ]];
+then
+    echo "Install Nix-Darwin Manager"
+    sudo ln -s private/var/run /run
+    export NIX_PATH=darwin="${BASE_DIR}"/nix-config/nix-darwin:darwin-config="${BASE_DIR}"/nix-config/configuration.nix:"${NIX_PATH}"
+    "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild build
+    "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild switch
+    . /etc/static/bashrc
+fi
