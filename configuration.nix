@@ -2,10 +2,10 @@
 let
   machine = import ./machine.nix { inherit lib pkgs; };
 
-  inherit(machine) networking nix;
+  inherit(machine) activationScripts etc networking nix;
 in
 {
-  environment = import ./environment.nix { inherit lib; };
+  environment = import ./environment.nix { inherit lib etc; };
 
   networking = {
     inherit (networking) hostName;
@@ -34,9 +34,11 @@ in
 
   services.skhd = import ./services/skhd.nix { inherit(pkgs) skhd; };
 
-  system.defaults = import ./preferences/defaults.nix {};
-
-  system.stateVersion = 3;
+  system = {
+    inherit activationScripts;
+    defaults = import ./preferences/defaults.nix {};
+    stateVersion = 3;
+  };
 
   time.timeZone = "Europe/Berlin";
 }
