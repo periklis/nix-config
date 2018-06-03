@@ -3,6 +3,19 @@ let
   machine = import ./machine.nix { inherit lib pkgs; };
 
   inherit(machine) activationScripts etc networking nix;
+
+  #
+  # TODO Switch over when the following PR is merged:
+  # https://github.com/periklis/nixpkgs/commit/9201e84257139f076da8bf0d6a5c8a3655831a0f
+  chunkwm = pkgs.runCommand "chunkwm" {} ''
+    mkdir -p $out/bin
+    mkdir -p $out/plugins
+    cp ${/usr/local/bin}/chunkc $out/bin
+    cp ${/usr/local/bin}/chunkwm $out/bin
+    cp ${/usr/local/lib}/border.so $out/plugins
+    cp ${/usr/local/lib}/ffm.so $out/plugins
+    cp ${/usr/local/lib}/tiling.so $out/plugins
+  '';
 in
 {
   environment = import ./environment.nix { inherit lib etc; };
@@ -30,7 +43,7 @@ in
 
   services.nix-daemon.enable = true;
 
-  # services.chunkwm = import ./services/chunkwm.nix { inherit(pkgs) chunkwm; };
+  services.chunkwm = import ./services/chunkwm.nix { inherit chunkwm; };
 
   services.skhd = import ./services/skhd.nix { inherit(pkgs) skhd; };
 
