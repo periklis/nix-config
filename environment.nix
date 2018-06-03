@@ -1,4 +1,4 @@
-{ lib, etc }:
+{ config, lib, etc }:
 {
   etc = etc // {
     "per-user/curlrc".text                         = import ./dot-files/curlrc.nix {};
@@ -13,6 +13,8 @@
     "per-user/npmrc".text                          = import ./dot-files/npmrc.nix {};
   };
 
+  extraOutputsToInstall = [ "man" "info" ];
+
   variables = {
     TERM              = "xterm-256color";
     LANG              = "en_US.UTF-8";
@@ -20,6 +22,16 @@
     PAGER             = "less";
     EDITOR            = "emacsclient";
     LSCOLORS          = "gxfxbEaEBxxEhEhBaDaCaD";
+    MANPATH           = [
+      "/Users/$LOGNAME/.nix-profile/share/man"
+      "/Users/$LOGNAME/.nix-profile/man"
+      "${config.system.path}/share/man"
+      "${config.system.path}/man"
+      "/usr/local/share/man"
+      "/usr/share/man"
+      "/Developer/usr/share/man"
+      "/usr/X11/man"
+    ];
     ACLOCAL_PATH      = "$HOME/.nix-profile/share/aclocal";
     PKG_CONFIG_PATH   = "$HOME/.nix-profile/lib/pkgconfig";
     PKG_CONFIG_LIBDIR = "$HOME/.nix-profile/lib/pkgconfig";
@@ -47,7 +59,7 @@
   shellAliases = {
     mmv                  = "noglob zmv -W";
     ec                   = "emacsclient -nq";
-    # nix-env              = "nix-env -f '<nixpkgs>'";
+    nix-env              = "nix-env -f '<nixpkgs>'";
     nix-build-out        = "nixBuildOut";
     nix-build-binding-as = "nixBuildBindingAs";
     nix-build-deps       = "nixBuildDeps";

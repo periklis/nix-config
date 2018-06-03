@@ -18,14 +18,15 @@ let
   '';
 in
 {
+  #
+  # System environment
+  #
   environment = import ./environment.nix
-    { inherit lib etc; };
+    { inherit config lib etc; };
 
-  networking = {
-    inherit (networking) hostName;
-    knownNetworkServices = [ "Ethernet" "Wi-Fi" ];
-  };
-
+  #
+  # Nix & Nixpkgs
+  #
   nix = import ./programs/nix.nix {
     machine = nix;
     nix = pkgs.nixUnstable;
@@ -40,6 +41,9 @@ in
     overlays = import ./overlays/overlays.nix;
   };
 
+  #
+  # Programs
+  #
   programs.gnupg = import ./programs/gnupg.nix {};
 
   programs.info.enable      = true;
@@ -48,13 +52,25 @@ in
 
   programs.zsh = import ./programs/zsh.nix {};
 
-  services.nix-daemon.enable = true;
+  #
+  # Services
+  #
+  services.activate-system.enable = true;
+  services.nix-daemon.enable      = true;
 
   services.chunkwm = import ./services/chunkwm.nix
     { inherit chunkwm; };
 
   services.skhd = import ./services/skhd.nix
     { inherit(pkgs) skhd; };
+
+  #
+  # System configuration
+  #
+  networking = {
+    inherit (networking) hostName;
+    knownNetworkServices = [ "Ethernet" "Wi-Fi" ];
+  };
 
   system = import ./system.nix
     { inherit activationScripts; };
