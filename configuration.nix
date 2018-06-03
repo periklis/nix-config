@@ -40,6 +40,8 @@ in
     overlays = import ./overlays/overlays.nix;
   };
 
+  programs.gnupg = import ./programs/gnupg.nix {};
+
   programs.zsh = import ./programs/zsh.nix {};
 
   services.nix-daemon.enable = true;
