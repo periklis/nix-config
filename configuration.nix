@@ -34,11 +34,7 @@ in
 
   services.skhd = import ./services/skhd.nix { inherit(pkgs) skhd; };
 
-  system = {
-    inherit activationScripts;
-    defaults = import ./preferences/defaults.nix {};
-    stateVersion = 3;
-  };
+  system = import ./system.nix { inherit activationScripts; };
 
   time.timeZone = "Europe/Berlin";
 }
