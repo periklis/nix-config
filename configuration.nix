@@ -42,6 +42,10 @@ in
 
   programs.gnupg = import ./programs/gnupg.nix {};
 
+  programs.info.enable      = true;
+  programs.man.enable       = true;
+  programs.nix-index.enable = false;
+
   programs.zsh = import ./programs/zsh.nix {};
 
   services.nix-daemon.enable = true;
