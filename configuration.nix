@@ -18,7 +18,8 @@ let
   '';
 in
 {
-  environment = import ./environment.nix { inherit lib etc; };
+  environment = import ./environment.nix
+    { inherit lib etc; };
 
   networking = {
     inherit (networking) hostName;
@@ -43,11 +44,14 @@ in
 
   services.nix-daemon.enable = true;
 
-  services.chunkwm = import ./services/chunkwm.nix { inherit chunkwm; };
+  services.chunkwm = import ./services/chunkwm.nix
+    { inherit chunkwm; };
 
-  services.skhd = import ./services/skhd.nix { inherit(pkgs) skhd; };
+  services.skhd = import ./services/skhd.nix
+    { inherit(pkgs) skhd; };
 
-  system = import ./system.nix { inherit activationScripts; };
+  system = import ./system.nix
+    { inherit activationScripts; };
 
   time.timeZone = "Europe/Berlin";
 }
