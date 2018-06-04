@@ -207,6 +207,7 @@
           self.oh-my-zsh
           self.pinentry_mac
           self.pwgen
+          self.shellcheck
           self.silver-searcher
           self.tree
           self.which
