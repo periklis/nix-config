@@ -1,4 +1,4 @@
-{ config, lib, etc }:
+{ config, etc, lib, machinePackages, pkgs }:
 {
   etc = etc // {
     "per-user/curlrc".text                         = import ./dot-files/curlrc.nix {};
@@ -69,5 +69,14 @@
     fts                  = "ag --nobreak --nonumbers --noheading . | fzf";
   };
 
-  systemPackages = [];
+  systemPackages = [
+    # pkgs.emacsToolsEnv
+    # pkgs.gitToolsEnv
+    # pkgs.langToolsEnv
+    # pkgs.javaToolsEnv
+    # pkgs.networkingToolsEnv
+    # pkgs.nixToolsEnv
+    # pkgs.systemToolsEnv
+    # pkgs.wmToolsEnv
+  ] ++ machinePackages;
 }
