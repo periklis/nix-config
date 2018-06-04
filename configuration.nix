@@ -2,7 +2,7 @@
 let
   machine = import ./machine.nix { inherit lib pkgs; };
 
-  inherit(machine) activationScripts etc networking nix;
+  inherit(machine) activationScripts agents daemons etc networking nix;
 
   #
   # TODO Switch over when the following PR is merged:
@@ -23,6 +23,8 @@ in
   #
   environment = import ./environment.nix
     { inherit config lib etc; };
+
+  launchd = { inherit agents daemons; };
 
   #
   # Nix & Nixpkgs
