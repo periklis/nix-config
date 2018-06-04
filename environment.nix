@@ -21,6 +21,7 @@
     LC_ALL            = "en_US.UTF-8";
     PAGER             = "less";
     EDITOR            = "emacsclient";
+    ALTERNATE_EDITOR  = "vim";
     LSCOLORS          = "gxfxbEaEBxxEhEhBaDaCaD";
     MANPATH           = [
       "/Users/$LOGNAME/.nix-profile/share/man"
