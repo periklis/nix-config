@@ -1,6 +1,6 @@
 # Nix-Config
 
-This project defines my declarative multi-machine macOS machine configuration. It is based [nix](https://github.com/nixos) and [nix-darwin](https://github.com/lnl7/nix-darwin) and makes use of submodules for tracking dependencies.
+This project defines my declarative multi-machine macOS machine configuration. It is based [nix][nixos] and [nix-darwin][nix-darwin] and makes use of submodules for tracking dependencies.
 
 # Rationale
 
@@ -15,7 +15,7 @@ The main objective for this project is to have single machine configurations wit
 The following requirements are missing:
 
 - Pinning for dependencies
-- Integration of [dot-emacs](https://github.com/periklis/dot-emacs) configuration
+- Integration of [dot-emacs][dot-emacs] configuration
 - Integration of emacs package management
 - Integration of Applications management
 
@@ -29,5 +29,19 @@ $ curl https://raw.githubusercontent.com/periklis/nix-config/master/bin/bootstra
 
 # Acknowledgments
 This in projects is inspired on the work of other giants in the open source community, thus i would like to thank:
-- [John Wiegley's](https://github.com/jwiegley/) inspiring [nix-config](https://github.com/jwiegley/nix-config)
-- [Daiderd Jordan](https://github.com/lnl7/) for the amazing [nix-darwin](https://github.com/lnl7/nix-darwin)
+- [John Wiegley's][jwiegley] inspiring [nix-config][nix-jw-config]
+- [Daiderd Jordan][lnl7] for the amazing [nix-darwin][nix-darwin]
+- [Matthew Justin Bauer][matthewbauer] for the single script bootstrap idea in [bauer][bauer-nix]
+
+# License
+
+**nix-config** is licensed under the MIT license, available at http://opensource.org/licenses/MIT and also in the [LICENSE](https://github.com/periklis/nix-config/blob/master/LICENSE) file.
+
+[bauer-nix] : https://github.com/matthewbauer/bauer
+[dot-emacs] : https://github.com/periklis/dot-emacs
+[jwiegley]  : https://github.com/jwiegley/
+[lnl7] : https://github.com/lnl7/
+[matthewbauer] : https://github.com/matthewbauer/
+[nixos] : https://github.com/nixos
+[nix-darwin] : https://github.com/lnl7/nix-darwin
+[nix-jw-config]: https://github.com/jwiegley/nix-config
