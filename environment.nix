@@ -57,6 +57,11 @@
     ];
   };
 
+  shells = [
+    pkgs.bashInteractive
+    pkgs.zsh
+  ];
+
   shellAliases = {
     mmv                  = "noglob zmv -W";
     ec                   = "emacsclient -nq";
