@@ -31,7 +31,7 @@ in
   #
   nix = import ./programs/nix.nix {
     machine = nix;
-    nix = pkgs.nixUnstable;
+    inherit(pkgs) nix;
   };
 
   nixpkgs = {
