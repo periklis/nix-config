@@ -19,7 +19,7 @@
     TERM              = "xterm-256color";
     LANG              = "en_US.UTF-8";
     LC_ALL            = "en_US.UTF-8";
-    PAGER             = "less";
+    PAGER             = "less -R";
     EDITOR            = "emacsclient";
     ALTERNATE_EDITOR  = "vim";
     LSCOLORS          = "gxfxbEaEBxxEhEhBaDaCaD";
