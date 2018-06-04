@@ -70,13 +70,13 @@
   };
 
   systemPackages = [
-    # pkgs.emacsToolsEnv
+    pkgs.emacsToolsEnv
     # pkgs.gitToolsEnv
-    # pkgs.langToolsEnv
-    # pkgs.javaToolsEnv
-    # pkgs.networkingToolsEnv
-    # pkgs.nixToolsEnv
-    # pkgs.systemToolsEnv
-    # pkgs.wmToolsEnv
+    pkgs.langToolsEnv
+    pkgs.javaToolsEnv
+    pkgs.networkingToolsEnv
+    pkgs.nixToolsEnv
+    pkgs.systemToolsEnv
+    pkgs.wmToolsEnv
   ] ++ machinePackages;
 }
