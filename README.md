@@ -37,11 +37,11 @@ This in projects is inspired on the work of other giants in the open source comm
 
 **nix-config** is licensed under the MIT license, available at http://opensource.org/licenses/MIT and also in the [LICENSE](https://github.com/periklis/nix-config/blob/master/LICENSE) file.
 
-[bauer-nix] : https://github.com/matthewbauer/bauer
-[dot-emacs] : https://github.com/periklis/dot-emacs
-[jwiegley]  : https://github.com/jwiegley/
-[lnl7] : https://github.com/lnl7/
-[matthewbauer] : https://github.com/matthewbauer/
-[nixos] : https://github.com/nixos
-[nix-darwin] : https://github.com/lnl7/nix-darwin
+[bauer-nix]: https://github.com/matthewbauer/bauer
+[dot-emacs]: https://github.com/periklis/dot-emacs
+[jwiegley]: https://github.com/jwiegley/
+[lnl7]: https://github.com/lnl7/
+[matthewbauer]: https://github.com/matthewbauer/
+[nixos]: https://github.com/nixos
+[nix-darwin]: https://github.com/lnl7/nix-darwin
 [nix-jw-config]: https://github.com/jwiegley/nix-config
