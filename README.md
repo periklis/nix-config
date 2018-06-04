@@ -1,14 +1,14 @@
 # Nix-Config
 
-This project defines my declarative multi-machine macOS machine configuration. It is based [nix][nixos] and [nix-darwin][nix-darwin] and makes use of submodules for tracking dependencies.
+This project defines my declarative multi-machine macOS machine configuration. It is based [nix][nixos] and [nix-darwin][nix-darwin] and makes use of sub-modules for tracking dependencies.
 
 # Rationale
 
-The main objective for this project is to have single machine configurations with extensions for machine dependent configs. In addition the setup of new machine should be as easy as running a single script beyond creating access credentials to repositories. The following requirements are met:
+The main objective for this project is to have single machine configurations with extensions for machine dependent configurations. In addition the setup of new machine should be as easy as running a single script beyond creating access credentials to repositories. The following requirements are met:
 
-- Single script boostrap process
+- Single script bootstrap process
 - Shareable across machines
-- Extendability for machine-specific and per-user specific configurations
+- Extensible for machine-specific and per-user specific configurations
 - Follows a declarative programming model for the system configuration
 - Explicit dependency management for `nix-darwin`, `nixpkgs` and machine configurations
 
@@ -16,15 +16,16 @@ The following requirements are missing:
 
 - Pinning for dependencies
 - Integration of [dot-emacs][dot-emacs] configuration
-- Integration of emacs package management
-- Integration of Applications management
+- Integration of Emacs package management
+- Integration of Applications management (e.g. [jwiegley's apps overlay](https://github.com/jwiegley/nix-config/blob/master/overlays/30-apps.nix))
 
-# Boostrap
+# Bootstrap
 
 To bootstrap this project a new macOS machine, you have to run the following script only:
 
 ```Shell
-$ curl https://raw.githubusercontent.com/periklis/nix-config/master/bin/bootstrap | sh $USERNAME $MACHINE_NAME $TARGET_NIXPGS_BRANCH
+$ curl https://raw.githubusercontent.com/periklis/nix-config/master/bin/bootstrap |  \
+  sh $USERNAME $MACHINE_NAME $TARGET_NIXPGS_BRANCH
 ```
 
 # Acknowledgments
