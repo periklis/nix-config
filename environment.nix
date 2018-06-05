@@ -10,6 +10,7 @@
     "per-user/gnupg/gpg.conf".text                 = import ./dot-files/gnupg/gpg.nix {};
     "per-user/gnupg/scdaemon.conf".text            = import ./dot-files/gnupg/scdaemon.nix {};
     "per-user/gnupg/sks-keyservers.netCA.pem".text = import ./dot-files/gnupg/sks-keyservers.nix {};
+    "per-user/nixpkgs/config.nix".text             = import ./dot-files/nixpkgs/config.nix {};
     "per-user/npmrc".text                          = import ./dot-files/npmrc.nix {};
   };
 

@@ -1,0 +1,6 @@
+{}:''
+{
+  allowBroken = true;
+  allowUnfree = true;
+}
+''
