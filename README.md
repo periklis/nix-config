@@ -11,12 +11,12 @@ The main objective for this project is to have single machine configurations wit
 - Extensible for machine-specific and per-user specific configurations
 - Follows a declarative programming model for the system configuration
 - Explicit dependency management for `nix-darwin`, `nixpkgs` and machine configurations
+- Integration of Emacs package management
 
 The following requirements are missing:
 
 - Pinning for dependencies
 - Integration of [dot-emacs][dot-emacs] configuration
-- Integration of Emacs package management
 - Integration of Applications management (e.g. [jwiegley's apps overlay](https://github.com/jwiegley/nix-config/blob/master/overlays/30-apps.nix))
 
 # Bootstrap
