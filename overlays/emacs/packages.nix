@@ -95,11 +95,11 @@ pkgs: epkgs: with epkgs;
   phpunit
   popwin
   powerline
-  # prettier-js # BROKEN?
+  prettier-js
   projectile
   racer
   restclient
-  rtags
+  # rtags
   rust-mode
   s
   sass-mode
