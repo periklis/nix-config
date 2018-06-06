@@ -41,7 +41,7 @@
     PKG_CONFIG_PATH   = "$HOME/.nix-profile/lib/pkgconfig";
     PKG_CONFIG_LIBDIR = "$HOME/.nix-profile/lib/pkgconfig";
     SSH_AUTH_SOCK     = "$HOME/.gnupg/S.gpg-agent.ssh";
-    ZSH               = "$HOME/.nix-profile/share/oh-my-zsh";
+    ZSH               = "/run/current-system/sw/share/oh-my-zsh";
     ZSH_CUSTOM        = "$HOME/.zsh/custom";
     ZSH_CACHE_DIR     = "$HOME/.zsh/cache";
     ZSH_THEME         = "sunrise";
