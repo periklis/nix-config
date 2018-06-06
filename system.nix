@@ -2,6 +2,7 @@
 {
   activationScripts.extraUserActivation.text = activationScripts.extraUserActivation.text + ''
     mkdir -p ~/.config/htop
+    ln -sf /etc/per-user/aspell.conf ~/.aspell.conf
     ln -sf /etc/per-user/curlrc ~/.curlrc
     ln -sf /etc/per-user/ctags ~/.ctags
     ln -sf /etc/per-user/htoprc ~/.config/htop

@@ -1,6 +1,7 @@
 { config, etc, lib, machinePackages, pkgs }:
 {
   etc = etc // {
+    "per-user/aspell.conf".text                    = import ./dot-files/aspell.nix {};
     "per-user/curlrc".text                         = import ./dot-files/curlrc.nix {};
     "per-user/ctags".text                          = import ./dot-files/ctags.nix {};
     "per-user/chunkwmrc".text                      = import ./dot-files/chunkwmrc.nix {};
@@ -14,7 +15,9 @@
     "per-user/npmrc".text                          = import ./dot-files/npmrc.nix {};
   };
 
-  extraOutputsToInstall = [ "man" "info" ];
+  extraOutputsToInstall = [ "doc" "lib" "man" "info" ];
+
+  pathsToLink = [ "/lib" "/libexec" "/share" ];
 
   variables = {
     TERM              = "xterm-256color";
@@ -76,9 +79,11 @@
     fts                  = "ag --nobreak --nonumbers --noheading . | fzf";
   };
 
-  systemPackages = [
-    pkgs.networkingToolsEnv
-    pkgs.nixToolsEnv
-    pkgs.systemToolsEnv
+  systemPackages = with pkgs; [
+    emacsToolsEnv
+    gitToolsEnv
+    networkingToolsEnv
+    nixToolsEnv
+    systemToolsEnv
   ] ++ machinePackages;
 }
