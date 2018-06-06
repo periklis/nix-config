@@ -33,6 +33,7 @@ pkgs: epkgs: with epkgs;
   elm-yasnippets
   ensime
   eslintd-fix
+  exec-path-from-shell
   expand-region
   eyebrowse
   f
@@ -72,6 +73,7 @@ pkgs: epkgs: with epkgs;
   json-reformat
   json-snatcher
   let-alist
+  list-environment
   macrostep
   magit
   markdown-mode
@@ -112,6 +114,7 @@ pkgs: epkgs: with epkgs;
   ssh
   ssh-config-mode
   swiper
+  term-plus
   tern
   tide
   toml-mode
