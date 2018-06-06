@@ -54,7 +54,7 @@ in
 
   programs.info.enable      = true;
   programs.man.enable       = true;
-  programs.nix-index.enable = false;
+  programs.nix-index.enable = true;
 
   programs.zsh = import ./programs/zsh.nix {};
 
