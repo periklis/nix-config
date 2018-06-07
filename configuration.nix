@@ -2,7 +2,7 @@
 let
   machine = import ./machine.nix { inherit lib pkgs; };
 
-  inherit(machine) activationScripts agents daemons etc machinePackages networking nix;
+  inherit(machine) activationScripts agents daemons etc machinePackages networking nix services;
 
   #
   # TODO Switch over when the following PR is merged:
@@ -50,25 +50,27 @@ in
   #
   # Programs
   #
-  programs.gnupg = import ./programs/gnupg.nix {};
-
-  programs.info.enable      = true;
-  programs.man.enable       = true;
-  programs.nix-index.enable = true;
-
-  programs.zsh = import ./programs/zsh.nix {};
+  programs = {
+    gnupg            = import ./programs/gnupg.nix {};
+    info.enable      = true;
+    man.enable       = true;
+    nix-index.enable = true;
+    zsh              = import ./programs/zsh.nix {};
+  };
 
   #
   # Services
   #
-  services.activate-system.enable = true;
-  services.nix-daemon.enable      = true;
+  services = services // {
+    activate-system.enable = true;
+    nix-daemon.enable      = true;
 
-  services.chunkwm = import ./services/chunkwm.nix
-    { inherit chunkwm; };
+    chunkwm = import ./services/chunkwm.nix
+      { inherit chunkwm; };
 
-  services.skhd = import ./services/skhd.nix
-    { inherit(pkgs) skhd; };
+    skhd = import ./services/skhd.nix
+      { inherit(pkgs) skhd; };
+  };
 
   #
   # System configuration
