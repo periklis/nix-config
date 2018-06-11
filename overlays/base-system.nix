@@ -10,6 +10,19 @@ let
 
 in
 {
+  pinentry = super.pinentry.override {
+    enableEmacs = true;
+    ncurses = null;
+    gcr = null;
+    qt = null;
+    gtk2 = null;
+  };
+
+  gnupg = super.gnupg.override {
+    pinentry = self.pinentry;
+    guiSupport = false;
+  };
+
   mailToolsEnv = super.buildEnv {
     name = "mailTools";
     paths = [
@@ -57,7 +70,7 @@ in
       self.gnutls
       self.htop
       self.oh-my-zsh
-      self.pinentry_mac
+      self.pinentry
       self.pwgen
       self.shellcheck
       self.silver-searcher
