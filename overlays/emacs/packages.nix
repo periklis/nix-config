@@ -95,6 +95,7 @@ pkgs: epkgs: with epkgs;
   php-refactor-mode
   phpcbf
   phpunit
+  pinentry
   popwin
   powerline
   prettier-js
