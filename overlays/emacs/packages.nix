@@ -81,7 +81,6 @@ pkgs: epkgs: with epkgs;
   multi-term
   nix-mode
   nix-sandbox
-  nlinum
   nov
   org
   org-projectile
@@ -89,7 +88,7 @@ pkgs: epkgs: with epkgs;
   ox-pandoc
   pandoc-mode
   paradox
-  # pdf-tools # BROKEN?
+  pdf-tools
   # php-auto-yasnippets BROKEN?
   php-mode
   php-refactor-mode
