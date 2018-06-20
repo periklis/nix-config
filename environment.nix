@@ -4,7 +4,6 @@
     "per-user/aspell.conf".text                    = import ./dot-files/aspell.nix {};
     "per-user/curlrc".text                         = import ./dot-files/curlrc.nix {};
     "per-user/ctags".text                          = import ./dot-files/ctags.nix {};
-    "per-user/chunkwmrc".text                      = import ./dot-files/chunkwmrc.nix {};
     "per-user/htoprc".text                         = import ./dot-files/htoprc.nix {};
     "per-user/gnupg/dirmngr.conf".text             = import ./dot-files/gnupg/dirmgr.nix {};
     "per-user/gnupg/gpg-agent.conf".text           = import ./dot-files/gnupg/gpg-agent.nix {};
