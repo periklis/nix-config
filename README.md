@@ -25,7 +25,7 @@ To bootstrap this project a new macOS machine, you have to run the following scr
 
 ```Shell
 $ curl https://raw.githubusercontent.com/periklis/nix-config/master/bin/bootstrap |  \
-  sh $USERNAME $MACHINE_NAME $TARGET_NIXPGS_BRANCH
+  bash -s -- $USERNAME $MACHINE_NAME $TARGET_NIXPGS_BRANCH
 ```
 
 # Acknowledgments

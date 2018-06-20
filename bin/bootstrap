@@ -9,7 +9,7 @@ VALID_MACHINES=("alphaomega" "theopompos")
 VALID_BRANCHES=("origin/master" "latest-release")
 
 BASE_DIR=~/projects/"${BOOT_USER}"
-BASE_MACHINE_DIR="${BASE_DIR}/dot-${BOOT_MACHINE}"
+BASE_MACHINE_DIR="${BASE_DIR}/nix-config/${BOOT_MACHINE}"
 
 if [[ " ${VALID_USERS[*]} " != *"$BOOT_USER"* ]];
 then
@@ -68,7 +68,7 @@ fi
 
 echo
 echo "Symlink $BOOT_MACHINE machine configuration"
-ln -sf "${BASE_MACHINE_DIR}/default.nix" machine.nix
+ln -sf "${BASE_MACHINE_DIR}/machine.nix" machine.nix
 
 echo
 echo "Initialize emacs repositories"

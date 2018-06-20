@@ -3,19 +3,6 @@ let
   machine = import ./machine.nix { inherit lib pkgs; };
 
   inherit(machine) activationScripts etc launchd  machinePackages networking nix services;
-
-  #
-  # TODO Switch over when the following PR is merged:
-  # https://github.com/periklis/nixpkgs/commit/9201e84257139f076da8bf0d6a5c8a3655831a0f
-  chunkwm = pkgs.runCommand "chunkwm" {} ''
-    mkdir -p $out/bin
-    mkdir -p $out/plugins
-    cp ${/usr/local/bin}/chunkc $out/bin
-    cp ${/usr/local/bin}/chunkwm $out/bin
-    cp ${/usr/local/lib}/border.so $out/plugins
-    cp ${/usr/local/lib}/ffm.so $out/plugins
-    cp ${/usr/local/lib}/tiling.so $out/plugins
-  '';
 in
 {
   inherit launchd;
@@ -64,12 +51,6 @@ in
   services = services // {
     activate-system.enable = true;
     nix-daemon.enable      = true;
-
-    chunkwm = import ./services/chunkwm.nix
-      { inherit chunkwm; };
-
-    skhd = import ./services/skhd.nix
-      { inherit(pkgs) skhd; };
   };
 
   #
