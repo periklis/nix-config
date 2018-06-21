@@ -5,7 +5,7 @@ let
   inherit(machine) activationScripts etc launchd  machinePackages networking nix services;
 in
 {
-  inherit launchd;
+  inherit launchd networking;
 
   #
   # System environment
@@ -56,11 +56,6 @@ in
   #
   # System configuration
   #
-  networking = {
-    inherit (networking) hostName;
-    knownNetworkServices = [ "Ethernet" "Wi-Fi" ];
-  };
-
   system = import ./system.nix
     { inherit activationScripts; };
 
