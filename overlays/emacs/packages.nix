@@ -47,7 +47,7 @@ pkgs: epkgs: with epkgs;
   flycheck-rust
   geben
   ghc
-  git-timemachine
+  # git-timemachine # BROKEN?
   gitconfig-mode
   gitignore-mode
   google-c-style
