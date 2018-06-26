@@ -58,6 +58,13 @@
       "--color info:254,prompt:37,spinner:108,pointer:235,marker:235"
       "--reverse"
     ];
+    PATH = lib.concatStringsSep ":" [
+      "$HOME/.cabal/bin"
+      "$HOME/.cargo/bin"
+      "$HOME/.composer/vendor/bin"
+      "$HOME/.node/bin"
+      "$PATH"
+    ];
   };
 
   shells = [
