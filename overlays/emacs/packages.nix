@@ -42,6 +42,7 @@ pkgs: epkgs: with epkgs;
   flycheck
   flycheck-elm
   flycheck-haskell
+  flycheck-inline
   flycheck-pos-tip
   # flycheck-rtags #BROKEN?
   flycheck-rust
