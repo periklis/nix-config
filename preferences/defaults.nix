@@ -17,6 +17,6 @@
   screencapture.location = "~/Downloads";
 
   trackpad.Clicking                = true;
-  trackpad.TrackpadRightClick      = false;
+  trackpad.TrackpadRightClick      = true;
   trackpad.TrackpadThreeFingerDrag = false;
 }
