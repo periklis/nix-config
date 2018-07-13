@@ -31,6 +31,7 @@ pkgs: epkgs: with epkgs;
   ecb
   elm-mode
   elm-yasnippets
+  # elpy Re-enable when 1.22 lands in upstream
   ensime
   eslintd-fix
   exec-path-from-shell
@@ -68,6 +69,7 @@ pkgs: epkgs: with epkgs;
   ivy
   ivy-rich
   javadoc-lookup
+  # jedi Re-activate with elpy
   js2-mode
   js2-refactor
   json-mode
@@ -100,6 +102,7 @@ pkgs: epkgs: with epkgs;
   powerline
   prettier-js
   projectile
+  # py-autopep8 Reactivate with elpy
   racer
   restclient
   # rtags

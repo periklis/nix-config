@@ -39,6 +39,7 @@
     ACLOCAL_PATH      = "$HOME/.nix-profile/share/aclocal";
     PKG_CONFIG_PATH   = "$HOME/.nix-profile/lib/pkgconfig";
     PKG_CONFIG_LIBDIR = "$HOME/.nix-profile/lib/pkgconfig";
+    PYTHONPATH        = "$HOME/.local/lib/python3.6/site-packages;${pkgs.pythonToolsEnv}/lib/python3.6/site-packages";
     SSH_AUTH_SOCK     = "$HOME/.gnupg/S.gpg-agent.ssh";
     ZSH               = "/run/current-system/sw/share/oh-my-zsh";
     ZSH_CUSTOM        = "$HOME/.zsh/custom";
@@ -59,6 +60,7 @@
       "--reverse"
     ];
     PATH = lib.concatStringsSep ":" [
+      "$HOME/.local/bin"
       "$HOME/.cabal/bin"
       "$HOME/.cargo/bin"
       "$HOME/.composer/vendor/bin"
