@@ -72,6 +72,7 @@ in
       self.oh-my-zsh
       self.pinentry
       self.pwgen
+      self.ripgrep
       self.shellcheck
       self.silver-searcher
       self.tree

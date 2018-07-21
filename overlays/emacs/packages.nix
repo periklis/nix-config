@@ -9,12 +9,12 @@ pkgs: epkgs: with epkgs;
   bind-key
   cargo
   cmake-ide
-  # cmake-mode          # BROKEN?
+  cmake-mode
   color-theme-solarized
   company
   company-c-headers
   company-quickhelp
-  # company-rtags # BROKEN?
+  # company-rtags
   company-tern
   counsel-bbdb
   counsel-projectile
@@ -31,7 +31,7 @@ pkgs: epkgs: with epkgs;
   ecb
   elm-mode
   elm-yasnippets
-  # elpy Re-enable when 1.22 lands in upstream
+  elpy
   ensime
   eslintd-fix
   exec-path-from-shell
@@ -43,13 +43,14 @@ pkgs: epkgs: with epkgs;
   flycheck
   flycheck-elm
   flycheck-haskell
-  # flycheck-inline
+  flycheck-inline
   flycheck-pos-tip
-  # flycheck-rtags #BROKEN?
+  # flycheck-rtags
   flycheck-rust
   geben
   ghc
-  # git-timemachine # BROKEN?
+  git-gutter
+  git-timemachine
   gitconfig-mode
   gitignore-mode
   google-c-style
@@ -69,7 +70,7 @@ pkgs: epkgs: with epkgs;
   ivy
   ivy-rich
   javadoc-lookup
-  # jedi Re-activate with elpy
+  jedi
   js2-mode
   js2-refactor
   json-mode
@@ -87,12 +88,12 @@ pkgs: epkgs: with epkgs;
   nov
   org
   org-projectile
-  orgit
+  # orgit # BROKEN
   ox-pandoc
   pandoc-mode
   paradox
   pdf-tools
-  # php-auto-yasnippets BROKEN?
+  # php-auto-yasnippets # BROKEN
   php-mode
   php-refactor-mode
   phpcbf
@@ -102,7 +103,7 @@ pkgs: epkgs: with epkgs;
   powerline
   prettier-js
   projectile
-  # py-autopep8 Reactivate with elpy
+  py-autopep8
   racer
   restclient
   # rtags
@@ -118,7 +119,7 @@ pkgs: epkgs: with epkgs;
   ssh
   ssh-config-mode
   swiper
-  term-plus
+  # term-plus # BROKEN
   tern
   tide
   toml-mode
@@ -127,6 +128,7 @@ pkgs: epkgs: with epkgs;
   undo-tree
   use-package
   uuidgen
+  virtualenv
   web-mode
   wgrep
   which-key
@@ -136,5 +138,5 @@ pkgs: epkgs: with epkgs;
   xterm-color
   yaml-mode
   yasnippet
-  # yasnippet-snippets # BROKEN?
+  yasnippet-snippets
 ]
