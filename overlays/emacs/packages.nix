@@ -89,7 +89,7 @@ pkgs: epkgs: with epkgs;
   nov
   org
   org-projectile
-  # orgit # BROKEN
+  orgit
   ox-pandoc
   pandoc-mode
   paradox
