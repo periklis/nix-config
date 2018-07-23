@@ -14,6 +14,7 @@ pkgs: epkgs: with epkgs;
   company
   company-c-headers
   company-quickhelp
+  company-jedi
   # company-rtags
   company-tern
   counsel-bbdb
