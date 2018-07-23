@@ -36,17 +36,18 @@
       "/Developer/usr/share/man"
       "/usr/X11/man"
     ];
-    ACLOCAL_PATH      = "$HOME/.nix-profile/share/aclocal";
-    PKG_CONFIG_PATH   = "$HOME/.nix-profile/lib/pkgconfig";
-    PKG_CONFIG_LIBDIR = "$HOME/.nix-profile/lib/pkgconfig";
-    PYTHONPATH        = "$HOME/.local/lib/python3.6/site-packages:${pkgs.pythonToolsEnv}/lib/python3.6/site-packages";
-    SSH_AUTH_SOCK     = "$HOME/.gnupg/S.gpg-agent.ssh";
-    ZSH               = "/run/current-system/sw/share/oh-my-zsh";
-    ZSH_CUSTOM        = "$HOME/.zsh/custom";
-    ZSH_CACHE_DIR     = "$HOME/.zsh/cache";
-    ZSH_THEME         = "sunrise";
-    FZF_COMMON_OPTS   = "--select-1 --exit-0";
-    FZF_CTRL_T_OPTS   = lib.concatStringsSep " " [
+    ACLOCAL_PATH        = "$HOME/.nix-profile/share/aclocal";
+    PKG_CONFIG_PATH     = "$HOME/.nix-profile/lib/pkgconfig";
+    PKG_CONFIG_LIBDIR   = "$HOME/.nix-profile/lib/pkgconfig";
+    PYTHONPATH          = "$HOME/.local/lib/python3.6/site-packages:${pkgs.pythonToolsEnv}/lib/python3.6/site-packages";
+    SSH_AUTH_SOCK       = "$HOME/.gnupg/S.gpg-agent.ssh";
+    ZSH                 = "/run/current-system/sw/share/oh-my-zsh";
+    ZSH_CUSTOM          = "$HOME/.zsh/custom";
+    ZSH_CACHE_DIR       = "$HOME/.zsh/cache";
+    ZSH_THEME           = "sunrise";
+    FZF_DEFAULT_COMMAND = "fd --type file --color=always --follow --hidden --exclude .git";
+    FZF_COMMON_OPTS     = "--select-1 --exit-0";
+    FZF_CTRL_T_OPTS     = lib.concatStringsSep " " [
       "$FZF_COMMON_OPTS --preview"
       "'(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
     ];
@@ -55,6 +56,7 @@
       "'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
     ];
     FZF_DEFAULT_OPTS  = lib.concatStringsSep " " [
+      "--ansi"
       "--color dark,hl:33,hl+:37,fg+:235,bg+:234,fg+:254"
       "--color info:254,prompt:37,spinner:108,pointer:235,marker:235"
       "--reverse"

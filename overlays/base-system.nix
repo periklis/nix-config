@@ -61,6 +61,7 @@ in
       self.cacert
       self.diffutils
       self.dos2unix
+      self.fd
       self.findutils
       self.fzf
       self.gawk
