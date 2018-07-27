@@ -120,7 +120,7 @@ pkgs: epkgs: with epkgs;
   ssh
   ssh-config-mode
   swiper
-  # term-plus # BROKEN
+  term-plus
   tern
   tide
   toml-mode
