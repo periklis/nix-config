@@ -37,6 +37,7 @@
       "/usr/X11/man"
     ];
     ACLOCAL_PATH        = "$HOME/.nix-profile/share/aclocal";
+    GOPATH              = "$HOME/projects/golang/";
     PKG_CONFIG_PATH     = "$HOME/.nix-profile/lib/pkgconfig";
     PKG_CONFIG_LIBDIR   = "$HOME/.nix-profile/lib/pkgconfig";
     PYTHONPATH          = "$HOME/.local/lib/python3.6/site-packages:${pkgs.pythonToolsEnv}/lib/python3.6/site-packages";
@@ -67,6 +68,7 @@
       "$HOME/.cargo/bin"
       "$HOME/.composer/vendor/bin"
       "$HOME/.node/bin"
+      "$HOME/projects/golang/bin"
       "$PATH"
     ];
   };

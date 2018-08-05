@@ -13,6 +13,7 @@ pkgs: epkgs: with epkgs;
   color-theme-solarized
   company
   company-c-headers
+  company-go
   company-quickhelp
   company-jedi
   # company-rtags
@@ -54,6 +55,17 @@ pkgs: epkgs: with epkgs;
   git-timemachine
   gitconfig-mode
   gitignore-mode
+  go-eldoc
+  go-errcheck
+  go-fill-struct
+  go-gen-test
+  go-guru
+  go-impl
+  go-imports
+  go-mode
+  go-projectile
+  go-rename
+  go-snippets
   google-c-style
   google-maps
   google-translate
