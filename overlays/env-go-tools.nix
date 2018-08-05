@@ -5,6 +5,7 @@ self: super:
     paths = [
       self.glide
       self.go
+      self.gocode
       self.godef
       self.goimports
       self.golint
