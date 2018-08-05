@@ -61,8 +61,8 @@
       sudo
       themes
       vagrant
-       yarn
-       web-search
+      yarn
+      web-search
     )
   '';
 
