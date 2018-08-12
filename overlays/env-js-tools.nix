@@ -3,7 +3,7 @@ self: super:
   jsToolsEnv = super.buildEnv {
     name = "jsTools";
     paths = [
-      self.nodejs-9_x
+      self.nodejs-10_x
       self.nodePackages_6_x.eslint_d
       # self.nodePackages_6_x.import_js # Not yet packaged in master
       self.nodePackages_6_x.prettier

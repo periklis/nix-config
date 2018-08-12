@@ -4,7 +4,7 @@ self: super:
     name = "nixTools";
     paths = [
       self.nix
-      self.nixops
+      # self.nixops # Mark as broken by d46cfd2ff08
       self.nix-prefetch-git
       self.nix-zsh-completions
     ];
