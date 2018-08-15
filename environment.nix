@@ -5,7 +5,7 @@
     "per-user/curlrc".text                         = import ./dot-files/curlrc.nix {};
     "per-user/ctags".text                          = import ./dot-files/ctags.nix {};
     "per-user/htoprc".text                         = import ./dot-files/htoprc.nix {};
-    "per-user/gnupg/dirmngr.conf".text             = import ./dot-files/gnupg/dirmgr.nix {};
+    "per-user/gnupg/dirmngr.conf".text             = import ./dot-files/gnupg/dirmngr.nix {};
     "per-user/gnupg/gpg-agent.conf".text           = import ./dot-files/gnupg/gpg-agent.nix {};
     "per-user/gnupg/gpg.conf".text                 = import ./dot-files/gnupg/gpg.nix {};
     "per-user/gnupg/scdaemon.conf".text            = import ./dot-files/gnupg/scdaemon.nix {};
