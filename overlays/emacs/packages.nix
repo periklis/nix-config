@@ -22,7 +22,6 @@ pkgs: epkgs: with epkgs;
   counsel-projectile
   counsel-tramp
   darktooth-theme
-  dash
   deferred
   diminish
   dired-narrow
