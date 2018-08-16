@@ -80,7 +80,8 @@
 
   shellAliases = {
     mmv                  = "noglob zmv -W";
-    ec                   = "emacsclient -nq";
+    emacs-nox            = "$HOME/Applications/Emacs.app/Contents/MacOS/Emacs -nw";
+    ec                   = "emacsclient -nw -c";
     nix-env              = "nix-env -f '<nixpkgs>'";
     nix-build-out        = "nixBuildOut";
     nix-build-binding-as = "nixBuildBindingAs";
