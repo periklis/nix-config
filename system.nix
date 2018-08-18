@@ -1,6 +1,9 @@
 { activationScripts }:
 {
   activationScripts.extraUserActivation.text = activationScripts.extraUserActivation.text + ''
+    mkdir -p ~/.gnupg
+    mkdir -p ~/.cache
+    mkdir -p ~/.gnus
     mkdir -p ~/.config/htop
     ln -sf /etc/per-user/aspell.conf ~/.aspell.conf
     ln -sf /etc/per-user/curlrc ~/.curlrc

@@ -11,6 +11,27 @@ VALID_BRANCHES=("origin/master" "latest-release")
 BASE_DIR=~/projects/"${BOOT_USER}"
 BASE_MACHINE_DIR="${BASE_DIR}/nix-config/${BOOT_MACHINE}"
 
+if [[ $(xcode-select -p) == "" ]];
+then
+    echo "Command line tools not installed!"
+    xcode-select --install
+    exit 1
+fi
+
+if [ ! -f /usr/local/bin/chunkc ] && [ ! -f /usr/local/bin/chunkwm ] && [ ! -f /usr/local/lib/tiling.so ] && [ ! -f /usr/local/lib/border.so ] && [ ! -f /usr/local/lib/ffm.so ];
+then
+    echo "Install chunkwm binaries and libraries first"
+    exit 1
+fi
+exit 1
+
+if [ ! -f ~/.newsrc ] && [ ! -f ~/.newsrc.eld ];
+then
+    echo "Transfer .newsrc and .newsrc.eld to this machine"
+    exit 1
+fi
+exit 1
+
 if [[ " ${VALID_USERS[*]} " != *"$BOOT_USER"* ]];
 then
     echo "Provided user is not valid!"
@@ -108,5 +129,20 @@ then
     export NIX_PATH=darwin="${BASE_DIR}"/nix-config/nix-darwin:darwin-config="${BASE_DIR}"/nix-config/configuration.nix:"${NIX_PATH}"
     "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild build
     "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild switch
-    . /etc/static/zshrc
+
+    echo "Change default shell to zsh"
+    chsh -s /run/current-system/sw/bin/zsh -u ${BOOT_USER}
+
+    echo "Add sourcing of zprofile for user"
+    echo "
+if [[ ! -z "\$EMACS" ]]; then
+   . /etc/zprofile
+fi" > ~/.zshrc
+
+    if [ $(which nix) == "/run/current-system/sw/bin/nix" ];
+    then
+        echo "Nix provided for all users system wide"
+    else
+        echo "Missing nix installation for all users"
+    fi
 fi
