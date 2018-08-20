@@ -33,6 +33,7 @@ pkgs: epkgs: with epkgs;
   elm-mode
   elm-yasnippets
   elpy
+  emamux
   ensime
   eslintd-fix
   exec-path-from-shell

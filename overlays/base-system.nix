@@ -53,6 +53,7 @@ in
          mkdir -p $out/etc/profile.d
          cp ${myProfile} $out/etc/profile.d/my-profile.sh
        '')
+      self.alacritty
       self.aspell
       self.aspellDicts.de
       self.aspellDicts.en
@@ -78,6 +79,9 @@ in
       self.shellcheck
       self.silver-searcher
       self.tree
+      self.tmux
+      self.tmux-cssh
+#      self.tmuxPlugins
       self.which
       self.zsh
       self.zsh-autosuggestions
