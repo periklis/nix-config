@@ -75,13 +75,13 @@ in
       self.oh-my-zsh
       self.pinentry
       self.pwgen
+      self.reattach-to-user-namespace
       self.ripgrep
       self.shellcheck
       self.silver-searcher
       self.tree
       self.tmux
       self.tmux-cssh
-#      self.tmuxPlugins
       self.which
       self.zsh
       self.zsh-autosuggestions
