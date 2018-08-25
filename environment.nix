@@ -1,9 +1,11 @@
 { config, etc, lib, machinePackages, pkgs }:
 {
   etc = etc // {
+    "per-user/alacritty/alacritty.yml".text        = import ./dot-files/alacritty/alacritty.nix {};
     "per-user/aspell.conf".text                    = import ./dot-files/aspell.nix {};
     "per-user/curlrc".text                         = import ./dot-files/curlrc.nix {};
     "per-user/ctags".text                          = import ./dot-files/ctags.nix {};
+    "per-user/darktooth/darktooth.sh".text         = import ./dot-files/darktooth/darktooth.nix { inherit(pkgs) bash; };
     "per-user/htoprc".text                         = import ./dot-files/htoprc.nix {};
     "per-user/gnupg/dirmngr.conf".text             = import ./dot-files/gnupg/dirmngr.nix {};
     "per-user/gnupg/gpg-agent.conf".text           = import ./dot-files/gnupg/gpg-agent.nix {};
@@ -12,6 +14,7 @@
     "per-user/gnupg/sks-keyservers.netCA.pem".text = import ./dot-files/gnupg/sks-keyservers.nix {};
     "per-user/nixpkgs/config.nix".text             = import ./dot-files/nixpkgs/config.nix {};
     "per-user/npmrc".text                          = import ./dot-files/npmrc.nix {};
+    "per-user/tmux.conf".text                      = import ./dot-files/tmux.nix {};
   };
 
   extraOutputsToInstall = [ "doc" "lib" "man" "info" ];
