@@ -58,6 +58,7 @@ in
       self.aspellDicts.de
       self.aspellDicts.en
       self.bashInteractive
+      self.bat
       self.bzip2
       self.cacert
       self.diffutils
