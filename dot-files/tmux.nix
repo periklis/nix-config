@@ -2,6 +2,7 @@
 set -g default-terminal "xterm-256color"
 set -g default-shell "/run/current-system/sw/bin/zsh"
 set -g default-command "reattach-to-user-namespace -l /run/current-system/sw/bin/zsh"
+set -g focus-events on
 set -g monitor-activity off
 set -g visual-activity off
 set -g visual-bell off
@@ -10,7 +11,6 @@ set -g bell-action none
 set -g mode-keys emacs
 set -g status-keys emacs
 set -g status-interval 5
-setw -g aggressive-resize on
 set -g base-index 1
 set -g pane-base-index 1
 set -g prefix C-z
