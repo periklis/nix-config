@@ -84,7 +84,6 @@ in
       self.tmux
       self.tmux-cssh
       self.which
-      self.zsh
       self.zsh-autosuggestions
       self.zsh-completions
       self.zsh-syntax-highlighting
