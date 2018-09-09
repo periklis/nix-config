@@ -22,7 +22,7 @@
   pathsToLink = [ "/lib" "/libexec" "/share" ];
 
   variables = {
-    TERM              = "xterm-256color";
+    TERM              = "screen-256color";
     LANG              = "en_US.UTF-8";
     LC_ALL            = "en_US.UTF-8";
     PAGER             = "less -R";
@@ -84,7 +84,7 @@
   shellAliases = {
     mmv                  = "noglob zmv -W";
     emacs-nox            = "$HOME/Applications/Emacs.app/Contents/MacOS/Emacs -nw";
-    ec                   = "emacsclient -nw -c";
+    ec                   = "emacsclient -t";
     nix-env              = "nix-env -f '<nixpkgs>'";
     nix-build-out        = "nixBuildOut";
     nix-build-binding-as = "nixBuildBindingAs";
