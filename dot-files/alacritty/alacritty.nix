@@ -12,7 +12,7 @@ env:
   # Note that some xterm terminfo databases don't declare support for italics.
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
-  TERM: xterm-256color
+  TERM: screen-256color
 
 window:
   # Window dimensions in character columns and lines
@@ -33,7 +33,7 @@ window:
   decorations: false
 
 # Display tabs using this many cells (changes require restart)
-tabspaces: 8
+tabspaces: 4
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
