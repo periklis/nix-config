@@ -7,10 +7,10 @@ self: super:
       self.go
       self.gocode
       self.godef
-      self.goimports
       self.golint
       self.go
       self.go2nix
+      self.gotools
     ];
     extraOutputsToInstall = [ "man" "doc" ];
   };

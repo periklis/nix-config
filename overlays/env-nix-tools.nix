@@ -15,7 +15,7 @@ self: super:
     name = "nixUtilities";
     paths = [
       self.nix-index
-      # self.vulnix
+      self.vulnix
       # self.haskellPackages.nix-delegate
       # self.haskellPackages.nix-deploy
       # self.haskellPackages.nix-diff
