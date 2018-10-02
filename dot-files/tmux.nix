@@ -10,6 +10,7 @@ set -g visual-bell off
 set -g visual-silence off
 set -g bell-action none
 setw -g mode-keys emacs
+set -g history-limit 5000
 set -g status-keys emacs
 set -g status-interval 5
 set -g base-index 1
