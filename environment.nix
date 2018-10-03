@@ -14,7 +14,8 @@
     "per-user/gnupg/sks-keyservers.netCA.pem".text = import ./dot-files/gnupg/sks-keyservers.nix {};
     "per-user/nixpkgs/config.nix".text             = import ./dot-files/nixpkgs/config.nix {};
     "per-user/npmrc".text                          = import ./dot-files/npmrc.nix {};
-    "per-user/tmux.conf".text                      = import ./dot-files/tmux.nix {};
+    "per-user/tmux/kube.tmux".text                 = lib.fileContents ./dot-files/tmux/kube.tmux;
+    "per-user/tmux.conf".text                      = import ./dot-files/tmux.nix { inherit(pkgs) bash; };
   };
 
   extraOutputsToInstall = [ "doc" "lib" "man" "info" ];

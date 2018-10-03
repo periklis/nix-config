@@ -1,4 +1,4 @@
-{}: ''
+{ bash }: ''
 set -g default-terminal "screen-256color"
 set -g default-shell "/run/current-system/sw/bin/zsh"
 set -g default-command "reattach-to-user-namespace -l /run/current-system/sw/bin/zsh"
@@ -24,7 +24,7 @@ set -g status-right-length 150
 set -g pane-active-border-fg colour8
 set -g status-position bottom
 set -g status-left '#[bg=colour8]#[fg=colour7] #S #[bg=colour3]#[fg=colour8] '
-set -g status-right '#[fg=colour8]#[bg=colour3]#[fg=colour7]#[bg=colour8] #H #[bg=colour3]#[fg=colour0] %a %D %T '
+set -g status-right '#(${bash}/bin/bash ~/.tmux/kube.tmux colour0 colour0 colour0) #[fg=colour8]#[bg=colour3]#[fg=colour7]#[bg=colour8] #H #[bg=colour3]#[fg=colour0] %a %D %T '
 
 # Set the background color
 set -g status-bg colour3

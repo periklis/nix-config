@@ -56,6 +56,7 @@
       git-extras
       history
       history-substring-search
+      kubectl
       man
       nix
       node

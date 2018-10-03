@@ -8,6 +8,7 @@
     mkdir -p ~/.config/darktooth
     mkdir -p ~/.config/htop
     mkdir -p ~/.config/nixpkpgs
+    mkdir -p ~/.tmux
 
     ln -sf /etc/per-user/alacritty/alacritty.yml ~/.config/alacritty/
     ln -sf /etc/per-user/aspell.conf ~/.aspell.conf
@@ -22,6 +23,7 @@
     ln -sf /etc/per-user/gnupg/sks-keyservers.netCA.pem ~/.gnupg
     ln -sf /etc/per-user/nixpkgs/config.nix ~/.config/nixpkgs
     ln -sf /etc/per-user/npmrc ~/.npmrc
+    ln -sf /etc/per-user/tmux/kube.tmux ~/.tmux/kube.tmux
     ln -sf /etc/per-user/tmux.conf ~/.tmux.conf
   '';
 
