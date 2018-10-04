@@ -3,7 +3,7 @@ self: super:
   gcloudToolsEnv = super.buildEnv {
     name = "gcloudTools";
     paths = [
-      self.heptio-ark
+      # self.heptio-ark # Disable for our cluster for now
       self.jq
       self.kubectx
       self.kubernetes
