@@ -14,7 +14,7 @@ self: super:
   nixUtilitiesEnv = super.buildEnv {
     name = "nixUtilities";
     paths = [
-      self.nix-index
+      # self.nix-index
       self.vulnix
       # self.haskellPackages.nix-delegate
       # self.haskellPackages.nix-deploy

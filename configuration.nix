@@ -41,7 +41,7 @@ in
     gnupg            = import ./programs/gnupg.nix {};
     info.enable      = true;
     man.enable       = true;
-    nix-index.enable = true;
+    nix-index.enable = false;
     zsh              = import ./programs/zsh.nix {};
   };
 
