@@ -7,7 +7,7 @@
     mkdir -p ~/.config/alacritty
     mkdir -p ~/.config/darktooth
     mkdir -p ~/.config/htop
-    mkdir -p ~/.config/nixpkpgs
+    mkdir -p ~/.config/nixpkgs
     mkdir -p ~/.tmux
 
     ln -sf /etc/per-user/alacritty/alacritty.yml ~/.config/alacritty/
