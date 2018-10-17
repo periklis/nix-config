@@ -6,6 +6,7 @@
     mkdir -p ~/.gnus
     mkdir -p ~/.config/alacritty
     mkdir -p ~/.config/darktooth
+    mkdir -p ~/.config/git
     mkdir -p ~/.config/htop
     mkdir -p ~/.config/nixpkgs
     mkdir -p ~/.tmux
@@ -16,6 +17,7 @@
     ln -sf /etc/per-user/ctags ~/.ctags
     ln -sf /etc/per-user/darktooth/darktooth.sh ~/.config/darktooth/
     ln -sf /etc/per-user/htoprc ~/.config/htop
+    ln -sf /etc/per-user/git/ignore ~/.config/git
     ln -sf /etc/per-user/gnupg/dirmngr.conf ~/.gnupg
     ln -sf /etc/per-user/gnupg/gpg-agent.conf ~/.gnupg
     ln -sf /etc/per-user/gnupg/gpg.conf ~/.gnupg

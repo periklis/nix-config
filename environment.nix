@@ -7,6 +7,7 @@
     "per-user/ctags".text                          = import ./dot-files/ctags.nix {};
     "per-user/darktooth/darktooth.sh".text         = import ./dot-files/darktooth/darktooth.nix { inherit(pkgs) bash; };
     "per-user/htoprc".text                         = import ./dot-files/htoprc.nix {};
+    "per-user/git/ignore".text                     = import ./dot-files/git/ignore.nix {};
     "per-user/gnupg/dirmngr.conf".text             = import ./dot-files/gnupg/dirmngr.nix {};
     "per-user/gnupg/gpg-agent.conf".text           = import ./dot-files/gnupg/gpg-agent.nix {};
     "per-user/gnupg/gpg.conf".text                 = import ./dot-files/gnupg/gpg.nix {};
