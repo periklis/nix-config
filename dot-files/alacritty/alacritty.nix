@@ -313,7 +313,6 @@ key_bindings:
   - { key: T,         mods: Command|Shift, chars: "\x1bT"                       }
   - { key: U,         mods: Command|Shift, chars: "\x1bU"                       }
   - { key: V,         mods: Command|Shift, chars: "\x1bV"                       }
-  - { key: W,         mods: Command|Shift, chars: "\x1bW"                       }
   - { key: X,         mods: Command|Shift, chars: "\x1bX"                       }
   - { key: Y,         mods: Command|Shift, chars: "\x1bY"                       }
   - { key: Z,         mods: Command|Shift, chars: "\x1bZ"                       }
@@ -341,12 +340,11 @@ key_bindings:
   - { key: Key6,      mods: Command|Shift, chars: "\x1b^"                       } # Command + ^
   - { key: Backslash, mods: Command,       chars: "\x1b\\"                      } # Command + \
   - { key: Backslash, mods: Command|Shift, chars: "\x1b|"                       } # Command + |
-  - { key: V,         mods: Alt,           action: Paste                        }
-  - { key: C,         mods: Alt,           action: Copy                         }
+  - { key: Y,         mods: Control,       action: Paste                        }
+  - { key: W,         mods: Command,       action: Copy                         }
   - { key: Paste,                          action: Paste                        }
   - { key: Copy,                           action: Copy                         }
   - { key: Q,        mods: Command,        action: Quit                         }
-  - { key: W,        mods: Command,        action: Quit                         }
   - { key: Home,                           chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                           chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                            chars: "\x1bOF",   mode: AppCursor   }
