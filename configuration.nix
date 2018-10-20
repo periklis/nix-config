@@ -14,6 +14,14 @@ in
     { inherit config etc lib machinePackages pkgs; };
 
   #
+  # Fonts
+  #
+  fonts = {
+    enableFontDir = true;
+    fonts = with pkgs; [ hack-font ];
+  };
+
+  #
   # Nix & Nixpkgs
   #
   nix = import ./programs/nix.nix {
