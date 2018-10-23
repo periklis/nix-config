@@ -5,8 +5,8 @@
   package = nix;
 
   useDaemon  = true;
-  maxJobs    = 4;
-  buildCores = 1;
+  maxJobs    = 32;
+  buildCores = 4;
   useSandbox = false;
 
   binaryCaches          = [ https://cache.nixos.org/ ];
