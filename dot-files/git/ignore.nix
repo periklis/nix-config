@@ -1,5 +1,5 @@
 {}:''
-.dir_locals.el
+.dir-locals.el
 .ensime
 .ensime-server.conf
 .ensime_cache/
