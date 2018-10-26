@@ -7,6 +7,7 @@ self: super:
       self.jq
       self.kubectx
       self.kubernetes
+      self.kustomize
       self.minikube
       self.netcat
       self.google-cloud-sdk
