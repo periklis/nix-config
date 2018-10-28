@@ -18,7 +18,7 @@ verify-options show-uid-validity
 # keyserver
 #-----------------------------
 
-keyserver hkps://hkps.pool.sks-keyservers.net
+keyserver hkp://pool.sks-keyservers.net
 keyserver-options no-honor-keyserver-url
 keyserver-options include-revoked
 
