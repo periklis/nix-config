@@ -7,7 +7,7 @@
   useDaemon  = true;
   maxJobs    = 32;
   buildCores = 4;
-  useSandbox = false;
+  useSandbox = true;
 
   binaryCaches          = [ https://cache.nixos.org/ ];
   binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
