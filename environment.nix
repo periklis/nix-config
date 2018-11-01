@@ -42,6 +42,7 @@
       "/usr/X11/man"
     ];
     ACLOCAL_PATH        = "$HOME/.nix-profile/share/aclocal";
+    CACHIX_SIGNING_KEY  = "UezrEGeJqHdXD97YjoMqdAV64/O+Sk5mzsBH7hV7rrjpUsDGacxW7t6FEeUAK7HJ4YOMYjz13tCfRRN2xmLfnw==";
     GOPATH              = "$HOME/projects/golang/";
     PKG_CONFIG_PATH     = "$HOME/.nix-profile/lib/pkgconfig";
     PKG_CONFIG_LIBDIR   = "$HOME/.nix-profile/lib/pkgconfig";
