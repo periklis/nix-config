@@ -10,7 +10,7 @@ in
       emacsWithPkgs
       self.multimarkdown
       self.poppler
-      self.haskellPackages.pandoc
+      # self.haskellPackages.pandoc # Broken on 10.14
     ];
     extraOutputsToInstall = [ "man" "doc" ];
   };
