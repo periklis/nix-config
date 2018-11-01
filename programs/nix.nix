@@ -9,15 +9,12 @@
   buildCores = 4;
   useSandbox = true;
 
-  binaryCaches          = [ https://cache.nixos.org/ ];
-  binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
-
   trustedUsers = [ "root" ];
   allowedUsers = [ "*" ];
 
   extraOptions = ''
-    gc-keep-derivations = true
-    gc-keep-outputs = true
+    keep-derivations = true
+    show-trace = true
   '';
 
   nixPath = [
