@@ -9,9 +9,9 @@
   buildCores = 4;
   useSandbox = true;
 
-  binaryCaches = [ https://periklis.cachix.org ];
+  # binaryCaches = [ https://periklis.cachix.org ];
 
-  binaryCachePublicKeys = [ "periklis.cachix.org-1:6VLAxmnMVu7ehRHlACuxyeGDjGI89d7Qn0UTdsZi358=" ];
+  # binaryCachePublicKeys = [ "periklis.cachix.org-1:6VLAxmnMVu7ehRHlACuxyeGDjGI89d7Qn0UTdsZi358=" ];
 
   trustedUsers = [ "root" ];
   allowedUsers = [ "*" ];
