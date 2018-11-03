@@ -9,7 +9,7 @@ self: super:
       self.nix-zsh-completions
     ];
     extraOutputsToInstall = [ "man" "doc" ];
-      };
+  };
 
   nixUtilitiesEnv = super.buildEnv {
     name = "nixUtilities";
