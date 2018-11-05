@@ -16,6 +16,10 @@
   trustedUsers = [ "root" ];
   allowedUsers = [ "*" ];
 
+  envVars = {
+    OBJC_DISABLE_INITIALIZE_FORK_SAFETY = "YES";
+  };
+
   extraOptions = ''
     keep-derivations = true
     show-trace = true
