@@ -55,6 +55,7 @@ pkgs: epkgs: with epkgs;
   git-timemachine
   gitconfig-mode
   gitignore-mode
+  go-dlv
   go-eldoc
   go-errcheck
   go-fill-struct
@@ -118,6 +119,7 @@ pkgs: epkgs: with epkgs;
   projectile
   py-autopep8
   racer
+  realgud
   restclient
   # rtags
   rust-mode
