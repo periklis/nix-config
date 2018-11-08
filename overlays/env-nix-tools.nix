@@ -17,6 +17,7 @@ self: super:
     paths = [
       # self.nix-index
       self.nix-review
+      self.nix-top
       self.vulnix
       # self.nix-delegate
       self.nix-deploy
