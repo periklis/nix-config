@@ -15,11 +15,11 @@ self: super:
   nixUtilitiesEnv = super.buildEnv {
     name = "nixUtilities";
     paths = [
-      # self.nix-index
+      # self.nix-index # Pending https://github.com/NixOS/nixpkgs/pull/49708
       self.nix-review
       self.nix-top
       self.vulnix
-      # self.nix-delegate
+      # self.nix-delegate # Pending release 1.0.1
       self.nix-deploy
       self.nix-diff
     ];
