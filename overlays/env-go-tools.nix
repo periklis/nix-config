@@ -3,6 +3,7 @@ self: super:
   goToolsEnv = super.buildEnv {
     name = "goTools";
     paths = [
+      self.delve
       self.glide
       self.go
       self.gocode
