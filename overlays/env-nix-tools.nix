@@ -6,6 +6,7 @@ self: super:
       self.nix
       self.nixops
       self.nix-prefetch-git
+      self.nix-prefetch-github
       self.nix-zsh-completions
     ];
     extraOutputsToInstall = [ "man" "doc" ];
@@ -17,9 +18,9 @@ self: super:
       # self.nix-index
       self.nix-review
       self.vulnix
-      # self.haskellPackages.nix-delegate
-      # self.haskellPackages.nix-deploy
-      # self.haskellPackages.nix-diff
+      # self.nix-delegate
+      self.nix-deploy
+      self.nix-diff
     ];
     extraOutputsToInstall = [ "man" "doc" ];
   };
