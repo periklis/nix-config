@@ -19,7 +19,7 @@ self: super:
       self.nix-review
       self.nix-top
       self.vulnix
-      # self.nix-delegate # Pending release 1.0.1
+      self.nix-delegate
       self.nix-deploy
       self.nix-diff
     ];
