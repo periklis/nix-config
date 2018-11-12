@@ -5,7 +5,7 @@ self: super:
     paths = [
       self.docker
       self.docker-machine
-      self.python36Packages.docker_compose
+      self.docker-compose
       self.socat
       self.vagrant
     ];
