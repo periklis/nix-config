@@ -10,7 +10,7 @@ pkgs: epkgs: with epkgs;
   cargo
   cmake-ide
   cmake-mode
-  color-theme-solarized
+  # color-theme-solarized
   company
   company-c-headers
   company-go
