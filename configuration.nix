@@ -49,7 +49,7 @@ in
     gnupg            = import ./programs/gnupg.nix {};
     info.enable      = true;
     man.enable       = true;
-    nix-index.enable = false;
+    nix-index.enable = true;
     zsh              = import ./programs/zsh.nix {};
   };
 

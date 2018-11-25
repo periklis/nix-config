@@ -15,7 +15,7 @@ self: super:
   nixUtilitiesEnv = super.buildEnv {
     name = "nixUtilities";
     paths = [
-      # self.nix-index # Pending https://github.com/NixOS/nixpkgs/pull/49708
+      self.nix-index
       self.nix-review
       self.nix-top
       self.vulnix
