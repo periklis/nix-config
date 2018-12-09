@@ -77,6 +77,7 @@ in
       self.pinentry_mac
       self.pwgen
       self.reattach-to-user-namespace
+      self.restic
       self.ripgrep
       self.shellcheck
       self.silver-searcher
