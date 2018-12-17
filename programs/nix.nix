@@ -7,7 +7,7 @@
   useDaemon  = true;
   maxJobs    = 32;
   buildCores = 4;
-  useSandbox = true;
+  useSandbox = false;
 
   # binaryCaches = [ https://periklis.cachix.org ];
 
