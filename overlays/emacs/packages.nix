@@ -121,6 +121,7 @@ pkgs: epkgs: with epkgs;
   racer
   realgud
   restclient
+  ripgrep
   # rtags
   rust-mode
   s
