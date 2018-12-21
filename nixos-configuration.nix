@@ -72,6 +72,7 @@
 
   # List services that you want to enable:
   services.acpid.enable = true;
+  services.autorandr.enable = true;
   services.printing.enable = true;
   services.tlp.enable = true;
   services.zfs.autoScrub.enable = true;
