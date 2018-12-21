@@ -49,17 +49,12 @@
      networkingToolsEnv
      nixToolsEnv
      nixUtilitiesEnv
+     nixosAppsEnv
      gcloudToolsEnv
      goToolsEnv
      pythonToolsEnv
      scalaToolsEnv
      systemToolsEnv
-
-     # TODO: Move this nixos applications to own overlay
-     firefox
-     i3lock-fancy
-     slack
-     zoom-us
   ];
 
   fonts = {
@@ -67,6 +62,7 @@
     enableGhostscriptFonts = true;
     fonts = with pkgs; [
       hack-font
+      font-awesome-ttf
    ];
   };
 
