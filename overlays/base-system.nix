@@ -10,18 +10,18 @@ let
 
 in
 {
-  pinentry = super.pinentry.override {
-    enableEmacs = true;
-    ncurses = null;
-    gcr = null;
-    qt = null;
-    gtk2 = null;
-  };
+  #pinentry = super.pinentry.override {
+  #  enableEmacs = true;
+  #  ncurses = null;
+  #  gcr = null;
+  #  qt = null;
+  #  gtk2 = null;
+  #};
 
-  gnupg = super.gnupg.override {
-    pinentry = self.pinentry;
-    guiSupport = false;
-  };
+  #gnupg = super.gnupg.override {
+  #  pinentry = self.pinentry;
+  #  guiSupport = false;
+  #};
 
   mailToolsEnv = super.buildEnv {
     name = "mailTools";
@@ -49,10 +49,10 @@ in
   systemToolsEnv = super.buildEnv {
     name = "systemTools";
     paths = [
-      (super.runCommand "profile" {} ''
-         mkdir -p $out/etc/profile.d
-         cp ${myProfile} $out/etc/profile.d/my-profile.sh
-       '')
+      # (super.runCommand "profile" {} ''
+      #   mkdir -p $out/etc/profile.d
+      #   cp ${myProfile} $out/etc/profile.d/my-profile.sh
+      # '')
       self.alacritty
       self.aspell
       self.aspellDicts.de
@@ -74,9 +74,9 @@ in
       self.gnutls
       self.htop
       self.oh-my-zsh
-      self.pinentry_mac
+      #self.pinentry_mac
       self.pwgen
-      self.reattach-to-user-namespace
+      #self.reattach-to-user-namespace
       self.restic
       self.ripgrep
       self.shellcheck
@@ -84,6 +84,7 @@ in
       self.tree
       self.tmux
       self.tmux-cssh
+      self.vim
       self.which
       self.zsh-autosuggestions
       self.zsh-completions
