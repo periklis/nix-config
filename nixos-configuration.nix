@@ -72,6 +72,7 @@
 
   # List services that you want to enable:
   services.printing.enable = true;
+  services.tlp.enable = true;
 
   # Enable sound.
   sound.enable = true;
