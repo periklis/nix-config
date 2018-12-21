@@ -7,11 +7,14 @@ in
     name = "nixosApps";
     paths = [
       self.adobeReader
+      self.arandr
+      self.brightnessctl
       self.firefox
       self.google-chrome-dev
       self.handbrake
       self.i3lock-fancy
       self.i3status-rust
+      self.jetbrains.idea-ultimate
       self.libreoffice
       self.mupdf
       self.openfortivpn

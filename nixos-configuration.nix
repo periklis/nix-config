@@ -71,24 +71,31 @@
   programs.mtr.enable = true;
 
   # List services that you want to enable:
+  services.acpid.enable = true;
   services.printing.enable = true;
   services.tlp.enable = true;
+  services.zfs.autoScrub.enable = true;
 
   # Enable sound.
   sound.enable = true;
+
+  hardware.brightnessctl.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
+  hardware.opengl.driSupport32Bit = true;
 
   virtualisation.docker = {
     enable = true;
     enableOnBoot = true;
   };
+  virtualisation.virtualbox.host.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ptsirakidis = {
      isNormalUser = true;
      uid = 1000;
      description = "Periklis Tsirakidis";
-     extraGroups = [ "wheel" "networkmanager" "docker" ];
+     extraGroups = [ "wheel" "networkmanager" "docker" "video" ];
      shell = "/run/current-system/sw/bin/zsh";
   };
 
