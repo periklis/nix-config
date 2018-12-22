@@ -15,7 +15,6 @@ self: super:
       self.stdman
       self.valgrind
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 
   langToolsEnv = super.buildEnv {
@@ -29,6 +28,5 @@ self: super:
       self.libtool
       self.pkgconfig
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 }

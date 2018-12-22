@@ -12,6 +12,5 @@ in
       self.poppler
       self.haskellPackages.pandoc
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 }

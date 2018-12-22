@@ -7,6 +7,5 @@ self: super:
       self.phpPackages.apcu
       self.phpPackages.composer
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 }

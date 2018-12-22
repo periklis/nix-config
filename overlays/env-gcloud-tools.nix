@@ -12,7 +12,7 @@ self: super:
       self.netcat
       self.google-cloud-sdk
       self.packer
+      self.vault
     ];
-    extraOutputsToInstall = [ "doc" "info ""man" ];
   };
 }

@@ -6,6 +6,5 @@ self: super:
       self.rustup
       self.rustracer
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 }

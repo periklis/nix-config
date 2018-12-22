@@ -14,6 +14,5 @@ self: super:
       # self.phantomjs2                 # Not yet packaged for darwin
       self.yarn
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 }

@@ -9,6 +9,5 @@ self: super:
       self.socat
       self.vagrant
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 }

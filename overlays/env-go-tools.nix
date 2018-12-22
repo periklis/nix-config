@@ -13,6 +13,5 @@ self: super:
       self.go2nix
       self.gotools
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 }

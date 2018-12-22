@@ -1,7 +1,4 @@
 self: super:
-let
-  extraOutputsToInstall = [ "man" "doc" ];
-in
 {
   nixosAppsEnv = super.buildEnv {
     name = "nixosApps";
@@ -24,6 +21,5 @@ in
       self.vlc
       self.zoom-us
     ];
-    inherit extraOutputsToInstall;
  };
 }

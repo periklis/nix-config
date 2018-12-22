@@ -8,7 +8,6 @@ self: super:
       self.jmeter
       self.openjdk
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 
   scalaToolsEnv = super.buildEnv {
@@ -19,6 +18,5 @@ self: super:
       self.scala
       self.scalafmt
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 }

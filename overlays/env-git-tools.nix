@@ -8,6 +8,5 @@ self: super:
       self.patch
       self.patchutils
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 }

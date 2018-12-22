@@ -5,6 +5,5 @@ self: super:
     paths = [
       self.elmPackages.elm
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 }

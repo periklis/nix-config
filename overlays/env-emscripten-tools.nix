@@ -6,6 +6,5 @@ self: super:
       self.emscripten
       self.yasm
     ];
-    extraOutputsToInstall = [ "man" "doc" ];
   };
 }
