@@ -3,12 +3,11 @@
 {
   imports =[
     <nixos-hardware/lenovo/thinkpad/t480s>
-    ./machines/alphaomega/environment.nix
-    ./machines/alphaomega/hardware-configuration.nix
-    ./machines/alphaomega/programs/gnupg.nix
-    ./machines/alphaomega/programs/zsh.nix
-    ./machines/alphaomega/services/xserver.nix
-    ./machines/alphaomega/system.nix
+    ./environment.nix
+    ./hardware-configuration.nix
+    ./programs
+    ./services
+    ./system.nix
   ];
 
   networking.hostId = "c0bebeef";
@@ -31,7 +30,7 @@
   };
 
   nixpkgs.overlays =
-    let path = ./overlays; in with builtins;
+    let path = ../../overlays; in with builtins;
       map (n: import (path + ("/" + n)))
           (filter (n: match ".*\\.nix" n != null ||
                       pathExists (path + ("/" + n + "/default.nix")))

@@ -1,1 +1,1 @@
-./nixos-configuration.nix
+machines/alphaomega/configuration.nix

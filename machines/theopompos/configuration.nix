@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  machine = import ./machine/machine.nix { inherit lib pkgs; };
+  machine = import ../../machine/machine.nix { inherit lib pkgs; };
 
   inherit(machine) activationScripts etc launchd  machinePackages networking nix services;
 in
@@ -10,7 +10,7 @@ in
   #
   # System environment
   #
-  environment = import ./machines/theopompos/environment.nix
+  environment = import ./environment.nix
     { inherit config etc lib machinePackages pkgs; };
 
   #
@@ -24,7 +24,7 @@ in
   #
   # Nix & Nixpkgs
   #
-  nix = import ./machines/theopompos/programs/nix.nix {
+  nix = import ./programs/nix.nix {
     machine = nix;
     inherit(pkgs) nix;
   };
@@ -35,7 +35,7 @@ in
       allowBroken = true;
     };
 
-    overlays = let path = ./overlays; in with builtins;
+    overlays = let path = ../../overlays; in with builtins;
       map (n: import (path + ("/" + n)))
           (filter (n: match ".*\\.nix" n != null ||
                       pathExists (path + ("/" + n + "/default.nix")))
@@ -46,11 +46,11 @@ in
   # Programs
   #
   programs = {
-    gnupg            = import ./machines/theopompos/programs/gnupg.nix {};
+    gnupg            = import ./programs/gnupg.nix {};
     info.enable      = true;
     man.enable       = true;
     nix-index.enable = true;
-    zsh              = import ./machines/theopompos/programs/zsh.nix {};
+    zsh              = import ./programs/zsh.nix {};
   };
 
   #
@@ -64,7 +64,7 @@ in
   #
   # System configuration
   #
-  system = import ./machines/theopompos/system.nix
+  system = import ./system.nix
     { inherit activationScripts; };
 
   time.timeZone = "Europe/Berlin";
