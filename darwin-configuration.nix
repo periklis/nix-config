@@ -10,7 +10,7 @@ in
   #
   # System environment
   #
-  environment = import ./machine/environment.nix
+  environment = import ./machines/theopompos/environment.nix
     { inherit config etc lib machinePackages pkgs; };
 
   #
@@ -24,7 +24,7 @@ in
   #
   # Nix & Nixpkgs
   #
-  nix = import ./machine/programs/nix.nix {
+  nix = import ./machines/theopompos/programs/nix.nix {
     machine = nix;
     inherit(pkgs) nix;
   };
@@ -46,11 +46,11 @@ in
   # Programs
   #
   programs = {
-    gnupg            = import ./machine/programs/gnupg.nix {};
+    gnupg            = import ./machines/theopompos/programs/gnupg.nix {};
     info.enable      = true;
     man.enable       = true;
     nix-index.enable = true;
-    zsh              = import ./machine/programs/zsh.nix {};
+    zsh              = import ./machines/theopompos/programs/zsh.nix {};
   };
 
   #
@@ -64,7 +64,7 @@ in
   #
   # System configuration
   #
-  system = import ./machine/system.nix
+  system = import ./machines/theopompos/system.nix
     { inherit activationScripts; };
 
   time.timeZone = "Europe/Berlin";

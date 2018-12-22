@@ -1,0 +1,5 @@
+{}:
+{
+  enableKeyMapping = true;
+  remapCapsLockToControl = true;
+}

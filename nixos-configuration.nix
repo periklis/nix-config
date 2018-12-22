@@ -3,12 +3,12 @@
 {
   imports =[
     <nixos-hardware/lenovo/thinkpad/t480s>
-    ./machine/environment.nix
-    ./machine/hardware-configuration.nix
-    ./machine/programs/gnupg.nix
-    ./machine/programs/zsh.nix
-    ./machine/services/xserver.nix
-    ./machine/system.nix
+    ./machines/alphaomega/environment.nix
+    ./machines/alphaomega/hardware-configuration.nix
+    ./machines/alphaomega/programs/gnupg.nix
+    ./machines/alphaomega/programs/zsh.nix
+    ./machines/alphaomega/services/xserver.nix
+    ./machines/alphaomega/system.nix
   ];
 
   networking.hostId = "c0bebeef";
