@@ -10,7 +10,6 @@ self: super:
     paths = [
       self.adobeReader
       self.arandr
-      self.brightnessctl
       self.firefox
       self.gnupg
       self.google-chrome-dev
