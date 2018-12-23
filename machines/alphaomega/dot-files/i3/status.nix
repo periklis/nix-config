@@ -7,6 +7,11 @@ block = "backlight"
 device = "intel_backlight"
 
 [[block]]
+block = "battery"
+interval = 10
+show = "both"
+
+[[block]]
 block = "disk_space"
 path = "/"
 alias = "/"
