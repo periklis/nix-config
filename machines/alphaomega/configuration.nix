@@ -10,15 +10,18 @@
     ./system.nix
   ];
 
+  boot.earlyVconsoleSetup = true;
+
   networking.hostId = "c0bebeef";
   networking.hostName = "nixos-alphaomega"; # Define your hostname.
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Select internationalisation properties.
   i18n = {
-     # consoleFont = "Lat2-Terminus16";
-     consoleKeyMap = "us";
-     defaultLocale = "en_US.UTF-8";
+    # consoleFont = "Lat2-Terminus16";
+    consoleFont = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
+    consoleKeyMap = "us";
+    defaultLocale = "en_US.UTF-8";
   };
 
   # Set your time zone.
