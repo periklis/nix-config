@@ -9,4 +9,6 @@
   # started in user sessions.
   programs.light.enable = true;
   programs.mtr.enable = true;
+
+  security.wrappers.bluetooth.source = "${pkgs.tlp}/bin/bluetooth";
 }

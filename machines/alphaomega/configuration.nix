@@ -74,7 +74,9 @@
 
   # Enable sound.
   sound.enable = true;
+  sound.mediaKeys.enable = false;
 
+  hardware.bluetooth.enable = true;
   hardware.pulseaudio.enable = true;
   hardware.pulseaudio.support32Bit = true;
   hardware.opengl.driSupport32Bit = true;
