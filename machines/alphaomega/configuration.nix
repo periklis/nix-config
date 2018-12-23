@@ -65,10 +65,6 @@
    ];
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs.mtr.enable = true;
-
   # List services that you want to enable:
   services.acpid.enable = true;
   services.autorandr.enable = true;
