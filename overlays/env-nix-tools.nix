@@ -6,7 +6,6 @@ self: super:
       self.nixops
       self.nix-prefetch-git
       self.nix-prefetch-github
-      self.nix-zsh-completions
     ];
   };
 

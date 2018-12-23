@@ -5,7 +5,6 @@ self: super:
     paths = [
       self.gitMinimal
       self.gitAndTools.git-extras
-      self.patch
       self.patchutils
     ];
   };

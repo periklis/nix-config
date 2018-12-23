@@ -9,7 +9,6 @@ self: super:
       self.kubernetes
       self.kustomize
       self.minikube
-      self.netcat
       self.google-cloud-sdk
       self.packer
       self.vault
