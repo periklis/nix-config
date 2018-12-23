@@ -2,7 +2,6 @@
 {
   system.userActivationScripts.alphaomegaSetup = {
     text = ''
-      mkdir -p ~/.gnupg
       mkdir -p ~/.cache
       mkdir -p ~/.gnus
       mkdir -p ~/.config/alacritty
@@ -20,11 +19,6 @@
       ln -sf /etc/per-user/darktooth/darktooth.sh ~/.config/darktooth/
       ln -sf /etc/per-user/htoprc ~/.config/htop
       ln -sf /etc/per-user/git/ignore ~/.config/git
-      ln -sf /etc/per-user/gnupg/dirmngr.conf ~/.gnupg
-      ln -sf /etc/per-user/gnupg/gpg-agent.conf ~/.gnupg
-      ln -sf /etc/per-user/gnupg/gpg.conf ~/.gnupg
-      ln -sf /etc/per-user/gnupg/scdaemon.conf ~/.gnupg
-      ln -sf /etc/per-user/gnupg/sks-keyservers.netCA.pem ~/.gnupg
       ln -sf /etc/per-user/i3/config ~/.config/i3/config
       ln -sf /etc/per-user/i3/status.toml ~/.config/i3/status.toml
       ln -sf /etc/per-user/nixpkgs/config.nix ~/.config/nixpkgs

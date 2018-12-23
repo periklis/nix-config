@@ -1,4 +1,4 @@
-{lib, isDarwin}: lib.optionalString isDarwin ''
+{pkgs}: pkgs.lib.optionalString pkgs.stdenv.isDarwin ''
 pinentry-program /run/current-system/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
 '' + ''
 default-cache-ttl 600

@@ -22,11 +22,6 @@
     etc."per-user/darktooth/darktooth.sh".text         = import ../common/dot-files/darktooth/darktooth.nix { inherit(pkgs) bash; };
     etc."per-user/htoprc".text                         = import ../common/dot-files/htoprc.nix {};
     etc."per-user/git/ignore".text                     = import ../common/dot-files/git/ignore.nix {};
-    etc."per-user/gnupg/dirmngr.conf".text             = import ../common/dot-files/gnupg/dirmngr.nix { };
-    etc."per-user/gnupg/gpg-agent.conf".text           = import ../common/dot-files/gnupg/gpg-agent.nix { inherit(pkgs) lib; isDarwin = pkgs.stdenv.isDarwin; };
-    etc."per-user/gnupg/gpg.conf".text                 = import ../common/dot-files/gnupg/gpg.nix {};
-    etc."per-user/gnupg/scdaemon.conf".text            = import ../common/dot-files/gnupg/scdaemon.nix {};
-    etc."per-user/gnupg/sks-keyservers.netCA.pem".text = import ../common/dot-files/gnupg/sks-keyservers.nix {};
     etc."per-user/nixpkgs/config.nix".text             = import ../common/dot-files/nixpkgs/config.nix {};
     etc."per-user/npmrc".text                          = import ../common/dot-files/npmrc.nix {};
 
@@ -64,7 +59,6 @@
       PKG_CONFIG_PATH     = "$HOME/.nix-profile/lib/pkgconfig";
       PKG_CONFIG_LIBDIR   = "$HOME/.nix-profile/lib/pkgconfig";
       PYTHONPATH          = "$HOME/.local/lib/python3.6/site-packages:${pkgs.pythonToolsEnv}/lib/python3.6/site-packages";
-      SSH_AUTH_SOCK       = "$HOME/.gnupg/S.gpg-agent.ssh";
       ZSH_CUSTOM          = "$HOME/.zsh/custom";
       ZSH_CACHE_DIR       = "$HOME/.zsh/cache";
       FZF_DEFAULT_COMMAND = "fd --type file --color=always --follow --hidden --exclude .git";

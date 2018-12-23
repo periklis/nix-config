@@ -11,7 +11,7 @@
     "per-user/htoprc".text                         = import ../common/dot-files/htoprc.nix {};
     "per-user/git/ignore".text                     = import ../common/dot-files/git/ignore.nix {};
     "per-user/gnupg/dirmngr.conf".text             = import ../common/dot-files/gnupg/dirmngr.nix {};
-    "per-user/gnupg/gpg-agent.conf".text           = import ../common/dot-files/gnupg/gpg-agent.nix {};
+    "per-user/gnupg/gpg-agent.conf".text           = import ../common/dot-files/gnupg/gpg-agent.nix { inherit pkgs; };
     "per-user/gnupg/gpg.conf".text                 = import ../common/dot-files/gnupg/gpg.nix {};
     "per-user/gnupg/scdaemon.conf".text            = import ../common/dot-files/gnupg/scdaemon.nix {};
     "per-user/gnupg/sks-keyservers.netCA.pem".text = import ../common/dot-files/gnupg/sks-keyservers.nix {};

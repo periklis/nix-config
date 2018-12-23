@@ -1,5 +1,10 @@
 self: super:
 {
+  gnupg = super.gnupg.override {
+    pinentry = self.pinentry_qt5;
+    guiSupport = true;
+  };
+
   nixosAppsEnv = super.buildEnv {
     name = "nixosApps";
     paths = [
@@ -7,6 +12,7 @@ self: super:
       self.arandr
       self.brightnessctl
       self.firefox
+      self.gnupg
       self.google-chrome-dev
       self.handbrake
       self.i3lock-fancy
