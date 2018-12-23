@@ -34,7 +34,11 @@ in
   services.xserver.libinput = {
     enable = true;
     disableWhileTyping = true;
+    middleEmulation = true;
+    naturalScrolling = true;
   };
+
+  services.xserver.synaptics.enable = false;
 
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
