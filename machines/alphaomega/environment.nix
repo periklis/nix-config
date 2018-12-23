@@ -22,8 +22,8 @@
     etc."per-user/darktooth/darktooth.sh".text         = import ../common/dot-files/darktooth/darktooth.nix { inherit(pkgs) bash; };
     etc."per-user/htoprc".text                         = import ../common/dot-files/htoprc.nix {};
     etc."per-user/git/ignore".text                     = import ../common/dot-files/git/ignore.nix {};
-    etc."per-user/gnupg/dirmngr.conf".text             = import ../common/dot-files/gnupg/dirmngr.nix {};
-    etc."per-user/gnupg/gpg-agent.conf".text           = import ../common/dot-files/gnupg/gpg-agent.nix {};
+    etc."per-user/gnupg/dirmngr.conf".text             = import ../common/dot-files/gnupg/dirmngr.nix { };
+    etc."per-user/gnupg/gpg-agent.conf".text           = import ../common/dot-files/gnupg/gpg-agent.nix { inherit(pkgs) lib; isDarwin = pkgs.stdenv.isDarwin; };
     etc."per-user/gnupg/gpg.conf".text                 = import ../common/dot-files/gnupg/gpg.nix {};
     etc."per-user/gnupg/scdaemon.conf".text            = import ../common/dot-files/gnupg/scdaemon.nix {};
     etc."per-user/gnupg/sks-keyservers.netCA.pem".text = import ../common/dot-files/gnupg/sks-keyservers.nix {};
