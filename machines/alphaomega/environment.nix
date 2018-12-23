@@ -97,7 +97,6 @@
       mmv                  = "noglob zmv -W";
       emacs-nox            = "$HOME/Applications/Emacs.app/Contents/MacOS/Emacs -nw";
       ec                   = "emacsclient -t";
-      nix-env              = "nix-env -f '<nixpkgs>'";
       nix-build-out        = "nixBuildOut";
       nix-build-binding-as = "nixBuildBindingAs";
       nix-build-deps       = "nixBuildDeps";
