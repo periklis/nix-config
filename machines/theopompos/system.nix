@@ -25,7 +25,6 @@
     ln -sf /etc/per-user/gnupg/sks-keyservers.netCA.pem ~/.gnupg
     ln -sf /etc/per-user/nixpkgs/config.nix ~/.config/nixpkgs
     ln -sf /etc/per-user/npmrc ~/.npmrc
-    ln -sf /etc/per-user/tmux/kube.tmux ~/.tmux/kube.tmux
     ln -sf /etc/per-user/tmux.conf ~/.tmux.conf
   '';
 

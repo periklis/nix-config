@@ -22,7 +22,6 @@
     # Per machine config files
     #
     "per-user/alacritty/alacritty.yml".text        = import ./dot-files/alacritty/alacritty.nix {};
-    "per-user/tmux/kube.tmux".text                 = lib.fileContents ./dot-files/tmux/kube.tmux;
     "per-user/tmux.conf".text                      = import ./dot-files/tmux.nix { inherit(pkgs) bash; };
   };
 
