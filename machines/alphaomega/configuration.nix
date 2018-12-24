@@ -41,7 +41,6 @@
 
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
      emacsToolsEnv
      gitToolsEnv
@@ -69,8 +68,9 @@
       hinting.enable = true;
     };
     fonts = with pkgs; [
-      hack-font
       font-awesome-ttf
+      hack-font
+      helvetica-neue-lt-std
    ];
   };
 
