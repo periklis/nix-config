@@ -6,10 +6,15 @@ icons = "awesome"
 block = "backlight"
 device = "intel_backlight"
 
+
+[[block]]
+block = "sound"
+
 [[block]]
 block = "battery"
+device = "BAT0"
 interval = 10
-show = "both"
+show = "percentage"
 
 [[block]]
 block = "disk_space"
@@ -34,10 +39,16 @@ interval = 1
 [[block]]
 block = "load"
 interval = 1
-format = "{1m}"
+format = "{1m} {5m} {15m}"
 
 [[block]]
-block = "sound"
+block = "net"
+device = "wlp3s0"
+ssid = true
+ip = true
+interval = 5
+speed_up = false
+speed_down = false
 
 [[block]]
 block = "time"
