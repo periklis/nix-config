@@ -2,6 +2,7 @@
 {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.dpi = 144;
   services.xserver.layout = "us,gr";
   services.xserver.xkbModel = "pc105";
   services.xserver.xkbOptions = "eurosign:e, ctrl:swapcaps, grp:alt_shift_toggle";

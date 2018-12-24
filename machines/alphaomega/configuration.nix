@@ -62,6 +62,12 @@
   fonts = {
     enableFontDir = true;
     enableGhostscriptFonts = true;
+    fontconfig = {
+      enable = true;
+      dpi = 144;
+      antialias = true;
+      hinting.enable = true;
+    };
     fonts = with pkgs; [
       hack-font
       font-awesome-ttf
