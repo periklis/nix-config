@@ -13,6 +13,7 @@ self: super:
       self.firefox
       self.gnupg
       self.google-chrome-dev
+      self.grobi
       self.handbrake
       self.i3lock-fancy
       self.i3status-rust

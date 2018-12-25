@@ -2,27 +2,35 @@
 {
   etc = etc // {
     #
-    # Per-user common config files
+    # Common config files
     #
-    "per-user/aspell.conf".text                    = import ../common/dot-files/aspell.nix {};
-    "per-user/curlrc".text                         = import ../common/dot-files/curlrc.nix {};
-    "per-user/ctags".text                          = import ../common/dot-files/ctags.nix {};
-    "per-user/darktooth/darktooth.sh".text         = import ../common/dot-files/darktooth/darktooth.nix { inherit(pkgs) bash; };
-    "per-user/htoprc".text                         = import ../common/dot-files/htoprc.nix {};
-    "per-user/git/ignore".text                     = import ../common/dot-files/git/ignore.nix {};
-    "per-user/gnupg/dirmngr.conf".text             = import ../common/dot-files/gnupg/dirmngr.nix {};
-    "per-user/gnupg/gpg-agent.conf".text           = import ../common/dot-files/gnupg/gpg-agent.nix { inherit pkgs; };
-    "per-user/gnupg/gpg.conf".text                 = import ../common/dot-files/gnupg/gpg.nix {};
-    "per-user/gnupg/scdaemon.conf".text            = import ../common/dot-files/gnupg/scdaemon.nix {};
-    "per-user/gnupg/sks-keyservers.netCA.pem".text = import ../common/dot-files/gnupg/sks-keyservers.nix {};
-    "per-user/nixpkgs/config.nix".text             = import ../common/dot-files/nixpkgs/config.nix {};
-    "per-user/npmrc".text                          = import ../common/dot-files/npmrc.nix {};
+    "dot-files/aspell.conf".text                    = import ../common/dot-files/aspell.nix {};
+    "dot-files/curlrc".text                         = import ../common/dot-files/curlrc.nix {};
+    "dot-files/ctags".text                          = import ../common/dot-files/ctags.nix {};
+    "dot-files/darktooth/darktooth.sh".text         = import ../common/dot-files/darktooth/darktooth.nix { inherit(pkgs) bash; };
+    "dot-files/htoprc".text                         = import ../common/dot-files/htoprc.nix {};
+    "dot-files/git/ignore".text                     = import ../common/dot-files/git/ignore.nix {};
+    "dot-files/gnupg/dirmngr.conf".text             = import ../common/dot-files/gnupg/dirmngr.nix {};
+    "dot-files/gnupg/gpg-agent.conf".text           = import ../common/dot-files/gnupg/gpg-agent.nix { inherit pkgs; };
+    "dot-files/gnupg/gpg.conf".text                 = import ../common/dot-files/gnupg/gpg.nix {};
+    "dot-files/gnupg/scdaemon.conf".text            = import ../common/dot-files/gnupg/scdaemon.nix {};
+    "dot-files/gnupg/sks-keyservers.netCA.pem".text = import ../common/dot-files/gnupg/sks-keyservers.nix {};
+    "dot-files/nixpkgs/config.nix".text             = import ../common/dot-files/nixpkgs/config.nix {};
+    "dot-files/npmrc".text                          = import ../common/dot-files/npmrc.nix {};
 
     #
     # Per machine config files
     #
-    "per-user/alacritty/alacritty.yml".text        = import ./dot-files/alacritty/alacritty.nix {};
-    "per-user/tmux.conf".text                      = import ./dot-files/tmux.nix { inherit(pkgs) bash; };
+    "dot-files/theopompos/alacritty/alacritty.yml".text = import ./dot-files/alacritty/alacritty.nix {};
+    "dot-files/theopompos/tmux.conf".text               = import ./dot-files/tmux.nix { inherit(pkgs) bash; };
+
+    #
+    # Per-user secret config files
+    #
+    "dot-files/periklis/gitconfig".text  = import ../../machine/per-user/gitconfig.nix {};
+    "dot-files/periklis/gnus.el".text    = import ../../machine/per-user/gnus.nix {};
+    "dot-files/periklis/signature".text  = import ../../machine/per-user/signature.nix {};
+    "dot-files/periklis/ssh-config".text = import ../../machine/per-user/ssh-user-config.nix {};
   };
 
   extraOutputsToInstall = [ "doc" "lib" "man" "info" ];

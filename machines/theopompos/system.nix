@@ -11,21 +11,22 @@
     mkdir -p ~/.config/nixpkgs
     mkdir -p ~/.tmux
 
-    ln -sf /etc/per-user/alacritty/alacritty.yml ~/.config/alacritty/
-    ln -sf /etc/per-user/aspell.conf ~/.aspell.conf
-    ln -sf /etc/per-user/curlrc ~/.curlrc
-    ln -sf /etc/per-user/ctags ~/.ctags
-    ln -sf /etc/per-user/darktooth/darktooth.sh ~/.config/darktooth/
-    ln -sf /etc/per-user/htoprc ~/.config/htop
-    ln -sf /etc/per-user/git/ignore ~/.config/git
-    ln -sf /etc/per-user/gnupg/dirmngr.conf ~/.gnupg
-    ln -sf /etc/per-user/gnupg/gpg-agent.conf ~/.gnupg
-    ln -sf /etc/per-user/gnupg/gpg.conf ~/.gnupg
-    ln -sf /etc/per-user/gnupg/scdaemon.conf ~/.gnupg
-    ln -sf /etc/per-user/gnupg/sks-keyservers.netCA.pem ~/.gnupg
-    ln -sf /etc/per-user/nixpkgs/config.nix ~/.config/nixpkgs
-    ln -sf /etc/per-user/npmrc ~/.npmrc
-    ln -sf /etc/per-user/tmux.conf ~/.tmux.conf
+    ln -sf /etc/dot-files/aspell.conf ~/.aspell.conf
+    ln -sf /etc/dot-files/curlrc ~/.curlrc
+    ln -sf /etc/dot-files/ctags ~/.ctags
+    ln -sf /etc/dot-files/darktooth/darktooth.sh ~/.config/darktooth/
+    ln -sf /etc/dot-files/htoprc ~/.config/htop
+    ln -sf /etc/dot-files/git/ignore ~/.config/git
+    ln -sf /etc/dot-files/gnupg/dirmngr.conf ~/.gnupg
+    ln -sf /etc/dot-files/gnupg/gpg-agent.conf ~/.gnupg
+    ln -sf /etc/dot-files/gnupg/gpg.conf ~/.gnupg
+    ln -sf /etc/dot-files/gnupg/scdaemon.conf ~/.gnupg
+    ln -sf /etc/dot-files/gnupg/sks-keyservers.netCA.pem ~/.gnupg
+    ln -sf /etc/dot-files/nixpkgs/config.nix ~/.config/nixpkgs
+    ln -sf /etc/dot-files/npmrc ~/.npmrc
+
+    ln -sf /etc/dot-files/theopompos/alacritty/alacritty.yml ~/.config/alacritty/
+    ln -sf /etc/dot-files/theopompos/tmux.conf ~/.tmux.conf
   '';
 
   defaults = import ./preferences/defaults.nix {};

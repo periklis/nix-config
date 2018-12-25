@@ -18,7 +18,6 @@
 
   # Select internationalisation properties.
   i18n = {
-    # consoleFont = "Lat2-Terminus16";
     consoleFont = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
     consoleKeyMap = "us";
     defaultLocale = "en_US.UTF-8";
@@ -63,7 +62,7 @@
     enableGhostscriptFonts = true;
     fontconfig = {
       enable = true;
-      dpi = 144;
+      # dpi = 144;
       antialias = true;
       hinting.enable = true;
     };
@@ -76,7 +75,7 @@
 
   # List services that you want to enable:
   services.acpid.enable = true;
-  services.autorandr.enable = true;
+  services.autorandr.enable = false;
   services.printing.enable = true;
   services.tlp.enable = true;
   services.zfs.autoScrub.enable = true;

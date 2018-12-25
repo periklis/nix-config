@@ -2,37 +2,39 @@
 {
   environment = {
     #
-    # Per-user machine secret config files
+    # Common config files
     #
-    etc."per-user/ptsirakidis/gitconfig".text                   = import ../../machine/per-user/gitconfig.nix {};
-    etc."per-user/ptsirakidis/gnus.el".text                     = import ../../machine/per-user/gnus.nix {};
-    etc."per-user/ptsirakidis/sbt/1.0/global.sbt".text          = import ../../machine/per-user/sbt/1.0/global.nix {};
-    etc."per-user/ptsirakidis/sbt/1.0/plugins/plugins.sbt".text = import ../../machine/per-user/sbt/1.0/plugins/plugins.nix {};
-    etc."per-user/ptsirakidis/sbt/1.0/sonatype.sbt".text        = import ../../machine/per-user/sbt/1.0/sonatype.nix {};
-    etc."per-user/ptsirakidis/signature".text                   = import ../../machine/per-user/signature.nix {};
-    etc."per-user/ptsirakidis/ssh-config".text                  = import ../../machine/per-user/ssh-user-config.nix {};
-    etc."per-user/ptsirakidis/zshrc".text                       = import ../../machine/per-user/zshrc.nix {};
-
-    #
-    # Per-user common config files
-    #
-    etc."per-user/aspell.conf".text                    = import ../common/dot-files/aspell.nix {};
-    etc."per-user/curlrc".text                         = import ../common/dot-files/curlrc.nix {};
-    etc."per-user/ctags".text                          = import ../common/dot-files/ctags.nix {};
-    etc."per-user/darktooth/darktooth.sh".text         = import ../common/dot-files/darktooth/darktooth.nix { inherit(pkgs) bash; };
-    etc."per-user/htoprc".text                         = import ../common/dot-files/htoprc.nix {};
-    etc."per-user/git/ignore".text                     = import ../common/dot-files/git/ignore.nix {};
-    etc."per-user/nixpkgs/config.nix".text             = import ../common/dot-files/nixpkgs/config.nix {};
-    etc."per-user/npmrc".text                          = import ../common/dot-files/npmrc.nix {};
+    etc."dot-files/aspell.conf".text            = import ../common/dot-files/aspell.nix {};
+    etc."dot-files/curlrc".text                 = import ../common/dot-files/curlrc.nix {};
+    etc."dot-files/ctags".text                  = import ../common/dot-files/ctags.nix {};
+    etc."dot-files/darktooth/darktooth.sh".text = import ../common/dot-files/darktooth/darktooth.nix { inherit(pkgs) bash; };
+    etc."dot-files/htoprc".text                 = import ../common/dot-files/htoprc.nix {};
+    etc."dot-files/git/ignore".text             = import ../common/dot-files/git/ignore.nix {};
+    etc."dot-files/nixpkgs/config.nix".text     = import ../common/dot-files/nixpkgs/config.nix {};
+    etc."dot-files/npmrc".text                  = import ../common/dot-files/npmrc.nix {};
 
     #
     # Per machine config files
     #
-    etc."per-user/alacritty/alacritty.yml".text        = import ./dot-files/alacritty/alacritty.nix {};
-    etc."per-user/i3/config".text                      = import ./dot-files/i3/config.nix {};
-    etc."per-user/i3/status.toml".text                 = import ./dot-files/i3/status.nix {};
-    etc."per-user/tmux/kube.tmux".text                 = pkgs.lib.fileContents ./dot-files/tmux/kube.tmux;
-    etc."per-user/tmux.conf".text                      = import ./dot-files/tmux.nix { inherit(pkgs) bash; };
+    etc."dot-files/alphaomega/alacritty/alacritty.yml".text = import ./dot-files/alacritty/alacritty.nix {};
+    etc."dot-files/alphaomega/grobi.conf".text              = import ./dot-files/grobi.nix {};
+    etc."dot-files/alphaomega/i3/config".text               = import ./dot-files/i3/config.nix {};
+    etc."dot-files/alphaomega/i3/status.toml".text          = import ./dot-files/i3/status.nix {};
+    etc."dot-files/alphaomega/tmux/kube.tmux".text          = pkgs.lib.fileContents ./dot-files/tmux/kube.tmux;
+    etc."dot-files/alphaomega/tmux.conf".text               = import ./dot-files/tmux.nix { inherit(pkgs) bash; };
+    etc."dot-files/alphaomega/Xresources".text              = import ./dot-files/Xresources.nix {};
+
+    #
+    # Per-user secret config files
+    #
+    etc."dot-files/ptsirakidis/gitconfig".text                   = import ../../machine/per-user/gitconfig.nix {};
+    etc."dot-files/ptsirakidis/gnus.el".text                     = import ../../machine/per-user/gnus.nix {};
+    etc."dot-files/ptsirakidis/sbt/1.0/global.sbt".text          = import ../../machine/per-user/sbt/1.0/global.nix {};
+    etc."dot-files/ptsirakidis/sbt/1.0/plugins/plugins.sbt".text = import ../../machine/per-user/sbt/1.0/plugins/plugins.nix {};
+    etc."dot-files/ptsirakidis/sbt/1.0/sonatype.sbt".text        = import ../../machine/per-user/sbt/1.0/sonatype.nix {};
+    etc."dot-files/ptsirakidis/signature".text                   = import ../../machine/per-user/signature.nix {};
+    etc."dot-files/ptsirakidis/ssh-config".text                  = import ../../machine/per-user/ssh-user-config.nix {};
+    etc."dot-files/ptsirakidis/zshrc".text                       = import ../../machine/per-user/zshrc.nix {};
 
     extraOutputsToInstall = [ "doc" "lib" "man" "info" ];
 
