@@ -19,6 +19,7 @@ self: super:
       self.i3lock-fancy
       self.i3status-rust
       self.jetbrains.idea-ultimate
+      self.libreoffice
       self.mupdf
       self.openfortivpn
       self.pavucontrol
