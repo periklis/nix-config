@@ -16,10 +16,10 @@ rules:
     configure_single: DP2
     atomic: true
     primary: DP2
-    # execute_after:
-    #   - xrandr --dpi 96
-    #   - "echo Xft.dpi: 96 | xrdb -merge"
-    #   - i3-msg restart
+    execute_after:
+      - xrandr --dpi 96
+      - "echo Xft.dpi: 96 | xrdb -merge"
+      - i3-msg restart
 
   # This is a rule for mobile computing, i.e. outside of the docking station defined above.
   - name: Mobile
@@ -28,10 +28,10 @@ rules:
     outputs_disconnected: [DP2]
     configure_single: eDP1
     primary: eDP1
-    # execute_after:
-    #   - xrandr --dpi 144
-    #   - "echo Xft.dpi: 144 | xrdb -merge"
-    #   - i3-msg restart
+    execute_after:
+      - xrandr --dpi 144
+      - "echo Xft.dpi: 144 | xrdb -merge"
+      - i3-msg restart
 
   - name: Fallback
     configure_single: eDP1

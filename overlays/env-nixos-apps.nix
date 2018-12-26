@@ -10,6 +10,7 @@ self: super:
     paths = [
       self.adobeReader
       self.arandr
+      self.corefonts
       self.firefox
       self.gnupg
       self.google-chrome-dev
@@ -23,6 +24,7 @@ self: super:
       self.pavucontrol
       self.skype
       self.slack
+      self.vistafonts
       self.vlc
       self.zoom-us
     ];
