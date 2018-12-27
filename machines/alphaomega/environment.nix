@@ -18,6 +18,7 @@
     #
     etc."dot-files/alphaomega/alacritty/alacritty.yml".text = import ./dot-files/alacritty/alacritty.nix {};
     etc."dot-files/alphaomega/fonts.conf".text              = import ./dot-files/fonts.nix {};
+    etc."dot-files/alphaomega/gtk-3.0/settings.ini".text    = import ./dot-files/gtk-3.0/settings.nix {};
     etc."dot-files/alphaomega/grobi.conf".text              = import ./dot-files/grobi.nix {};
     etc."dot-files/alphaomega/i3/config".text               = import ./dot-files/i3/config.nix {};
     etc."dot-files/alphaomega/i3/status.toml".text          = import ./dot-files/i3/status.nix {};

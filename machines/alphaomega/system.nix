@@ -7,6 +7,7 @@
       mkdir -p ~/.config/alacritty
       mkdir -p ~/.config/darktooth
       mkdir -p ~/.config/fontconfig
+      mkdir -p ~/.config/gtk-3.0
       mkdir -p ~/.config/git
       mkdir -p ~/.config/htop
       mkdir -p ~/.config/i3
@@ -26,11 +27,12 @@
       ln -sf /etc/dot-files/npmrc ~/.npmrc
 
       ln -sf /etc/dot-files/alphaomega/alacritty/alacritty.yml ~/.config/alacritty/
-      ln -sf /etc/dot-files/alphaomega/fonts.conf ~/.config/fontconfig/fonts.conf
-      ln -sf /etc/dot-files/alphaomega/grobi.conf ~/.config/grobi.conf
-      ln -sf /etc/dot-files/alphaomega/i3/config ~/.config/i3/config
-      ln -sf /etc/dot-files/alphaomega/i3/status.toml ~/.config/i3/status.toml
-      ln -sf /etc/dot-files/alphaomega/tmux/kube.tmux ~/.tmux/kube.tmux
+      ln -sf /etc/dot-files/alphaomega/fonts.conf ~/.config/fontconfig/
+      ln -sf /etc/dot-files/alphaomega/grobi.conf ~/.config/
+      ln -sf /etc/dot-files/alphaomega/gtk-3.0/settings.ini ~/.config/gtk-3.0/
+      ln -sf /etc/dot-files/alphaomega/i3/config ~/.config/i3/
+      ln -sf /etc/dot-files/alphaomega/i3/status.toml ~/.config/i3/
+      ln -sf /etc/dot-files/alphaomega/tmux/kube.tmux ~/.tmux/
       ln -sf /etc/dot-files/alphaomega/tmux.conf ~/.tmux.conf
       ln -sf /etc/dot-files/alphaomega/Xresources ~/.Xresources
 
