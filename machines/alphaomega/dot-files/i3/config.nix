@@ -12,6 +12,9 @@ font pango:Hack 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Take a screenshot
+bindsym Ctrl+Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
+
 # start a terminal
 bindsym $mod+Return exec alacritty
 

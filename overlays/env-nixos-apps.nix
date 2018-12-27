@@ -12,10 +12,12 @@ self: super:
       self.arandr
       self.corefonts
       self.firefox
+      self.gimp-with-plugins
       self.gnupg
       self.google-chrome-dev
       self.grobi
       self.handbrake
+      self.imagemagick
       self.i3lock-fancy
       self.i3status-rust
       self.jetbrains.idea-ultimate
@@ -23,6 +25,7 @@ self: super:
       self.mupdf
       self.openfortivpn
       self.pavucontrol
+      self.scrot
       self.skype
       self.slack
       self.vistafonts
