@@ -13,7 +13,7 @@
   boot.earlyVconsoleSetup = true;
 
   networking.hostId = "c0bebeef";
-  networking.hostName = "nixos-alphaomega"; # Define your hostname.
+  networking.hostName = "alphaomega";
   networking.networkmanager.enable = true;
 
   # Select internationalisation properties.
