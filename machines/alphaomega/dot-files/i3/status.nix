@@ -11,12 +11,6 @@ block = "sound"
 
 [[block]]
 block = "battery"
-device = "BAT0"
-interval = 10
-show = "percentage"
-
-[[block]]
-block = "battery"
 device = "BAT1"
 interval = 10
 show = "percentage"
