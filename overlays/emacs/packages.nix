@@ -61,6 +61,7 @@ pkgs: epkgs: with epkgs;
   go-fill-struct
   go-gen-test
   go-guru
+  go-imenu
   go-impl
   go-imports
   go-mode

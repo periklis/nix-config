@@ -11,6 +11,7 @@ self: super:
       self.golint
       self.go
       self.go2nix
+      self.go-outline
       self.gotools
     ];
   };
