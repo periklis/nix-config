@@ -1,4 +1,41 @@
 { config, pkgs, ... }:
+let
+  fzfCtrlTOpts = pkgs.lib.concatStringsSep " " [
+     "$FZF_COMMON_OPTS --preview"
+     "'(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+  ];
+
+  fzfCtrlROpts = pkgs.lib.concatStringsSep " " [
+    "$FZF_COMMON_OPTS --preview"
+    "'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+  ];
+
+  fzfDefaultOpts = pkgs.lib.concatStringsSep " " [
+    "--ansi"
+    "--color dark,hl:33,hl+:37,fg+:235,bg+:234,fg+:254"
+    "--color info:254,prompt:37,spinner:108,pointer:235,marker:235"
+    "--reverse"
+  ];
+
+  manPath = pkgs.lib.concatStringsSep ";" [
+    "/home/$LOGNAME/.nix-profile/share/man"
+    "/home/$LOGNAME/.nix-profile/man"
+    "${config.system.path}/share/man"
+    "${config.system.path}/man"
+    "/usr/local/share/man"
+    "/usr/share/man"
+  ];
+
+  path = pkgs.lib.concatStringsSep ":" [
+    "$HOME/.local/bin"
+    "$HOME/.cabal/bin"
+    "$HOME/.cargo/bin"
+    "$HOME/.composer/vendor/bin"
+    "$HOME/.node/bin"
+    "$HOME/projects/golang/bin"
+    "$PATH"
+  ];
+in
 {
   environment = {
     #
@@ -47,55 +84,28 @@
 
     pathsToLink = [ "/lib" "/libexec" "/share" ];
 
-    variables = {
-      TERM              = "screen-256color";
-      LC_ALL            = "en_US.UTF-8";
-      PAGER             = "less -R";
-      EDITOR            = "emacsclient";
-      ALTERNATE_EDITOR  = "vim";
-      LSCOLORS          = "gxfxbEaEBxxEhEhBaDaCaD";
-      MANPATH           = [
-        "/home/$LOGNAME/.nix-profile/share/man"
-        "/home/$LOGNAME/.nix-profile/man"
-        "${config.system.path}/share/man"
-        "${config.system.path}/man"
-        "/usr/local/share/man"
-        "/usr/share/man"
-      ];
-      ACLOCAL_PATH        = "$HOME/.nix-profile/share/aclocal";
-      CACHIX_SIGNING_KEY  = "UezrEGeJqHdXD97YjoMqdAV64/O+Sk5mzsBH7hV7rrjpUsDGacxW7t6FEeUAK7HJ4YOMYjz13tCfRRN2xmLfnw==";
-      GOPATH              = "$HOME/projects/golang/";
-      PKG_CONFIG_PATH     = "$HOME/.nix-profile/lib/pkgconfig";
-      PKG_CONFIG_LIBDIR   = "$HOME/.nix-profile/lib/pkgconfig";
-      PYTHONPATH          = "$HOME/.local/lib/python3.6/site-packages:${pkgs.pythonToolsEnv}/lib/python3.6/site-packages";
-      ZSH_CUSTOM          = "$HOME/.zsh/custom";
-      ZSH_CACHE_DIR       = "$HOME/.zsh/cache";
-      FZF_DEFAULT_COMMAND = "fd --type file --color=always --follow --hidden --exclude .git";
-      FZF_COMMON_OPTS     = "--select-1 --exit-0";
-      FZF_CTRL_T_OPTS     = pkgs.lib.concatStringsSep " " [
-        "$FZF_COMMON_OPTS --preview"
-        "'(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-      ];
-      FZF_CTRL_R_OPTS   = pkgs.lib.concatStringsSep " " [
-        "$FZF_COMMON_OPTS --preview"
-        "'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
-      ];
-      FZF_DEFAULT_OPTS  = pkgs.lib.concatStringsSep " " [
-        "--ansi"
-        "--color dark,hl:33,hl+:37,fg+:235,bg+:234,fg+:254"
-        "--color info:254,prompt:37,spinner:108,pointer:235,marker:235"
-        "--reverse"
-      ];
-      PATH = pkgs.lib.concatStringsSep ":" [
-        "$HOME/.local/bin"
-        "$HOME/.cabal/bin"
-        "$HOME/.cargo/bin"
-        "$HOME/.composer/vendor/bin"
-        "$HOME/.node/bin"
-        "$HOME/projects/golang/bin"
-        "$PATH"
-      ];
-    };
+    loginShellInit = ''
+      TERM="screen-256color"
+      LC_ALL="en_US.UTF-8"
+      PAGER="less -R"
+      EDITOR="emacsclient"
+      ALTERNATE_EDITOR="vim"
+      LSCOLORS="gxfxbEaEBxxEhEhBaDaCaD"
+      MANPATH="${manPath}"
+      ACLOCAL_PATH="$HOME/.nix-profile/share/aclocal"
+      CACHIX_SIGNING_KEY="UezrEGeJqHdXD97YjoMqdAV64/O+Sk5mzsBH7hV7rrjpUsDGacxW7t6FEeUAK7HJ4YOMYjz13tCfRRN2xmLfnw=="
+      GOPATH="$HOME/projects/golang"
+      PKG_CONFIG_PATH="$HOME/.nix-profile/lib/pkgconfig"
+      PYTHONPATH="$HOME/.local/lib/python3.6/site-packages:${pkgs.pythonToolsEnv}/lib/python3.6/site-packages"
+      ZSH_CUSTOM="$HOME/.zsh/custom"
+      ZSH_CACHE_DIR="$HOME/.zsh/cache"
+      FZF_DEFAULT_COMMAND="fd --type file --color=always --follow --hidden --exclude .git"
+      FZF_COMMON_OPTS="--select-1 --exit-0"
+      FZF_CTRL_T_OPTS="${fzfCtrlTOpts}"
+      FZF_CTRL_R_OPTS="${fzfCtrlROpts}"
+      FZF_DEFAULT_OPTS="${fzfDefaultOpts}"
+      PATH="${path}"
+    '';
 
     shells = with pkgs; [
       bashInteractive

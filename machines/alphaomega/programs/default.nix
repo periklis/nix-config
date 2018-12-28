@@ -2,7 +2,7 @@
 {
   imports =[
     ./gnupg.nix
-    ./zsh.nix
+    ./zsh/default.nix
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
