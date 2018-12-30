@@ -10,7 +10,7 @@ in
       emacsWithPkgs
       self.multimarkdown
       self.poppler
-      self.haskellPackages.pandoc
+      # self.haskellPackages.pandoc
     ];
   };
 }

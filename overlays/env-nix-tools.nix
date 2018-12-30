@@ -18,7 +18,7 @@ self: super:
       # self.vulnix # Pending https://github.com/NixOS/nixpkgs/issues/51016
       # self.nix-delegate
       # self.nix-deploy
-      self.nix-diff
+      # self.nix-diff
     ];
   };
 }

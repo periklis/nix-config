@@ -30,7 +30,7 @@ window:
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: false
+  decorations: none
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 4
@@ -74,10 +74,6 @@ font:
     x: 0
     y: 0
 
-  # Scale the font size based on the monitor's DPI. This will lead to bigger text on HiDPI
-  # screens and make reading text a little easier.
-  scale_with_dpi: true
-
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
@@ -85,10 +81,6 @@ font:
 
 # Should display the render timer
 render_timer: false
-
-# Use custom cursor colors. If true, display the cursor in the cursor.foreground
-# and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: false
 
 # Colors (Darktooth)
 colors:
@@ -195,14 +187,14 @@ mouse:
   # scrolling for applications like `man`.
   #
   # To disable this completely, set `faux_scrollback_lines` to 0.
-  faux_scrollback_lines: 1
+  faux_scrolling_lines: 1
+
+  hide_when_typing: true
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
 dynamic_title: true
-
-hide_cursor_when_typing: true
 
 # Style of the cursor
 #
@@ -210,10 +202,11 @@ hide_cursor_when_typing: true
 # - Block
 # - Underline
 # - Beam
-cursor_style: Block
+cursor:
+  style: Block
 
-# Whether the cursor should be a hollow block on window focus loss
-unfocused_hollow_cursor: true
+  # Whether the cursor should be a hollow block on window focus loss
+  unfocused_hollow: true
 
 # Live config reload (changes require restart)
 live_config_reload: true
@@ -341,7 +334,7 @@ key_bindings:
   - { key: Backslash, mods: Command,       chars: "\x1b\\"                      } # Command + \
   - { key: Backslash, mods: Command|Shift, chars: "\x1b|"                       } # Command + |
   - { key: Y,         mods: Control,       action: Paste                        }
-  - { key: W,         mods: Command,       action: Copy                         }
+  - { key: W,         mods: Alt,          action: Copy                         }
   - { key: Paste,                          action: Paste                        }
   - { key: Copy,                           action: Copy                         }
   - { key: Q,        mods: Command,        action: Quit                         }
