@@ -44,7 +44,6 @@ in
     etc."dot-files/aspell.conf".text            = import ../common/dot-files/aspell.nix {};
     etc."dot-files/curlrc".text                 = import ../common/dot-files/curlrc.nix {};
     etc."dot-files/ctags".text                  = import ../common/dot-files/ctags.nix {};
-    etc."dot-files/darktooth/darktooth.sh".text = import ../common/dot-files/darktooth/darktooth.nix { inherit(pkgs) bash; };
     etc."dot-files/htoprc".text                 = import ../common/dot-files/htoprc.nix {};
     etc."dot-files/git/ignore".text             = import ../common/dot-files/git/ignore.nix {};
     etc."dot-files/nixpkgs/config.nix".text     = import ../common/dot-files/nixpkgs/config.nix {};
@@ -59,7 +58,7 @@ in
     etc."dot-files/alphaomega/grobi.conf".text              = import ./dot-files/grobi.nix {};
     etc."dot-files/alphaomega/i3/config".text               = import ./dot-files/i3/config.nix { inherit (pkgs) alsaUtils light; };
     etc."dot-files/alphaomega/i3/status.toml".text          = import ./dot-files/i3/status.nix {};
-    etc."dot-files/alphaomega/tmux/kube.tmux".text          = pkgs.lib.fileContents ./dot-files/tmux/kube.tmux;
+    etc."dot-files/alphaomega/tmux/plugins/kube.tmux".text  = pkgs.lib.fileContents ./dot-files/tmux/plugins/kube.tmux;
     etc."dot-files/alphaomega/tmux.conf".text               = import ./dot-files/tmux.nix { inherit(pkgs) bash; };
     etc."dot-files/alphaomega/Xresources".text              = import ./dot-files/Xresources.nix {};
 

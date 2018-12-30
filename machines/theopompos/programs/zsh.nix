@@ -39,11 +39,6 @@
         fi
       done
     }
-
-    if [ -f ~/.config/darktooth/darktooth.sh ];
-    then
-      source ~/.config/darktooth/darktooth.sh
-    fi
   '';
 
   interactiveShellInit = ''

@@ -5,7 +5,6 @@
       mkdir -p ~/.cache
       mkdir -p ~/.gnus
       mkdir -p ~/.config/alacritty
-      mkdir -p ~/.config/darktooth
       mkdir -p ~/.config/fontconfig
       mkdir -p ~/.config/gtk-3.0
       mkdir -p ~/.config/git
@@ -15,12 +14,11 @@
       mkdir -p ~/.sbt/1.0/plugins
       mkdir -p ~/.sbt/gpg
       mkdir -p ~/.ssh
-      mkdir -p ~/.tmux
+      mkdir -p ~/.tmux/plugins
 
       ln -sf /etc/dot-files/aspell.conf ~/.aspell.conf
       ln -sf /etc/dot-files/curlrc ~/.curlrc
       ln -sf /etc/dot-files/ctags ~/.ctags
-      ln -sf /etc/dot-files/darktooth/darktooth.sh ~/.config/darktooth/
       ln -sf /etc/dot-files/htoprc ~/.config/htop
       ln -sf /etc/dot-files/git/ignore ~/.config/git
       ln -sf /etc/dot-files/nixpkgs/config.nix ~/.config/nixpkgs
@@ -32,7 +30,7 @@
       ln -sf /etc/dot-files/alphaomega/gtk-3.0/settings.ini ~/.config/gtk-3.0/
       ln -sf /etc/dot-files/alphaomega/i3/config ~/.config/i3/
       ln -sf /etc/dot-files/alphaomega/i3/status.toml ~/.config/i3/
-      ln -sf /etc/dot-files/alphaomega/tmux/kube.tmux ~/.tmux/
+      ln -sf /etc/dot-files/alphaomega/tmux/plugins/kube.tmux ~/.tmux/plugins
       ln -sf /etc/dot-files/alphaomega/tmux.conf ~/.tmux.conf
       ln -sf /etc/dot-files/alphaomega/Xresources ~/.Xresources
 

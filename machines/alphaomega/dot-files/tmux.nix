@@ -16,17 +16,20 @@ set -g base-index 1
 set -g pane-base-index 1
 set -g prefix C-z
 
-# length of tmux status line
-set -g status-left-length 30
+# Set the length of the right status line
 set -g status-right-length 150
 
-set -g pane-active-border-fg colour8
-set -g status-position bottom
-set -g status-left '#[bg=colour8]#[fg=colour7] #S #[bg=colour3]#[fg=colour8] '
-set -g status-right '#(${bash}/bin/bash ~/.tmux/kube.tmux colour0 colour0 colour0) #[fg=colour8]#[bg=colour3]#[fg=colour7]#[bg=colour8] #H #[bg=colour3]#[fg=colour0] %a %D %T '
+# Set the background color of the status line
+set -g status-bg black
 
-# Set the background color
-set -g status-bg colour3
+# Setup left and right status lines
+set -g status-left "#[fg=black,bg=colour3,bold] #S #[fg=colour3,bg=black,nobold,noitalics,nounderscore]"
+set -g status-right "#(${bash}/bin/bash ~/.tmux/plugins/kube.tmux white white white)#[fg=brightblack,bg=black,nobold,noitalics,nounderscore]#[fg=white,bg=brightblack] %Y-%m-%d #[fg=white,bg=brightblack,nobold,noitalics,nounderscore]#[fg=white,bg=brightblack] %H:%M #[fg=colour3,bg=brightblack,nobold,noitalics,nounderscore]#[fg=black,bg=colour3,bold] #H "
+
+# Set window status format
+set -g window-status-format "#[fg=black,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#I #[fg=white,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#W #F #[fg=brightblack,bg=black,nobold,noitalics,nounderscore]"
+set -g window-status-current-format "#[fg=black,bg=colour3,nobold,noitalics,nounderscore] #[fg=black,bg=colour3]#I #[fg=black,bg=colour3,nobold,noitalics,nounderscore] #[fg=black,bg=colour3]#W #F #[fg=colour3,bg=black,nobold,noitalics,nounderscore]"
+set -g window-status-separator ""
 
 bind | split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
