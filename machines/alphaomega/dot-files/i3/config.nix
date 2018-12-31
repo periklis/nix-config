@@ -12,6 +12,12 @@ font pango:Hack 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 # Take a screenshot
 bindsym Ctrl+Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
 
@@ -161,4 +167,12 @@ bar {
         urgent_workspace #2f343a #900000 #ffffff
     }
 }
+
+assign [class="Firefox"] 1
+assign [class="Emacs"] 2
+assign [class="Slack"] 3
+
+exec --no-startup-id firefox
+exec --no-startup-id emacs
+exec --no-startup-id slack
 ''
