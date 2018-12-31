@@ -25,6 +25,7 @@ self: super:
       self.mupdf
       self.openfortivpn
       self.pavucontrol
+      self.rofi
       self.scrot
       self.skype
       self.slack

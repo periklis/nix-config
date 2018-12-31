@@ -28,7 +28,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec "rofi -show window"
 
 # change focus
 bindsym $mod+h focus left

@@ -58,6 +58,7 @@ in
     etc."dot-files/alphaomega/grobi.conf".text              = import ./dot-files/grobi.nix {};
     etc."dot-files/alphaomega/i3/config".text               = import ./dot-files/i3/config.nix { inherit (pkgs) alsaUtils light; };
     etc."dot-files/alphaomega/i3/status.toml".text          = import ./dot-files/i3/status.nix {};
+    etc."dot-files/alphaomega/rofi/config".text             = import ./dot-files/rofi/config.nix {};
     etc."dot-files/alphaomega/tmux/plugins/kube.tmux".text  = pkgs.lib.fileContents ./dot-files/tmux/plugins/kube.tmux;
     etc."dot-files/alphaomega/tmux.conf".text               = import ./dot-files/tmux.nix { inherit(pkgs) bash; };
     etc."dot-files/alphaomega/Xresources".text              = import ./dot-files/Xresources.nix {};

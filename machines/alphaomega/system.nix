@@ -11,6 +11,7 @@
       mkdir -p ~/.config/htop
       mkdir -p ~/.config/i3
       mkdir -p ~/.config/nixpkgs/overlays
+      mkdir -p ~/.config/rofi
       mkdir -p ~/.sbt/1.0/plugins
       mkdir -p ~/.sbt/gpg
       mkdir -p ~/.ssh
@@ -30,6 +31,7 @@
       ln -sf /etc/dot-files/alphaomega/gtk-3.0/settings.ini ~/.config/gtk-3.0/
       ln -sf /etc/dot-files/alphaomega/i3/config ~/.config/i3/
       ln -sf /etc/dot-files/alphaomega/i3/status.toml ~/.config/i3/
+      ln -sf /etc/dot-files/alphaomega/rofi/config ~/.config/rofi/
       ln -sf /etc/dot-files/alphaomega/tmux/plugins/kube.tmux ~/.tmux/plugins
       ln -sf /etc/dot-files/alphaomega/tmux.conf ~/.tmux.conf
       ln -sf /etc/dot-files/alphaomega/Xresources ~/.Xresources
