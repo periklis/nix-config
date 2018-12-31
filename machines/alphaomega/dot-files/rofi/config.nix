@@ -1,11 +1,12 @@
 {}:''
 rofi.modi: window,run,ssh
 rofi.font: Hack 14
-rofi.combi-modi: window,drun,run,ssh
+rofi.combi-modi: window,run,ssh
 rofi.terminal: alacritty
+rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
 rofi.theme: gruvbox-dark
 rofi.hide-scrollbar: true
-rofi.sidebar-mode: true
+rofi.sidebar-mode: false
 rofi.kb-primary-paste: Ctrl+y
 rofi.kb-secondary-paste: Insert
 rofi.kb-mode-next: Alt+n
