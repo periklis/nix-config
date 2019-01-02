@@ -90,6 +90,8 @@
   hardware.pulseaudio.support32Bit = true;
   hardware.opengl.driSupport32Bit = true;
 
+  powerManagement.powertop.enable = true;
+
   virtualisation.docker = {
     enable = true;
     enableOnBoot = true;
