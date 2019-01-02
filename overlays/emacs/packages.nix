@@ -121,7 +121,7 @@ pkgs: epkgs: with epkgs;
   projectile
   py-autopep8
   racer
-  realgud
+  # realgud
   restclient
   ripgrep
   # rtags
