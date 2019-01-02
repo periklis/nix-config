@@ -73,6 +73,8 @@
    ];
   };
 
+  documentation.dev.enable = true;
+
   # List services that you want to enable:
   services.acpid.enable = true;
   services.autorandr.enable = false;
