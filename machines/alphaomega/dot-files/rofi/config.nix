@@ -3,7 +3,7 @@ rofi.modi: window,run,ssh
 rofi.font: Hack 14
 rofi.combi-modi: window,run,ssh
 rofi.terminal: alacritty
-rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
+rofi.ssh-command: {terminal} -e /run/current-system/sw/bin/zsh -i -c "{ssh-client} {host}"
 rofi.theme: gruvbox-dark
 rofi.hide-scrollbar: true
 rofi.sidebar-mode: false
