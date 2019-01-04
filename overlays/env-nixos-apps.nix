@@ -11,6 +11,7 @@ self: super:
       self.adobeReader
       self.arandr
       self.corefonts
+      self.file
       self.firefox
       self.gimp-with-plugins
       self.gnupg
@@ -22,8 +23,11 @@ self: super:
       self.i3status-rust
       self.jetbrains.idea-ultimate
       self.libreoffice
+      self.lsof
       self.mupdf
+      self.networkmanagerapplet
       self.openfortivpn
+      self.pa_applet
       self.pavucontrol
       self.rofi
       self.scrot

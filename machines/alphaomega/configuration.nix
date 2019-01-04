@@ -70,6 +70,7 @@
       font-awesome-ttf
       hack-font
       helvetica-neue-lt-std
+      unifont
    ];
   };
 
