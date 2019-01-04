@@ -17,7 +17,7 @@ let
     "--reverse"
   ];
 
-  manPath = pkgs.lib.concatStringsSep ";" [
+  manPath = pkgs.lib.concatStringsSep ":" [
     "/home/$LOGNAME/.nix-profile/share/man"
     "/home/$LOGNAME/.nix-profile/man"
     "${config.system.path}/share/man"
