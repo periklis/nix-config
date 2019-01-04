@@ -18,7 +18,17 @@ rules:
     primary: DP2
     execute_after:
       - xrandr --dpi 96
-      - "echo Xft.dpi: 96 | xrdb -merge"
+      - i3-msg restart
+
+  # This is a rule for a office's docking station.
+  - name: Office
+    outputs_connected: [eDP1, DP1]
+    outputs_present: [DP1]
+    configure_single: DP1
+    atomic: true
+    primary: DP1
+    execute_after:
+      - xrandr --dpi 144
       - i3-msg restart
 
   # This is a rule for mobile computing, i.e. outside of the docking station defined above.
@@ -30,7 +40,6 @@ rules:
     primary: eDP1
     execute_after:
       - xrandr --dpi 144
-      - "echo Xft.dpi: 144 | xrdb -merge"
       - i3-msg restart
 
   - name: Fallback

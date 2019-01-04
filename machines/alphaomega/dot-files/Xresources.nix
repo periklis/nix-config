@@ -1,4 +1,8 @@
 {}: ''
+#if X_RESOLUTION == 3840
+Xft.dpi: 144
+#endif
+
 #if X_RESOLUTION == 2560
 Xft.dpi: 144
 #endif

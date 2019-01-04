@@ -151,12 +151,24 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+mode "screen" {
+        bindsym o exec --no-startup-id grobi apply Office
+        bindsym h exec --no-startup-id grobi apply HomeOffice
+        bindsym m exec --no-startup-id grobi apply Mobile
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindcode 235 mode "default"
+}
+
+bindcode 235 mode "screen"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 12
     position bottom
     status_command i3status-rs ~/.config/i3/status.toml
+    binding_mode_indicator yes
     colors {
         separator #666666
         background #222222
