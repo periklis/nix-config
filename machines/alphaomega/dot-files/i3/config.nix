@@ -180,6 +180,8 @@ bar {
     }
 }
 
+focus_follows_mouse no
+
 assign [class="Firefox"] 1
 assign [class="Emacs"] 2
 assign [class="Slack"] 3
