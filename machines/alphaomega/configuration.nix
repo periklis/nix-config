@@ -3,6 +3,7 @@
 {
   imports =[
     <nixos-hardware/lenovo/thinkpad/t480s>
+    <nixos-hardware/common/cpu/intel/kaby-lake>
     ./environment.nix
     ./hardware-configuration.nix
     ./programs
@@ -75,13 +76,6 @@
   };
 
   documentation.dev.enable = true;
-
-  # List services that you want to enable:
-  services.acpid.enable = true;
-  services.autorandr.enable = false;
-  services.printing.enable = true;
-  services.tlp.enable = true;
-  services.zfs.autoScrub.enable = true;
 
   # Enable sound.
   sound.enable = true;

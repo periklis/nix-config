@@ -32,6 +32,9 @@ in
     naturalScrolling = true;
   };
 
+  services.xserver.videoDriver = "modesetting";
+  services.xserver.videoDrivers = [ "modesetting" ];
+
   services.xserver.synaptics.enable = false;
 
   # Enable the KDE Desktop Environment.
