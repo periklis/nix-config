@@ -61,6 +61,10 @@ in
       naturalScrolling = true;
     };
 
+    useGlamor = true;
+
+    videoDrivers = [ "intel" "nouveau" ];
+
     windowManager.i3.enable = true;
 
     xautolock = {
