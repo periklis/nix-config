@@ -20,53 +20,53 @@ in
 {
   environment.etc."X11/keymap.xkb".source = keymap;
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.dpi = 144;
-  services.xserver.enableCtrlAltBackspace = true;
-
-  # Enable touchpad support.
-  services.xserver.synaptics.enable = false;
-  services.xserver.libinput = {
+  services.xserver = {
     enable = true;
-    disableWhileTyping = true;
-    middleEmulation = true;
-    naturalScrolling = true;
+    enableCtrlAltBackspace = true;
+
+    dpi = 144;
+
+    displayManager.lightdm = {
+      enable = true;
+      background = "${pkgs.nixos-artwork.wallpapers.stripes-logo}/share/artwork/gnome/nix-wallpaper-stripes-logo.png";
+    };
+
+    displayManager.sessionCommands = ''
+      ${pkgs.xorg.xkbcomp}/bin/xkbcomp ${keymap} $DISPLAY
+    '';
+
+    desktopManager = {
+      default = "none";
+      xterm.enable = false;
+    };
+
+    inputClassSections = [
+      ''
+        Identifier "Trackpoint Wheel Emulation"
+        MatchProduct "ThinkPad USB Keyboard with TrackPoint"
+        Option "EmulateWheel" "true"
+        Option "EmulateWheelButton" "2"
+        Option "Emulate3Buttons" "false"
+        Option "XkbModel" "pc105"
+        Option "XkbLayout" "us,gr"
+        Option "XkbVariant" ",extended"
+        Option "XKbOptions" "grp:alt_space_toggle,ctrl:nocaps,terminate:ctrl_alt_bksp,eurosign:e"
+      ''
+    ];
+
+    libinput = {
+      enable = true;
+      disableWhileTyping = true;
+      middleEmulation = true;
+      naturalScrolling = true;
+    };
+
+    windowManager.i3.enable = true;
+
+    xautolock = {
+      enable = true;
+      locker = "${pkgs.i3lock-fancy}/bin/i3lock-fancy";
+      time   = 5;
+    };
   };
-
-  services.xserver.displayManager.lightdm = {
-    enable = true;
-    background = "${pkgs.nixos-artwork.wallpapers.stripes-logo}/share/artwork/gnome/nix-wallpaper-stripes-logo.png";
-  };
-
-  services.xserver.displayManager.sessionCommands = ''
-    ${pkgs.xorg.xkbcomp}/bin/xkbcomp ${keymap} $DISPLAY
-  '';
-
-  services.xserver.desktopManager = {
-    default = "none";
-    xterm.enable = false;
-  };
-
-  services.xserver.windowManager.i3.enable = true;
-
-  services.xserver.xautolock = {
-    enable = true;
-    locker = "${pkgs.i3lock-fancy}/bin/i3lock-fancy";
-    time   = 5;
-  };
-
-  services.xserver.inputClassSections = [
-    ''
-      Identifier "Trackpoint Wheel Emulation"
-      MatchProduct "ThinkPad USB Keyboard with TrackPoint"
-      Option "EmulateWheel" "true"
-      Option "EmulateWheelButton" "2"
-      Option "Emulate3Buttons" "false"
-      Option "XkbModel" "pc105"
-      Option "XkbLayout" "us,gr"
-      Option "XkbVariant" ",extended"
-      Option "XKbOptions" "grp:alt_space_toggle,ctrl:nocaps,terminate:ctrl_alt_bksp,eurosign:e"
-    ''
-  ];
 }
