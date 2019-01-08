@@ -30,6 +30,7 @@ rules:
     execute_after:
       - xrandr --dpi 144
       - i3-msg restart
+      - xkbcomp /etc/X11/keymap.xkb $DISPLAY
 
   # This is a rule for mobile computing, i.e. outside of the docking station defined above.
   - name: Mobile
