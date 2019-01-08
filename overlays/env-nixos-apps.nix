@@ -33,6 +33,7 @@ self: super:
       self.scrot
       self.skype
       self.slack
+      self.thunderbird
       self.vistafonts
       self.vlc
       self.zoom-us
