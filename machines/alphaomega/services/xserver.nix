@@ -23,8 +23,10 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.dpi = 144;
+  services.xserver.enableCtrlAltBackspace = true;
 
   # Enable touchpad support.
+  services.xserver.synaptics.enable = false;
   services.xserver.libinput = {
     enable = true;
     disableWhileTyping = true;
@@ -32,23 +34,20 @@ in
     naturalScrolling = true;
   };
 
-  services.xserver.videoDriver = "modesetting";
-  services.xserver.videoDrivers = [ "modesetting" ];
-
-  services.xserver.synaptics.enable = false;
-
-  # Enable the KDE Desktop Environment.
   services.xserver.displayManager.lightdm = {
     enable = true;
     background = "${pkgs.nixos-artwork.wallpapers.stripes-logo}/share/artwork/gnome/nix-wallpaper-stripes-logo.png";
   };
+
   services.xserver.displayManager.sessionCommands = ''
     ${pkgs.xorg.xkbcomp}/bin/xkbcomp ${keymap} $DISPLAY
   '';
+
   services.xserver.desktopManager = {
     default = "none";
     xterm.enable = false;
   };
+
   services.xserver.windowManager.i3.enable = true;
 
   services.xserver.xautolock = {

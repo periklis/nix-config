@@ -81,6 +81,7 @@
   sound.enable = true;
   sound.mediaKeys.enable = false;
 
+  hardware.enableAllFirmware = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
   hardware.pulseaudio.enable = true;
