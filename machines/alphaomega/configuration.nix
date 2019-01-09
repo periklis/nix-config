@@ -17,14 +17,12 @@
   networking.hostName = "alphaomega";
   networking.networkmanager.enable = true;
 
-  # Select internationalisation properties.
   i18n = {
     consoleFont = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
     consoleKeyMap = "us";
     defaultLocale = "en_US.UTF-8";
   };
 
-  # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
   nixpkgs.config = {
@@ -40,7 +38,6 @@
                       (attrNames (readDir path)));
 
 
-  # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
      emacsToolsEnv
      gitToolsEnv
@@ -77,18 +74,24 @@
 
   documentation.dev.enable = true;
 
-  # Enable sound.
   sound.enable = true;
   sound.mediaKeys.enable = false;
 
   hardware.enableAllFirmware = true;
+
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
+
   hardware.pulseaudio.enable = true;
   hardware.pulseaudio.support32Bit = true;
+
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.extraPackages = [
+    pkgs.libGL_driver
+    pkgs.linuxPackages.nvidia_x11.out
+  ];
 
   powerManagement.powertop.enable = true;
 
@@ -98,7 +101,6 @@
   };
   virtualisation.virtualbox.host.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ptsirakidis = {
      isNormalUser = true;
      uid = 1000;

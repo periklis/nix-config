@@ -63,7 +63,7 @@ in
 
     useGlamor = true;
 
-    videoDrivers = [ "intel" "nouveau" ];
+    videoDrivers = [ "intel" "nvidia" ];
 
     windowManager.i3.enable = true;
 
