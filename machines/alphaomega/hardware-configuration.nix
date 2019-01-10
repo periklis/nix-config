@@ -9,7 +9,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
-  boot.kernelModules = [ "kvm-intel" "nvidia" "tp_smapi" ];
+  boot.kernelModules = [ "kvm-intel" "nvidia" ];
   boot.extraModulePackages = [ ];
 
   boot.initrd.luks.devices.zroot = {
