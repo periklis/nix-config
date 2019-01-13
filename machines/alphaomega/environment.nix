@@ -113,18 +113,18 @@ in
     ];
 
     shellAliases = {
-      mmv                  = "noglob zmv -W";
       emacs-nox            = "$HOME/Applications/Emacs.app/Contents/MacOS/Emacs -nw";
       ec                   = "emacsclient -t";
       firefox              = "firefox --ProfileManager";
+      fts                  = "ag --nobreak --nonumbers --noheading . | fzf";
+      hcvpn                = "sudo openfortivpn -c /etc/openfortivpn/config";
+      mmv                  = "noglob zmv -W";
       nix-build-out        = "nixBuildOut";
       nix-build-binding-as = "nixBuildBindingAs";
       nix-build-deps       = "nixBuildDeps";
       nix-runtime-deps     = "nixRuntimeDeps";
       nix-check-updates    = "nixCheckUpdates";
       nix-env-rebuild      = "nixEnvRebuild";
-      fts                  = "ag --nobreak --nonumbers --noheading . | fzf";
-      hcvpn                = "sudo openfortivpn -c /etc/openfortivpn/config";
     };
   };
 }
