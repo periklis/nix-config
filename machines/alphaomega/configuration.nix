@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   imports =[
     <nixos-hardware/lenovo/thinkpad/t480s>
@@ -31,12 +30,17 @@
   };
 
   nixpkgs.overlays =
-    let path = ../../overlays; in with builtins;
-      map (n: import (path + ("/" + n)))
+    let
+      paths = [
+        ../../overlays
+        ../../machine/overlays
+      ];
+    in with builtins;
+      concatMap (path:
+        (map (n: import (path + ("/" + n)))
           (filter (n: match ".*\\.nix" n != null ||
                       pathExists (path + ("/" + n + "/default.nix")))
-                      (attrNames (readDir path)));
-
+                      (attrNames (readDir path))))) paths;
 
   environment.systemPackages = with pkgs; [
      emacsToolsEnv
