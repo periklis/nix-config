@@ -1,6 +1,7 @@
 {config, pkgs, ...}:
 {
   imports =[
+    ./printing.nix
     ./xserver.nix
   ];
 
