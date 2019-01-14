@@ -113,7 +113,7 @@ in
     ];
 
     shellAliases = {
-      emacs-nox            = "$HOME/Applications/Emacs.app/Contents/MacOS/Emacs -nw";
+      emacs-nox            = "emacs -nw";
       ec                   = "emacsclient -t";
       firefox              = "firefox --ProfileManager";
       fts                  = "ag --nobreak --nonumbers --noheading . | fzf";
