@@ -1,4 +1,4 @@
-{alsaUtils, light}: ''
+{ light, pamixer }: ''
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -133,10 +133,12 @@ bindsym $mod+Shift+l exec "i3lock-fancy"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-bindcode 121 exec --no-startup-id ${alsaUtils}/bin/amixer -q sset Master toggle
-bindcode 122 exec --no-startup-id ${alsaUtils}/bin/amixer -q sset Master 5%-
-bindcode 123 exec --no-startup-id ${alsaUtils}/bin/amixer -q sset Master 5%+
-bindcode 198 exec --no-startup-id ${alsaUtils}/bin/amixer -q sset Capture toggle
+bindcode 121 exec --no-startup-id ${pamixer}/bin/pamixer --sink 0 -t
+bindcode 122 exec --no-startup-id ${pamixer}/bin/pamixer --sink 0 -d 5
+bindcode 123 exec --no-startup-id ${pamixer}/bin/pamixer --sink 0 -i 5
+bindcode 198 exec --no-startup-id ${pamixer}/bin/pamixer --source 1 -t
+
+
 bindcode 232 exec --no-startup-id ${light}/bin/light -U 5
 bindcode 233 exec --no-startup-id ${light}/bin/light -A 5
 bindcode 245 exec --no-startup-id /run/wrappers/bin/bluetooth toggle

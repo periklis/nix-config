@@ -56,7 +56,7 @@ in
     etc."dot-files/alphaomega/fonts.conf".text              = import ./dot-files/fonts.nix {};
     etc."dot-files/alphaomega/gtk-3.0/settings.ini".text    = import ./dot-files/gtk-3.0/settings.nix {};
     etc."dot-files/alphaomega/grobi.conf".text              = import ./dot-files/grobi.nix {};
-    etc."dot-files/alphaomega/i3/config".text               = import ./dot-files/i3/config.nix { inherit (pkgs) alsaUtils light; };
+    etc."dot-files/alphaomega/i3/config".text               = import ./dot-files/i3/config.nix { inherit (pkgs) light pamixer; };
     etc."dot-files/alphaomega/i3/status.toml".text          = import ./dot-files/i3/status.nix {};
     etc."dot-files/alphaomega/rofi/config".text             = import ./dot-files/rofi/config.nix {};
     etc."dot-files/alphaomega/tmux/plugins/kube.tmux".text  = pkgs.lib.fileContents ./dot-files/tmux/plugins/kube.tmux;
