@@ -9,7 +9,8 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
-  boot.kernelModules = [ "kvm-intel" "nvidia" ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.blacklistedKernelModules = [ "nvidia" "nvidia-drm" "nvidia-uvm" "nvidia-modesetting" "nouveau" ];
   boot.extraModulePackages = [ ];
 
   boot.initrd.luks.devices.zroot = {

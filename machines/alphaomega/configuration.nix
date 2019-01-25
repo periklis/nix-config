@@ -2,7 +2,6 @@
 {
   imports =[
     <nixos-hardware/lenovo/thinkpad/t480s>
-    <nixos-hardware/common/cpu/intel/kaby-lake>
     ./environment.nix
     ./hardware-configuration.nix
     ./programs
@@ -95,10 +94,6 @@
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
-  hardware.opengl.extraPackages = [
-    pkgs.libGL_driver
-    pkgs.linuxPackages.nvidia_x11.out
-  ];
 
   powerManagement.powertop.enable = true;
 

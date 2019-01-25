@@ -61,9 +61,9 @@ in
       naturalScrolling = true;
     };
 
-    useGlamor = false;
+    useGlamor = true;
 
-    videoDrivers = [ "intel" "nvidia" ];
+    videoDrivers = [ "intel" ];
 
     windowManager.i3.enable = true;
 
