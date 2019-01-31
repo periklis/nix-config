@@ -11,6 +11,7 @@ self: super:
       self.minikube
       self.google-cloud-sdk
       self.packer
+      self.stern
       self.vault
     ];
   };
