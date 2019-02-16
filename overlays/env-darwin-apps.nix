@@ -18,6 +18,7 @@ self: super:
       self.oh-my-zsh
       self.openssh
       self.patch
+      self.pinentry_mac
       self.reattach-to-user-namespace
       self.rsync
       self.which
