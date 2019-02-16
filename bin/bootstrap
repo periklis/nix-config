@@ -1,36 +1,17 @@
-#!/bin/bash -xe
+#!/usr/bin/env bash
 
 BOOT_USER=${1:-periklis}
 BOOT_MACHINE=${2:-theopompos}
 BOOT_BRANCH=${3:-origin/master}
+BOOT_ARCH=${4:-x86_64-linux}
 
 VALID_USERS=("periklis" "ptsirakidis")
 VALID_MACHINES=("alphaomega" "theopompos")
 VALID_BRANCHES=("origin/master" "latest-release")
+VALID_ARCHS=("x86_64-linux" "x86_64-darwin")
 
 BASE_DIR=~/projects/"${BOOT_USER}"
 BASE_MACHINE_DIR="${BASE_DIR}/nix-config/${BOOT_MACHINE}"
-
-if [[ $(xcode-select -p) == "" ]];
-then
-    echo "Command line tools not installed!"
-    xcode-select --install
-    exit 1
-fi
-
-if [ ! -f /usr/local/bin/chunkc ] && [ ! -f /usr/local/bin/chunkwm ] && [ ! -f /usr/local/lib/tiling.so ] && [ ! -f /usr/local/lib/border.so ] && [ ! -f /usr/local/lib/ffm.so ];
-then
-    echo "Install chunkwm binaries and libraries first"
-    exit 1
-fi
-exit 1
-
-if [ ! -f ~/.newsrc ] && [ ! -f ~/.newsrc.eld ];
-then
-    echo "Transfer .newsrc and .newsrc.eld to this machine"
-    exit 1
-fi
-exit 1
 
 if [[ " ${VALID_USERS[*]} " != *"$BOOT_USER"* ]];
 then
@@ -50,16 +31,37 @@ then
     exit 1
 fi
 
-echo "Booting machine $BOOT_MACHINE for $BOOT_USER on $BOOT_BRANCH"
-echo
-echo "Initialize base repositories"
+if [[ " ${VALID_ARCHS[*]} " != *"$BOOT_ARCH"* ]];
+then
+    echo "Provided arch is not valid!"
+    exit 1
+fi
+
+if [[ $BOOT_ARCH == "x86_64-darwin" ]];
+then
+    if [[ $(xcode-select -p) == "" ]];
+    then
+        echo "Command line tools not installed!"
+        xcode-select --install
+        exit 1
+    fi
+fi
+
+if [ ! -f ~/.newsrc ] && [ ! -f ~/.newsrc.eld ];
+then
+    echo "Transfer .newsrc and .newsrc.eld to this machine"
+    exit 1
+fi
+
+echo "Booting machine $BOOT_MACHINE:$BOOT_ARCH for $BOOT_USER on $BOOT_BRANCH"
+echo -e "\nInitialize base repositories"
 
 if [ ! -d "${BASE_DIR}" ];
 then
     mkdir -p "${BASE_DIR}"
 fi
 
-cd "${BASE_DIR}"
+cd "${BASE_DIR}" || exit
 
 if [[ -d "${BASE_DIR}/nix-config" ]]; then
     echo "Base repository nix-config exists"
@@ -68,7 +70,7 @@ else
 fi
 
 
-cd "${BASE_DIR}"/nix-config
+cd "${BASE_DIR}"/nix-config || exit
 if [[ -f "${BASE_DIR}/nix-config/nixpkgs/default.nix" ]]; then
     echo "Base nix-config submodule nixpkgs exists"
 else
@@ -87,14 +89,22 @@ else
     git submodule update --init -- "${BOOT_MACHINE}"
 fi
 
-echo
-echo "Symlink $BOOT_MACHINE machine configuration"
-ln -sf "${BASE_MACHINE_DIR}/machine.nix" machine.nix
+echo -e "\nCreate nix-config directory symlinks for $BOOT_MACHINE"
+echo "Symlink $BOOT_MACHINE configiration.nix"
+ln -sf "$BASE_DIR/nix-config/machines/$BOOT_MACHINE/configuration.nix" configuration.nix
 
-echo
-echo "Initialize emacs repositories"
+echo "Symlink $BOOT_MACHINE config directory"
+ln -sf "$BASE_DIR/nix-config/$BOOT_MACHINE" machine
 
-cd "${BASE_DIR}"
+if [[ $BOOT_ARCH == "x86_64-darwin" ]];
+then
+    echo "Symlink $BOOT_MACHINE machine configuration"
+    ln -sf "${BASE_MACHINE_DIR}/machine.nix" machine.nix
+fi
+
+echo -e "\nInitialize emacs repositories"
+
+cd "${BASE_DIR}" || exit
 if [[ -d "${BASE_DIR}/dot-emacs" ]]; then
     echo "Repository dot-emacs exists"
 else
@@ -105,8 +115,7 @@ else
     ln -sf "${BASE_DIR}/dot-emacs/machines/${BOOT_MACHINE}/local.el" dot-emacs/local.el
 fi
 
-echo
-echo "Initialize org repository"
+echo -e "\nInitialize org repository"
 if [[ -d "${BASE_DIR}/org" ]]; then
     echo "Repository org exists"
 else
@@ -114,35 +123,41 @@ else
     ln -sf "${BASE_DIR}/org" ~/org
 fi
 
-if [[ :$PATH: != *:"/nix/var/nix/profiles/default/bin":* ]];
+#
+# Install nix and nix-darwin on macOS machines
+#
+if [[ $BOOT_ARCH == "x86_64-darwin" ]];
 then
-    echo
-    echo "Install Nix Package Manager"
-    curl https://nixos.org/nix/install | sh
-fi
+    if [[ :$PATH: != *:"/nix/var/nix/profiles/default/bin":* ]];
+    then
+        echo
+        echo "Install Nix Package Manager"
+        curl https://nixos.org/nix/install | sh
+    fi
 
-if [[ :$NIX_PATH: != *:"${BASE_DIR}/nix-config/nix-darwin":* ]];
-then
-    echo
-    echo "Install Nix-Darwin Manager"
-    sudo ln -sf private/var/run /run
-    export NIX_PATH=darwin="${BASE_DIR}"/nix-config/nix-darwin:darwin-config="${BASE_DIR}"/nix-config/configuration.nix:"${NIX_PATH}"
-    "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild build
-    "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild switch
+    if [[ :$NIX_PATH: != *:"${BASE_DIR}/nix-config/nix-darwin":* ]];
+    then
+        echo
+        echo "Install Nix-Darwin Manager"
+        sudo ln -sf private/var/run /run
+        export NIX_PATH=darwin="${BASE_DIR}"/nix-config/nix-darwin:darwin-config="${BASE_DIR}"/nix-config/configuration.nix:"${NIX_PATH}"
+        "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild build
+        "$(nix-build '<darwin>' -A system --no-out-link)"/sw/bin/darwin-rebuild switch
 
-    echo "Change default shell to zsh"
-    chsh -s /run/current-system/sw/bin/zsh -u ${BOOT_USER}
+        echo "Change default shell to zsh"
+        chsh -s /run/current-system/sw/bin/zsh -u "${BOOT_USER}"
 
-    echo "Add sourcing of zprofile for user"
-    echo "
-if [[ ! -z "\$EMACS" ]]; then
+        echo "Add sourcing of zprofile for user"
+        echo "
+if [[ ! -z \"\$EMACS\" ]]; then
    . /etc/zprofile
 fi" > ~/.zshrc
 
-    if [ $(which nix) == "/run/current-system/sw/bin/nix" ];
-    then
-        echo "Nix provided for all users system wide"
-    else
-        echo "Missing nix installation for all users"
+        if [ "$(command -v nix)" == "/run/current-system/sw/bin/nix" ];
+        then
+            echo "Nix provided for all users system wide"
+        else
+            echo "Missing nix installation for all users"
+        fi
     fi
 fi

@@ -1,13 +1,15 @@
-# Nix-Config
+# nix-config
 
-This project defines my declarative multi-machine macOS machine configuration. It is based [nix][nixos] and [nix-darwin][nix-darwin] and makes use of sub-modules for tracking dependencies.
+This project defines my declarative multi-machine configuration for NixOS and macOS. It is based [nix][nixos] and [nix-darwin][nix-darwin]. It is based upon sub-modules for tracking dependencies (e.g. machine specific dot-files, secret files).
 
 # Rationale
 
-The main objective for this project is to have single machine configurations with extensions for machine dependent configurations. In addition the setup of new machine should be as easy as running a single script beyond creating access credentials to repositories. The following requirements are met:
+The main objective for this project is to have single machine configurations in addition to  machine dependent configurations. The setup of new machine should be as easy as running a single script beyond creating access credentials to repositories.
 
+The following requirements are met:
 - Single script bootstrap process
 - Shareable across machines
+- Shareable across architectures
 - Extensible for machine-specific and per-user specific configurations
 - Follows a declarative programming model for the system configuration
 - Explicit dependency management for `nix-darwin`, `nixpkgs` and machine configurations
@@ -25,7 +27,7 @@ To bootstrap this project a new macOS machine, you have to run the following scr
 
 ```Shell
 $ curl https://raw.githubusercontent.com/periklis/nix-config/master/bin/bootstrap |  \
-  bash -s -- $USERNAME $MACHINE_NAME $TARGET_NIXPGS_BRANCH
+  bash -s -- $USERNAME $MACHINE_NAME $TARGET_NIXPGS_BRANCH $ARCH
 ```
 
 # Acknowledgments
