@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  machine = import ../../machine/machine.nix { inherit lib pkgs; };
+  machine = import ../../machine.nix { inherit lib pkgs; };
 
   inherit(machine) activationScripts etc launchd  machinePackages networking nix services;
 in
