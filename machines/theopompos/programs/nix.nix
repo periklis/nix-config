@@ -5,13 +5,9 @@
   package = nix;
 
   useDaemon  = true;
-  maxJobs    = 32;
-  buildCores = 4;
+  maxJobs    = 4;
+  buildCores = 2;
   useSandbox = false;
-
-  # binaryCaches = [ https://periklis.cachix.org ];
-
-  # binaryCachePublicKeys = [ "periklis.cachix.org-1:6VLAxmnMVu7ehRHlACuxyeGDjGI89d7Qn0UTdsZi358=" ];
 
   trustedUsers = [ "root" ];
   allowedUsers = [ "*" ];
