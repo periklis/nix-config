@@ -68,6 +68,7 @@ pkgs: epkgs: with epkgs;
   go-projectile
   go-rename
   go-snippets
+  gotest
   google-c-style
   google-maps
   google-translate
