@@ -1,6 +1,8 @@
 {config, pkgs, ...}:
 {
   imports =[
+    ./dovecot.nix
+    ./offlineimap.nix
     ./printing.nix
     ./xserver.nix
   ];

@@ -11,7 +11,9 @@
       mkdir -p ~/.config/htop
       mkdir -p ~/.config/i3
       mkdir -p ~/.config/nixpkgs/overlays
+      mkdir -p ~/.config/offlineimap
       mkdir -p ~/.config/rofi
+      mkdir -p ~/.maildirs/hcag
       mkdir -p ~/.sbt/1.0/plugins
       mkdir -p ~/.sbt/gpg
       mkdir -p ~/.ssh
@@ -48,6 +50,9 @@
 
       ln -sf /etc/dot-files/ptsirakidis/gitconfig ~/.gitconfig
       ln -sf /etc/dot-files/ptsirakidis/gnus.el ~/.gnus.el
+      ln -sf /etc/dot-files/ptsirakidis/offlineimap/config ~/.config/offlineimap/config
+      ln -sf /etc/dot-files/ptsirakidis/offlineimap/ca.crt ~/.config/offlineimap/ca.crt
+      ln -sf /etc/dot-files/ptsirakidis/offlineimap/offlineimap.py ~/.config/offlineimap/offlineimap.py
       ln -sf /etc/dot-files/ptsirakidis/signature ~/.signature
       ln -sf /etc/dot-files/ptsirakidis/sbt/1.0/global.sbt ~/.sbt/1.0/global.sbt
       ln -sf /etc/dot-files/ptsirakidis/sbt/1.0/plugins/plugins.sbt ~/.sbt/1.0/plugins/plugins.sbt
