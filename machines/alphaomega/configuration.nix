@@ -2,9 +2,9 @@
 {
   imports =[
     <nixos-hardware/lenovo/thinkpad/t480s>
-    ./modules/coredns.nix
     ./environment.nix
     ./hardware-configuration.nix
+    ./modules
     ./programs
     ./services
     ./system.nix
