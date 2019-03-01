@@ -1,6 +1,7 @@
 {config, pkgs, ...}:
 {
   imports =[
+    ./coredns.nix
     ./dovecot.nix
     ./offlineimap.nix
     ./printing.nix

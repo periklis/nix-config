@@ -2,6 +2,7 @@
 {
   imports =[
     <nixos-hardware/lenovo/thinkpad/t480s>
+    ./modules/coredns.nix
     ./environment.nix
     ./hardware-configuration.nix
     ./programs
@@ -14,6 +15,7 @@
   networking.hostId = "c0bebeef";
   networking.hostName = "alphaomega";
   networking.networkmanager.enable = true;
+  networking.nameservers = [ "127.0.0.1" ];
 
   i18n = {
     consoleFont = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
