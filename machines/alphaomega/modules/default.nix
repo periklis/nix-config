@@ -1,6 +1,4 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    ./coredns.nix
-  ];
+  imports = [];
 }

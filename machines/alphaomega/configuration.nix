@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   imports =[
-    # <nixos-hardware/lenovo/thinkpad/t480s>
     <nixos-hardware/common/cpu/intel>
     <nixos-hardware/common/pc/laptop/acpi_call.nix>
     <nixos-hardware/lenovo/thinkpad>

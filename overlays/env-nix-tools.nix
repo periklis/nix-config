@@ -15,7 +15,7 @@ self: super:
       self.nix-index
       self.nix-review
       self.nix-top
-      self.vulnix # Pending https://github.com/NixOS/nixpkgs/issues/51016
+      # self.vulnix
       self.nix-delegate
       self.nix-deploy
       self.nix-diff
