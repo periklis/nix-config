@@ -40,12 +40,18 @@
 
       for o in $(ls ~/projects/ptsirakidis/nix-config/overlays);
       do
-        ln -sf ~/projects/ptsirakidis/nix-config/overlays/$o ~/.config/nixpkgs/overlays/$o
+        if [ -f "$o" ];
+        then
+          ln -sf ~/projects/ptsirakidis/nix-config/overlays/$o ~/.config/nixpkgs/overlays/$o
+        fi
       done
 
       for o in $(ls ~/projects/ptsirakidis/nix-config/alphaomega/overlays);
       do
-        ln -sf ~/projects/ptsirakidis/nix-config/alphaomega/overlays/$o ~/.config/nixpkgs/overlays/$o
+        if [ -f "$o" ];
+        then
+          ln -sf ~/projects/ptsirakidis/nix-config/alphaomega/overlays/$o ~/.config/nixpkgs/overlays/$o
+        fi
       done
 
       ln -sf /etc/dot-files/ptsirakidis/gitconfig ~/.gitconfig
