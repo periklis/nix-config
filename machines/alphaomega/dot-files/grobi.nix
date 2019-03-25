@@ -19,6 +19,7 @@ rules:
     execute_after:
       - xrandr --dpi 96
       - i3-msg restart
+      - xkbcomp /etc/X11/keymap.xkb $DISPLAY
 
   # This is a rule for a office's docking station.
   - name: Office
