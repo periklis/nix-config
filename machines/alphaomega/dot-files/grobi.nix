@@ -29,7 +29,7 @@ rules:
     atomic: true
     primary: DP1
     execute_after:
-      - xrandr --dpi 144
+      - xrandr --dpi 192
       - i3-msg restart
       - xkbcomp /etc/X11/keymap.xkb $DISPLAY
 
