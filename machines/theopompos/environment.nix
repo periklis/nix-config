@@ -46,8 +46,8 @@
     ALTERNATE_EDITOR  = "vim";
     LSCOLORS          = "gxfxbEaEBxxEhEhBaDaCaD";
     MANPATH           = [
-      "/Users/$LOGNAME/.nix-profile/share/man"
-      "/Users/$LOGNAME/.nix-profile/man"
+      "/Users/periklis/.nix-profile/share/man"
+      "/Users/periklis/.nix-profile/man"
       "${config.system.path}/share/man"
       "${config.system.path}/man"
       "/usr/local/share/man"

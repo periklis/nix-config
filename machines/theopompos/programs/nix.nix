@@ -21,10 +21,10 @@
     show-trace = true
   '';
 
-  nixPath = [
-    "darwin=$HOME/projects/$LOGNAME/nix-config/nix-darwin"
-    "darwin-config=$HOME/projects/$LOGNAME/nix-config/configuration.nix"
-    "nixpkgs=/Users/$LOGNAME/projects/$LOGNAME/nix-config/nixpkgs"
+  nixpath = [
+    "darwin=$HOME/projects/periklis/nix-config/nix-darwin"
+    "darwin-config=$HOME/projects/periklis/nix-config/configuration.nix"
+    "nixpkgs=/Users/periklis/projects/periklis/nix-config/nixpkgs"
     "/nix/var/nix/profiles/per-user/root/channels"
   ];
 }
