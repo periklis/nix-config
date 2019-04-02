@@ -23,11 +23,11 @@ rules:
 
   # This is a rule for a office's docking station.
   - name: Office
-    outputs_connected: [eDP1, DP1]
-    outputs_present: [DP1]
-    configure_single: DP1
+    outputs_connected: [eDP1, DP2]
+    outputs_present: [DP2]
+    configure_single: DP2
     atomic: true
-    primary: DP1
+    primary: DP2
     execute_after:
       - xrandr --dpi 192
       - i3-msg restart
