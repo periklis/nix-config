@@ -10,8 +10,20 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.blacklistedKernelModules = [ "nvidia" "nvidia-drm" "nvidia-uvm" "nvidia-modesetting" "nouveau" ];
   boot.extraModulePackages = [ ];
+
+  boot.kernelParams = [
+    "snd_hda_intel.power_save=1"
+    "i915.enable_psr=0"
+    "bbswitch.load_state=0"
+    "bbswitch.unload_state=1"
+  ];
+
+  boot.kernel.sysctl = {
+    "kernel.nmi_watchdog" = 0;
+    "vm.dirty_writeback_centisecs" = 1500;
+    "vm.laptop_mode" = 5;
+  };
 
   boot.initrd.luks.devices.zroot = {
     device = "/dev/disk/by-uuid/270c62c0-70d4-44a0-8a3b-50ce8941b61a";
@@ -51,4 +63,8 @@
 
   nix.maxJobs = lib.mkDefault 8;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+
+  systemd.tmpfiles.rules = [
+    "w /sys/devices/system/cpu/cpufreq/policy?/energy_performance_preference - - - - balance_power"
+  ];
 }

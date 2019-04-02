@@ -205,9 +205,6 @@ assign [class="Firefox"] 1
 assign [class="Emacs"] 2
 assign [class="Slack"] 3
 
-exec --no-startup-id firefox
-exec --no-startup-id emacs
-exec --no-startup-id slack
 exec --no-startup-id nm-applet
 exec --no-startup-id pa-applet
 ''

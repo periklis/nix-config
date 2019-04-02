@@ -5,6 +5,7 @@
     ./dovecot.nix
     ./offlineimap.nix
     ./printing.nix
+    ./udev.nix
     ./xserver.nix
   ];
 
