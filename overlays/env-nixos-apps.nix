@@ -10,12 +10,12 @@ self: super:
     paths = [
       self.adobeReader
       self.arandr
+      self.chromium
       self.corefonts
       self.file
       self.firefox
       self.gimp-with-plugins
       self.gnupg
-      self.google-chrome-dev
       self.grobi
       self.handbrake
       self.imagemagick
