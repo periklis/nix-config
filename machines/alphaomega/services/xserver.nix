@@ -24,7 +24,7 @@ in
     enable = true;
     enableCtrlAltBackspace = true;
 
-    dpi = 144;
+    dpi = 192;
 
     displayManager.lightdm = {
       enable = true;

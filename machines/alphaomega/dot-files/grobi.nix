@@ -41,7 +41,7 @@ rules:
     configure_single: eDP1
     primary: eDP1
     execute_after:
-      - xrandr --dpi 144
+      - xrandr --dpi 192
       - i3-msg restart
 
   - name: Fallback

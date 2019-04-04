@@ -24,7 +24,7 @@ client.urgent $red $red $white $red $red
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack 10
+font pango:Hack 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -184,7 +184,7 @@ bindcode 235 mode "screen"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 12
+    font pango:DejaVu Sans Mono, FontAwesome 8
     position bottom
     status_command i3status-rs ~/.config/i3/status.toml
     binding_mode_indicator yes
