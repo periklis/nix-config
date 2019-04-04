@@ -91,7 +91,7 @@
  
   hardware.enableAllFirmware = true;
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth.enable = false;
   hardware.bluetooth.powerOnBoot = false;
 
   hardware.pulseaudio = {
