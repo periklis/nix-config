@@ -28,7 +28,6 @@
 
   boot.kernelParams = [
     "snd_hda_intel.power_save=1"
-    "i915.enable_fbc=1"
     "i915.enable_psr=2"    
     "bbswitch.load_state=0"
     "bbswitch.unload_state=1"
