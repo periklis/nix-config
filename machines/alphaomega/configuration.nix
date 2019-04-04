@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 {
   imports =[
-    <nixos-hardware/common/cpu/intel>
-    <nixos-hardware/common/pc/laptop/acpi_call.nix>
-    <nixos-hardware/lenovo/thinkpad>
     ./environment.nix
     ./hardware-configuration.nix
     ./modules
@@ -83,30 +80,6 @@
 
   sound.enable = true;
   sound.mediaKeys.enable = false;
-
-  hardware.enableAllFirmware = true;
-
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = false;
-  # hardware.bumblebee.enable = true;
-  # hardware.bumblebee.pmMethod = "bbswitch";
-  # disable card with bbswitch by default
-  hardware.nvidiaOptimus.disable = true;
-  # install nvidia drivers in addition to intel one
-  hardware.opengl.extraPackages = [ pkgs.linuxPackages.nvidia_x11.out ];
-  hardware.opengl.extraPackages32 = [ pkgs.linuxPackages.nvidia_x11.lib32 ];
-
-  hardware.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudioFull;
-    support32Bit = true;
-  };
-
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
-
-  powerManagement.powertop.enable = true;
 
   virtualisation.docker = {
     enable = true;

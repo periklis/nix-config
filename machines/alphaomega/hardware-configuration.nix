@@ -4,17 +4,32 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
-    ];
+  imports = [
+    <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+  ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.initrd.kernelModules = [ "i915" ];
+
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "nvme"
+    "usb_storage"
+    "sd_mod"
+  ];
+
+  boot.kernelModules = [
+    "acpi_call"
+    "kvm-intel"
+  ];
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    acpi_call
+  ];
 
   boot.kernelParams = [
     "snd_hda_intel.power_save=1"
-    "i915.enable_psr=0"
+    "i915.enable_fbc=1"
+    "i915.enable_psr=2"    
     "bbswitch.load_state=0"
     "bbswitch.unload_state=1"
   ];
@@ -59,12 +74,46 @@
       fsType = "vfat";
     };
 
-  swapDevices = [ ];
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  hardware.nvidiaOptimus.disable = true;
+  
+  hardware.opengl.extraPackages = with pkgs; [
+    vaapiIntel
+    vaapiVdpau
+    libvdpau-va-gl
+    linuxPackages.nvidia_x11.out
+  ];
+  hardware.opengl.extraPackages32 = with pkgs; [
+    linuxPackages.nvidia_x11.lib32
+  ];
+ 
+  hardware.enableAllFirmware = true;
+
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = false;
+
+  hardware.pulseaudio = {
+    enable = true;
+    package = pkgs.pulseaudioFull;
+    support32Bit = true;
+  };
+
+  hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;
+
+  hardware.trackpoint.enable = lib.mkDefault true;
 
   nix.maxJobs = lib.mkDefault 8;
+  
+  powerManagement.powertop.enable = true;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   systemd.tmpfiles.rules = [
     "w /sys/devices/system/cpu/cpufreq/policy?/energy_performance_preference - - - - balance_power"
   ];
+
+  swapDevices = [ ];
 }
