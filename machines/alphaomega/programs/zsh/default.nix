@@ -9,11 +9,14 @@ in
     enableCompletion = false;
     syntaxHighlighting.enable = true;
     ohMyZsh = {
-    enable = true;
+      enable = true;
       plugins = [
         "docker"
         "emacs"
         "git"
+        "git-extras"
+        "kubectl"
+        "sudo"
       ];
       theme = "sunrise";
     };
