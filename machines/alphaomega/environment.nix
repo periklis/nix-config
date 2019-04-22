@@ -18,8 +18,8 @@ let
   ];
 
   manPath = pkgs.lib.concatStringsSep ":" [
-    "/home/$LOGNAME/.nix-profile/share/man"
-    "/home/$LOGNAME/.nix-profile/man"
+    "/home/ptsirakidis/.nix-profile/share/man"
+    "/home/ptsirakidis/.nix-profile/man"
     "${config.system.path}/share/man"
     "${config.system.path}/man"
     "/usr/local/share/man"
@@ -96,7 +96,6 @@ in
       export LSCOLORS="gxfxbEaEBxxEhEhBaDaCaD"
       export MANPATH="${manPath}"
       export ACLOCAL_PATH="$HOME/.nix-profile/share/aclocal"
-      export CACHIX_SIGNING_KEY="UezrEGeJqHdXD97YjoMqdAV64/O+Sk5mzsBH7hV7rrjpUsDGacxW7t6FEeUAK7HJ4YOMYjz13tCfRRN2xmLfnw=="
       export GOPATH="$HOME/projects/golang"
       export PKG_CONFIG_PATH="$HOME/.nix-profile/lib/pkgconfig"
       export PYTHONPATH="$HOME/.local/lib/python3.6/site-packages:${pkgs.pythonToolsEnv}/lib/python3.6/site-packages"

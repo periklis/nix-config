@@ -5,9 +5,6 @@ in
 {
   programs.zsh = {
     enable = true;
-    autosuggestions.enable = false;
-    enableCompletion = false;
-    syntaxHighlighting.enable = true;
     ohMyZsh = {
       enable = true;
       plugins = [
