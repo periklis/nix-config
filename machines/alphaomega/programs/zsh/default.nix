@@ -5,6 +5,7 @@ in
 {
   programs.zsh = {
     enable = true;
+    enableCompletion = false;
     ohMyZsh = {
       enable = true;
       plugins = [
