@@ -21,7 +21,7 @@
     show-trace = true
   '';
 
-  nixpath = [
+  nixPath = [
     "darwin=$HOME/projects/periklis/nix-config/nix-darwin"
     "darwin-config=$HOME/projects/periklis/nix-config/configuration.nix"
     "nixpkgs=/Users/periklis/projects/periklis/nix-config/nixpkgs"
