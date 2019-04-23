@@ -11,8 +11,11 @@ self: super:
  networkingToolsEnv = super.buildEnv {
    name = "networkingTools";
    paths = [
+     self.bind
      self.nghttp2
      self.nmap
+     self.tcpdump
+     self.tshark
      self.wget
    ];
   };

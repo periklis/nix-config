@@ -21,18 +21,20 @@ self: super:
       self.imagemagick
       self.i3lock-fancy
       self.i3status-rust
-      self.jetbrains.idea-ultimate
+      self.killall
       self.lsof
       self.mupdf
       self.networkmanagerapplet
       self.openfortivpn
       self.pa_applet
       self.pavucontrol
+      self.powertop
       self.rofi
       self.scrot
       self.skype
       self.slack
       self.thunderbird
+      self.xorg.xkbcomp
       self.vistafonts
       self.vlc
       self.zoom-us
