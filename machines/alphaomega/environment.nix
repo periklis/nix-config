@@ -71,6 +71,7 @@ in
     etc."dot-files/ptsirakidis/offlineimap/config".text          = import ../../machine/per-user/offlineimap/config.nix { inherit (pkgs) cacert; };
     etc."dot-files/ptsirakidis/offlineimap/ca.crt".text          = import ../../machine/per-user/offlineimap/ca.nix {};
     etc."dot-files/ptsirakidis/offlineimap/offlineimap.py".text  = import ../../machine/per-user/offlineimap/offlineimap.nix { inherit (pkgs) gnupg python; };
+    etc."dot-files/ptsirakidis/sbt/repositories".text          = import ../../machine/per-user/sbt/repositories.nix {};
     etc."dot-files/ptsirakidis/sbt/1.0/global.sbt".text          = import ../../machine/per-user/sbt/1.0/global.nix {};
     etc."dot-files/ptsirakidis/sbt/1.0/plugins/plugins.sbt".text = import ../../machine/per-user/sbt/1.0/plugins/plugins.nix {};
     etc."dot-files/ptsirakidis/sbt/1.0/sonatype.sbt".text        = import ../../machine/per-user/sbt/1.0/sonatype.nix {};

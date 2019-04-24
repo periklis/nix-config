@@ -60,6 +60,7 @@
       ln -sf /etc/dot-files/ptsirakidis/offlineimap/ca.crt ~/.config/offlineimap/ca.crt
       ln -sf /etc/dot-files/ptsirakidis/offlineimap/offlineimap.py ~/.config/offlineimap/offlineimap.py
       ln -sf /etc/dot-files/ptsirakidis/signature ~/.signature
+      ln -sf /etc/dot-files/ptsirakidis/sbt/repositories ~/.sbt/repositories
       ln -sf /etc/dot-files/ptsirakidis/sbt/1.0/global.sbt ~/.sbt/1.0/global.sbt
       ln -sf /etc/dot-files/ptsirakidis/sbt/1.0/plugins/plugins.sbt ~/.sbt/1.0/plugins/plugins.sbt
       ln -sf /etc/dot-files/ptsirakidis/sbt/1.0/sonatype.sbt ~/.sbt/1.0/sonatype.sbt
