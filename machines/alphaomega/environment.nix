@@ -98,6 +98,7 @@ in
       export MANPATH="${manPath}"
       export ACLOCAL_PATH="$HOME/.nix-profile/share/aclocal"
       export GOPATH="$HOME/projects/golang"
+      export GOPROXY="https://proxy.golang.org"
       export PKG_CONFIG_PATH="$HOME/.nix-profile/lib/pkgconfig"
       export PYTHONPATH="$HOME/.local/lib/python3.6/site-packages:${pkgs.pythonToolsEnv}/lib/python3.6/site-packages"
       export ZSH_CUSTOM="$HOME/.zsh/custom"
