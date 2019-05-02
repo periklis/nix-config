@@ -13,7 +13,11 @@
 
   networking.hostId = "c0bebeef";
   networking.hostName = "alphaomega";
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.powersave = true;
+    insertNameservers = [ "127.0.0.1" ];
+  };
   networking.nameservers = [ "127.0.0.1" ];
 
   i18n = {
