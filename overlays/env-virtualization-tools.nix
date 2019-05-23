@@ -3,10 +3,10 @@ self: super:
   virtualizationToolsEnv = super.buildEnv {
     name = "virtualizationTools";
     paths = [
-      self.docker
-      self.docker-machine
-      self.docker-compose
-      self.socat
+      self.buildah
+      self.podman
+      self.runc
+      self.skopeo
       self.vagrant
     ];
   };
