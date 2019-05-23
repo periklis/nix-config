@@ -31,7 +31,6 @@ self: super:
       self.powertop
       self.rofi
       self.scrot
-      self.skype
       self.slack
       self.thunderbird
       self.xorg.xkbcomp
