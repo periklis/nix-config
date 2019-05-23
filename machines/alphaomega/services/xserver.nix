@@ -66,11 +66,5 @@ in
     videoDrivers = [ "intel" ];
 
     windowManager.i3.enable = true;
-
-    xautolock = {
-      enable = true;
-      locker = "${pkgs.i3lock-fancy}/bin/i3lock-fancy";
-      time   = 5;
-    };
   };
 }
