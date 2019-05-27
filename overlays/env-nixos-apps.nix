@@ -34,7 +34,7 @@ self: super:
       self.slack
       self.thunderbird
       self.xorg.xkbcomp
-      self.vistafonts
+      # self.vistafonts
       self.vlc
       self.zoom-us
     ];
