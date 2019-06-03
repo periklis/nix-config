@@ -61,6 +61,7 @@
      pythonToolsEnv
      scalaToolsEnv
      systemToolsEnv
+     virtualizationToolsEnv
   ];
 
   fonts = {
@@ -86,14 +87,20 @@
   sound.mediaKeys.enable = false;
 
   virtualisation.docker = {
-    enable = true;
-    enableOnBoot = true;
+    enable = false;
+    enableOnBoot = false;
   };
-  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enable = false;
 
   users.users.ptsirakidis = {
      isNormalUser = true;
      uid = 1000;
+     subUidRanges = [
+       { count = 65536; startUid = 10000; }
+     ];
+     subGidRanges = [
+       { count = 65536; startGid = 10000; }
+     ];
      description = "Periklis Tsirakidis";
      extraGroups = [ "wheel" "networkmanager" "docker" "video" ];
      shell = "/run/current-system/sw/bin/zsh";

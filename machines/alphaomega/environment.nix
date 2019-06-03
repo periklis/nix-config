@@ -38,6 +38,9 @@ let
 in
 {
   environment = {
+    etc."containers/registries.conf".text = import ./etc/containers/registries.nix {};
+    etc."containers/policy.json".text     = import ./etc/containers/policy.nix {};
+
     #
     # Common config files
     #
@@ -126,6 +129,7 @@ in
         "--enable-native-gpu-memory-buffers"
         "--enable-zero-copy"
       ];
+      docker               = "podman";
       emacs-nox            = "emacs -nw";
       ec                   = "emacsclient -t";
       firefox              = "firefox --ProfileManager";
