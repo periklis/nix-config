@@ -82,46 +82,77 @@ font:
 # Should display the render timer
 render_timer: false
 
-# Colors (Darktooth)
+# Colors (Gruvbox dark)
 colors:
-
   # Default colors
   primary:
+    # hard contrast: background = '0x1d2021'
     background: '0x282828'
-    foreground: '0xfdf4c1'
+    # soft contrast: background = '0x32302f'
+    foreground: '0xebdbb2'
 
   # Normal colors
   normal:
     black:   '0x282828'
-    red:     '0x9d0006'
-    green:   '0x79740e'
-    yellow:  '0xb57614'
-    blue:    '0x076678'
-    magenta: '0x8f3f71'
-    cyan:    '0x00a7af'
-    white:   '0xfdf4c1'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
 
   # Bright colors
   bright:
-    black:   '0x32302f'
-    red:     '0xfb4933'
+    black:   '0x928374'
+    red:     '0xfb4934'
     green:   '0xb8bb26'
     yellow:  '0xfabd2f'
     blue:    '0x83a598'
     magenta: '0xd3869b'
-    cyan:    '0x3fd7e5'
-    white:   '0xffffc8'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
+    
+# Colors (Darktooth)
+# colors:
 
-  # Dim colors (Optional)
-  dim:
-    black:   '0x1d2021'
-    red:     '0x421e1e'
-    green:   '0x232b0f'
-    yellow:  '0x4d3b27'
-    blue:    '0x2b3c44'
-    magenta: '0x4e3d45'
-    cyan:    '0x205161'
-    white:   '0xf4e8ba'
+#   # Default colors
+#   primary:
+#     background: '0x282828'
+#     foreground: '0xfdf4c1'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x282828'
+#     red:     '0x9d0006'
+#     green:   '0x79740e'
+#     yellow:  '0xb57614'
+#     blue:    '0x076678'
+#     magenta: '0x8f3f71'
+#     cyan:    '0x00a7af'
+#     white:   '0xfdf4c1'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x32302f'
+#     red:     '0xfb4933'
+#     green:   '0xb8bb26'
+#     yellow:  '0xfabd2f'
+#     blue:    '0x83a598'
+#     magenta: '0xd3869b'
+#     cyan:    '0x3fd7e5'
+#     white:   '0xffffc8'
+
+#   # Dim colors (Optional)
+#   dim:
+#     black:   '0x1d2021'
+#     red:     '0x421e1e'
+#     green:   '0x232b0f'
+#     yellow:  '0x4d3b27'
+#     blue:    '0x2b3c44'
+#     magenta: '0x4e3d45'
+#     cyan:    '0x205161'
+#     white:   '0xf4e8ba'
 
 # Visual Bell
 #
