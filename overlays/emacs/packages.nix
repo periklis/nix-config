@@ -74,7 +74,7 @@ pkgs: epkgs: with epkgs;
   google-translate
   groovy-imports
   groovy-mode
-  grubox-theme
+  gruvbox-theme
   guess-language
   hardcore-mode
   haskell-mode
