@@ -28,6 +28,7 @@ pkgs: epkgs: with epkgs;
   docker
   docker-compose-mode
   docker-tramp
+  dockerfile-mode
   duplicate-thing
   ecb
   elm-mode
@@ -78,6 +79,7 @@ pkgs: epkgs: with epkgs;
   guess-language
   hardcore-mode
   haskell-mode
+  hcl-mode
   helpful
   highlight-numbers
   highlight-symbol
@@ -88,6 +90,7 @@ pkgs: epkgs: with epkgs;
   ivy-rich
   javadoc-lookup
   jedi
+  jinja2-mode
   js2-mode
   js2-refactor
   json-mode
