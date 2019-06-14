@@ -3,6 +3,11 @@
     {type="reject";}
   ];
   transports= {
+    "dir"= {
+      ""= [
+        {type="insecureAcceptAnything";}
+      ];
+    };
     "docker" = {
       "docker.io" = [
         {type="insecureAcceptAnything";}
