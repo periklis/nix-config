@@ -129,7 +129,6 @@ in
         "--enable-native-gpu-memory-buffers"
         "--enable-zero-copy"
       ];
-      docker               = "podman";
       emacs-nox            = "emacs -nw";
       ec                   = "emacsclient -t";
       firefox              = "firefox --ProfileManager";

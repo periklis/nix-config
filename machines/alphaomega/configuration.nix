@@ -87,8 +87,8 @@
   sound.mediaKeys.enable = false;
 
   virtualisation.docker = {
-    enable = false;
-    enableOnBoot = false;
+    enable = true;
+    enableOnBoot = true;
   };
   virtualisation.virtualbox.host.enable = false;
 

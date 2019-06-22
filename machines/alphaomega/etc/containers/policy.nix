@@ -8,6 +8,11 @@
         {type="insecureAcceptAnything";}
       ];
     };
+    "containers-storage"= {
+      ""= [
+        {type="insecureAcceptAnything";}
+      ];
+    };
     "docker" = {
       "docker.io" = [
         {type="insecureAcceptAnything";}
