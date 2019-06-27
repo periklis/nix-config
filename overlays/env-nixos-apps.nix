@@ -12,6 +12,7 @@ self: super:
       self.arandr
       self.chromium
       self.corefonts
+      self.direnv
       self.file
       self.firefox
       self.gimp-with-plugins

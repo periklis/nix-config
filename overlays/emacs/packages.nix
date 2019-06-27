@@ -25,6 +25,7 @@ pkgs: epkgs: with epkgs;
   deferred
   diminish
   dired-narrow
+  direnv
   docker
   docker-compose-mode
   docker-tramp
