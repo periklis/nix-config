@@ -10,11 +10,13 @@ self: super:
     paths = [
       self.adobeReader
       self.arandr
+      self.autojump
       self.chromium
       self.corefonts
       self.direnv
       self.file
       self.firefox
+      self.flameshot
       self.gimp-with-plugins
       self.gnupg
       self.grobi
@@ -30,6 +32,7 @@ self: super:
       self.pa_applet
       self.pavucontrol
       self.powertop
+      self.pstree
       self.rofi
       self.scrot
       self.slack
