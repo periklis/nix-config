@@ -9,6 +9,7 @@ in
     ohMyZsh = {
       enable = true;
       plugins = [
+        "autojump"
         "docker"
         "emacs"
         "git"
