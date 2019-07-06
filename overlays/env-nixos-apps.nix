@@ -18,6 +18,7 @@ self: super:
       self.firefox
       self.flameshot
       # self.gimp-with-plugins
+      self.gnome3.gnome-tweaks
       self.gnupg
       self.grobi
       self.handbrake
