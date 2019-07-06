@@ -82,11 +82,6 @@ in
     etc."dot-files/ptsirakidis/ssh-config".text                  = import ../../machine/per-user/ssh-user-config.nix {};
     etc."dot-files/ptsirakidis/zshrc".text                       = import ../../machine/per-user/zshrc.nix {};
 
-    #
-    # Per-machine secret config files
-    #
-    etc."openfortivpn/config".text = import ../../machine/services/openfortivpn/config.nix {};
-
     extraOutputsToInstall = [ "doc" "lib" "man" "info" ];
 
     pathsToLink = [ "/lib" "/libexec" "/share" ];
@@ -133,7 +128,6 @@ in
       ec                   = "emacsclient -t";
       firefox              = "firefox --ProfileManager";
       fts                  = "ag --nobreak --nonumbers --noheading . | fzf";
-      hcvpn                = "sudo openfortivpn -c /etc/openfortivpn/config";
       mmv                  = "noglob zmv -W";
       nix-build-out        = "nixBuildOut";
       nix-build-binding-as = "nixBuildBindingAs";
