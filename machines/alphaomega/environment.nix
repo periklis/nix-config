@@ -115,18 +115,8 @@ in
     ];
 
     shellAliases = {
-      chromium = pkgs.lib.concatStringsSep " " [
-        "chromium"
-        "--enable-accelerated-mjpeg-decode"
-        "--enable-accelerated-video"
-        "--ignore-gpu-blacklist"
-        "--enable-gpu-rasterization"
-        "--enable-native-gpu-memory-buffers"
-        "--enable-zero-copy"
-      ];
       emacs-nox            = "emacs -nw";
       ec                   = "emacsclient -t";
-      firefox              = "firefox --ProfileManager";
       fts                  = "ag --nobreak --nonumbers --noheading . | fzf";
       mmv                  = "noglob zmv -W";
       nix-build-out        = "nixBuildOut";

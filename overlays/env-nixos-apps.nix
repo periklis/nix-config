@@ -11,7 +11,6 @@ self: super:
       self.adobeReader
       self.arandr
       self.autojump
-      self.chromium
       self.corefonts
       self.direnv
       self.file
@@ -20,6 +19,7 @@ self: super:
       # self.gimp-with-plugins
       self.gnome3.gnome-tweaks
       self.gnupg
+      self.google-chrome
       self.grobi
       self.handbrake
       self.imagemagick
