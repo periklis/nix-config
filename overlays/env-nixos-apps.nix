@@ -17,7 +17,7 @@ self: super:
       self.file
       self.firefox
       self.flameshot
-      self.gimp-with-plugins
+      # self.gimp-with-plugins
       self.gnupg
       self.grobi
       self.handbrake
