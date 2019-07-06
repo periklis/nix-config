@@ -52,6 +52,7 @@
      javaToolsEnv
      jsToolsEnv
      langToolsEnv
+     manpages
      networkingToolsEnv
      nixToolsEnv
      nixUtilitiesEnv
