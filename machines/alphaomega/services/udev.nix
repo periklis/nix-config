@@ -17,5 +17,8 @@
 
     # power off fibocom wwan device
     ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="2cb7", ATTR{idProduct}=="0210", TEST =="power/control", ATTR{power/control}="off"
+
+    # disable bluetooth
+    SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}="0"
   '';
 }
