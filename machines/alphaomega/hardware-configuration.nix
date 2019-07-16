@@ -117,5 +117,5 @@
     "w /sys/devices/system/cpu/cpufreq/policy?/energy_performance_preference - - - - balance_power"
   ];
 
-  swapDevices = [ ];
+  swapDevices = [ { device = "/dev/nvme0n1p2"; } ];
 }
