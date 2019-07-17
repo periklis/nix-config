@@ -1,13 +1,16 @@
 {}:''
 .dir-locals.el
+.bloop
 .ensime
 .ensime-server.conf
 .ensime_cache/
 .importjs.js
+.metals/
 .projectile
 .tern-port
 .term-project
 ensime.sbt
 ensime-langserver.log
+project/.bloop
 TAGS
 ''
