@@ -4,7 +4,7 @@
     enable = true;
     enableCtrlAltBackspace = true;
 
-    displayManager.lightdm.enable = true;
+    displayManager.gdm.enable = true;
 
     desktopManager = {
       default = "none";

@@ -3,7 +3,6 @@
   imports =[
     ./chromium.nix
     ./gnupg.nix
-    ./xss-lock.nix
     ./zsh/default.nix
   ];
 
