@@ -42,19 +42,19 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Hack
+    family: DejaVu Sans Mono
     # Style can be specified to pick a specific face.
-    style: Regular
+    style: Book
 
   # The bold font face
   family:
-    bold: Hack
+    bold: DejaVu Sans Mono
     # Style can be specified to pick a specific face.
     style: Bold
 
   # The italic font face
   italic:
-    family: Hack
+    family: DejaVu Sans Mono
     # Style can be specified to pick a specific face.
     style: Italic
 
