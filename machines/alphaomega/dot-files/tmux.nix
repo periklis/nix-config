@@ -24,7 +24,7 @@ set -g status-bg black
 
 # Setup left and right status lines
 set -g status-left "#[fg=black,bg=colour3,bold] #S #[fg=colour3,bg=black,nobold,noitalics,nounderscore]"
-set -g status-right "#(${bash}/bin/bash ~/.tmux/plugins/kube.tmux white white white)#[fg=brightblack,bg=black,nobold,noitalics,nounderscore]#[fg=white,bg=brightblack] %Y-%m-%d #[fg=white,bg=brightblack,nobold,noitalics,nounderscore]#[fg=white,bg=brightblack] %H:%M #[fg=colour3,bg=brightblack,nobold,noitalics,nounderscore]#[fg=black,bg=colour3,bold] #H "
+set -g status-right "#(${bash}/bin/bash ~/.tmux/plugins/kube.tmux white white white)"
 
 # Set window status format
 set -g window-status-format "#[fg=black,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#I #[fg=white,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#W #F #[fg=brightblack,bg=black,nobold,noitalics,nounderscore]"
