@@ -1,7 +1,6 @@
 {config, pkgs, ...}:
 {
   imports =[
-    ./chromium.nix
     ./gnupg.nix
     ./zsh.nix
   ];
