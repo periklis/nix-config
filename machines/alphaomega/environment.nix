@@ -3,7 +3,12 @@ let
   fzfCtrlOpts = pkgs.lib.concatStringsSep " " [
     "$FZF_COMMON_OPTS"
     "--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-    "--preview-window right:60:hidden:wrap --bind '?:toggle-preview'"
+    "--preview-window right:50%:hidden:wrap --bind '?:toggle-preview'"
+  ];
+
+  fzfCtrlROpts = pkgs.lib.concatStringsSep " " [
+    fzfCtrlOpts
+    "--history-size=10000"
   ];
 
   fzfDefaultOpts = pkgs.lib.concatStringsSep " " [
@@ -100,7 +105,7 @@ in
       export FZF_DEFAULT_COMMAND="${pkgs.fd}/bin/fd --type file --color=always --follow --hidden --exclude .git"
       export FZF_COMMON_OPTS="--select-1 --exit-0"
       export FZF_CTRL_T_OPTS="${fzfCtrlOpts}"
-      export FZF_CTRL_R_OPTS="${fzfCtrlOpts}"
+      export FZF_CTRL_R_OPTS="${fzfCtrlROpts}"
       export FZF_DEFAULT_OPTS="${fzfDefaultOpts}"
       export PATH="${path}"
     '';
