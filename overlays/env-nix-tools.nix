@@ -5,6 +5,7 @@ self: super:
     paths = [
       self.nix-prefetch-git
       self.nix-prefetch-github
+      self.nix-zsh-completions
     ];
   };
 
