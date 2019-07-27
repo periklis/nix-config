@@ -118,6 +118,8 @@ in
     shellAliases = {
       emacs-nox            = "emacs -nw";
       ec                   = "emacsclient -t";
+      ll                   = "exa -la";
+      lt                   = "exa -T";
       nix-build-out        = "nixBuildOut";
       nix-build-binding-as = "nixBuildBindingAs";
       nix-build-deps       = "nixBuildDeps";
