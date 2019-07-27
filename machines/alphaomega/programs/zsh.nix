@@ -2,14 +2,14 @@
 {
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
+    enableCompletion = false;
     syntaxHighlighting = {
       enable = true;
-      highlighters = ["main" "brackets" "pattern" "cursor" "root" "line"];
+      highlighters = ["main" "brackets" "pattern"];
     };
     ohMyZsh = {
       enable = true;
-      theme = "sunrise";
+      theme = "McQuen";
     };
     promptInit = ''
       source $FZF_BASE/share/fzf/completion.zsh
