@@ -103,7 +103,7 @@
        { count = 65536; startGid = 10000; }
      ];
      description = "Periklis Tsirakidis";
-     extraGroups = [ "wheel" "networkmanager" "docker" "video" ];
+     extraGroups = [ "docker" "networkmanager" "systemd-journal" "wheel" "video" ];
      shell = "/run/current-system/sw/bin/zsh";
   };
 
