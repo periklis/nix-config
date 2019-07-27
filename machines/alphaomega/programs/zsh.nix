@@ -9,11 +9,12 @@
     };
     ohMyZsh = {
       enable = true;
-      theme = "McQuen";
+      theme = "powerlevel10k/powerlevel10k";
     };
     promptInit = ''
       source $FZF_BASE/share/fzf/completion.zsh
       source $FZF_BASE/share/fzf/key-bindings.zsh
+      source $ZSH_CUSTOM/p10k-lean.zsh
     '';
   };
 }
