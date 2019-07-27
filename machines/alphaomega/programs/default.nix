@@ -3,7 +3,7 @@
   imports =[
     ./chromium.nix
     ./gnupg.nix
-    ./zsh/default.nix
+    ./zsh.nix
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

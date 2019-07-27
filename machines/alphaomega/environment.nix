@@ -1,13 +1,9 @@
 { config, pkgs, ... }:
 let
-  fzfCtrlTOpts = pkgs.lib.concatStringsSep " " [
-     "$FZF_COMMON_OPTS --preview"
-     "'(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-  ];
-
-  fzfCtrlROpts = pkgs.lib.concatStringsSep " " [
-    "$FZF_COMMON_OPTS --preview"
-    "'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+  fzfCtrlOpts = pkgs.lib.concatStringsSep " " [
+    "$FZF_COMMON_OPTS"
+    "--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+    "--preview-window right:60:hidden:wrap --bind '?:toggle-preview'"
   ];
 
   fzfDefaultOpts = pkgs.lib.concatStringsSep " " [
@@ -92,7 +88,6 @@ in
       export PAGER="less -R"
       export EDITOR="emacsclient"
       export ALTERNATE_EDITOR="vim"
-      export LSCOLORS="gxfxbEaEBxxEhEhBaDaCaD"
       export MANPATH="${manPath}"
       export ACLOCAL_PATH="$HOME/.nix-profile/share/aclocal"
       export GOPATH="$HOME/projects/golang"
@@ -101,10 +96,11 @@ in
       export PYTHONPATH="$HOME/.local/lib/python3.6/site-packages:${pkgs.pythonToolsEnv}/lib/python3.6/site-packages"
       export ZSH_CUSTOM="$HOME/.zsh/custom"
       export ZSH_CACHE_DIR="$HOME/.zsh/cache"
-      export FZF_DEFAULT_COMMAND="fd --type file --color=always --follow --hidden --exclude .git"
+      export FZF_BASE="${pkgs.fzf}"
+      export FZF_DEFAULT_COMMAND="${pkgs.fd}/bin/fd --type file --color=always --follow --hidden --exclude .git"
       export FZF_COMMON_OPTS="--select-1 --exit-0"
-      export FZF_CTRL_T_OPTS="${fzfCtrlTOpts}"
-      export FZF_CTRL_R_OPTS="${fzfCtrlROpts}"
+      export FZF_CTRL_T_OPTS="${fzfCtrlOpts}"
+      export FZF_CTRL_R_OPTS="${fzfCtrlOpts}"
       export FZF_DEFAULT_OPTS="${fzfDefaultOpts}"
       export PATH="${path}"
     '';
@@ -117,8 +113,6 @@ in
     shellAliases = {
       emacs-nox            = "emacs -nw";
       ec                   = "emacsclient -t";
-      fts                  = "ag --nobreak --nonumbers --noheading . | fzf";
-      mmv                  = "noglob zmv -W";
       nix-build-out        = "nixBuildOut";
       nix-build-binding-as = "nixBuildBindingAs";
       nix-build-deps       = "nixBuildDeps";
