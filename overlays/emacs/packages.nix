@@ -15,6 +15,7 @@ pkgs: epkgs: with epkgs;
   company-c-headers
   company-go
   company-quickhelp
+  # company-lsp
   company-jedi
   # company-rtags
   company-tern
@@ -99,6 +100,8 @@ pkgs: epkgs: with epkgs;
   json-snatcher
   let-alist
   list-environment
+  # lsp-mode
+  # lsp-ui
   macrostep
   magit
   markdown-mode
@@ -108,6 +111,7 @@ pkgs: epkgs: with epkgs;
   nix-sandbox
   nord-theme
   nov
+  one-themes
   org
   org-projectile
   orgit
@@ -163,4 +167,5 @@ pkgs: epkgs: with epkgs;
   yaml-mode
   yasnippet
   yasnippet-snippets
+  zenburn-theme
 ]
