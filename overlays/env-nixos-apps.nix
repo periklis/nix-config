@@ -41,7 +41,7 @@ self: super:
       self.xorg.xkbcomp
       # self.vistafonts
       self.vlc
-      self.zoom-us
+      #self.zoom-us
     ];
  };
 }
