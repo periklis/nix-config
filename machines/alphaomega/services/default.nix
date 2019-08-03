@@ -13,6 +13,7 @@
   services.autorandr.enable = false;
   services.fwupd.enable = true;
   services.printing.enable = true;
+  services.throttled.enable = true;
   services.tlp.enable = true;
   services.zfs.autoScrub.enable = true;
 }

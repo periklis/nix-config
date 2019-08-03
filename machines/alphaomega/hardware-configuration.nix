@@ -8,7 +8,7 @@
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest_t480;
 
   boot.initrd.kernelModules = [ "i915" ];
 
