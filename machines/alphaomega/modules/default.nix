@@ -1,4 +1,6 @@
 { config, pkgs, ... }:
 {
-  imports = [];
+  imports = [
+    ./throttled.nix
+  ];
 }
