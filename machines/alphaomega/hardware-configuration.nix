@@ -32,7 +32,7 @@
     "snd_hda_intel.power_save=1"
     "i915.enable_dc=2"
     "i915.enable_guc=2"
-    # "i915.enable_psr=2"
+    "i915.enable_psr=1"
     "i915.enable_dpcd_backlight=1"
     "bbswitch.load_state=0"
     "bbswitch.unload_state=1"
