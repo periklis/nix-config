@@ -18,14 +18,11 @@ self: super:
     name = "nixosApps";
     paths = [
       self.adobeReader
-      self.arandr
-      self.autojump
       self.corefonts
       self.direnv
       self.file
       self.firefox
       self.flameshot
-      # self.gimp-with-plugins
       self.gnome3.gnome-tweaks
       self.gnupg
       self.google-chrome
@@ -36,7 +33,6 @@ self: super:
       self.i3status-rust
       self.killall
       self.lsof
-      self.mupdf
       self.networkmanagerapplet
       self.openfortivpn
       self.pa_applet
@@ -44,13 +40,10 @@ self: super:
       self.powertop
       self.pstree
       self.rofi
-      self.scrot
       self.slack
-      self.thunderbird
       self.xorg.xkbcomp
-      # self.vistafonts
       self.vlc
-      #self.zoom-us
+      self.zoom-us
     ];
  };
 }
