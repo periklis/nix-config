@@ -9,7 +9,7 @@ pkgs: epkgs: with epkgs;
   bind-key
   cargo
   cmake-ide
-  cmake-mode
+  # cmake-mode
   # color-theme-solarized
   company
   company-c-headers
