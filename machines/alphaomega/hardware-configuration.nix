@@ -8,9 +8,9 @@
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest_t480;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.kernelModules = [ "i915" ];
+  boot.initrd.kernelModules = [ "dm-snapshot" "i915" ];
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"
@@ -44,8 +44,10 @@
     "vm.laptop_mode" = 5;
   };
 
-  boot.initrd.luks.devices.zroot = {
-    device = "/dev/disk/by-uuid/270c62c0-70d4-44a0-8a3b-50ce8941b61a";
+  boot.initrd.luks.devices.cryptroot = {
+    device = "/dev/disk/by-uuid/4f4e6ecb-178c-4257-ab42-694fbab22459";
+    preLVM = true;
+    allowDiscards = true;
   };
 
   boot.loader = {
@@ -58,25 +60,24 @@
       device = "nodev";
       efiSupport = true;
       enableCryptodisk = true;
-      zfsSupport = true;
       efiInstallAsRemovable = false;
     };
   };
 
   fileSystems."/" =
-    { device = "zroot/root";
-      fsType = "zfs";
-    };
-
-  fileSystems."/home" =
-    { device = "zroot/home";
-      fsType = "zfs";
+    {
+      device = "/dev/disk/by-uuid/59308afb-bbb5-4ace-bfb2-ddc2486dde3a";
+      fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/7CAE-6141";
+    { device = "/dev/disk/by-uuid/31A4-B19B";
       fsType = "vfat";
     };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/b4037c33-5f74-4227-9728-7d4f9623f89a"; }
+    ];
 
   hardware.cpu.intel.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
@@ -118,6 +119,4 @@
   systemd.tmpfiles.rules = [
     "w /sys/devices/system/cpu/cpufreq/policy?/energy_performance_preference - - - - balance_power"
   ];
-
-  swapDevices = [ { device = "/dev/nvme0n1p2"; } ];
 }
