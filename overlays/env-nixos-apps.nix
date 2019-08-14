@@ -1,19 +1,5 @@
 self: super:
 {
-  gnupg = super.gnupg.override {
-    pinentry = self.pinentry_qt5;
-    guiSupport = true;
-  };
-
-  linuxPackages_latest_t480 = super.linuxPackages_latest.extend (super.lib.const (ksuper: {
-    kernel = ksuper.kernel.override {
-      extraConfig = ''
-        POWERCAP y
-        INTEL_RAPL y
-      '';
-    };
-  }));
-
   nixosAppsEnv = super.buildEnv {
     name = "nixosApps";
     paths = [
