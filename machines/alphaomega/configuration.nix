@@ -78,6 +78,7 @@
       font-awesome-ttf
       hack-font
       helvetica-neue-lt-std
+      noto-fonts-emoji
       unifont
    ];
   };
