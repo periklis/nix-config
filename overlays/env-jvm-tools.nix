@@ -13,10 +13,8 @@ self: super:
   scalaToolsEnv = super.buildEnv {
     name = "scalaTools";
     paths = [
-      self.ammonite
       self.sbt
       self.scala
-      self.scalafmt
     ];
   };
 }

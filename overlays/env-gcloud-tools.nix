@@ -8,7 +8,7 @@ self: super:
       self.kustomize
       self.packer
       self.stern
-      self.vault
+      # self.vault
     ];
   };
 }

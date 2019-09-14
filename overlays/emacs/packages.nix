@@ -35,7 +35,7 @@ pkgs: epkgs: with epkgs;
   ecb
   elm-mode
   elm-yasnippets
-  elpy
+  # elpy
   emamux
   ensime
   eslintd-fix
