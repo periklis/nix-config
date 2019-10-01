@@ -5,10 +5,8 @@ self: super:
     paths = [
       self.jq
       self.kubectx
-      self.kustomize
       self.packer
       self.stern
-      # self.vault
     ];
   };
 }
