@@ -92,7 +92,10 @@
     enable = true;
     enableOnBoot = true;
   };
-  virtualisation.virtualbox.host.enable = false;
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
+  };
 
   users.users.ptsirakidis = {
      isNormalUser = true;
@@ -104,7 +107,7 @@
        { count = 65536; startGid = 10000; }
      ];
      description = "Periklis Tsirakidis";
-     extraGroups = [ "docker" "networkmanager" "systemd-journal" "wheel" "video" ];
+     extraGroups = [ "docker" "networkmanager" "systemd-journal" "wheel" "video" "vboxusers" ];
      shell = "/run/current-system/sw/bin/zsh";
   };
 
